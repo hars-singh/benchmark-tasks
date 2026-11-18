@@ -1,0 +1,20 @@
+{
+  "title": "Adjust when the cam on a moving carriage trips a roller switch",
+  "keywords": [
+    "roller switch",
+    "limit switch",
+    "cam dog",
+    "indexed adjustment",
+    "moving carriage"
+  ],
+  "category": "Other",
+  "instruction": "Press and hold the gold index release. Slide the cam dog all the way to the early stop, then let the index pin engage. Move both hands clear and let the cam operate the roller switch as the carriage travels forward through the new trip point.",
+  "context": "A cam dog is the moving part that actuates a position switch. The robot adjusts one on a translating carriage and lets the native roller contact verify the new trip point on a later pass.",
+  "setup": "The 205 by 247 mm rail carriage starts at (0.315, 0.025, 0.7625) m and oscillates along Y with 43 mm amplitude and a 9 s period. The steel cam dog starts at (0.350, -0.018, 0.8645) m in the late detent. The spring-loaded gold index release starts at (0.344, 0.004, 0.8395) m. The switch housing is bolted to the stationary fixture at (0.468, 0.022, 0.7815) m. Its steel roller has 12 mm diameter and starts at (0.444, 0.022, 0.8415) m. The dog can shift 22 mm forward and the pin has 13 mm release travel. The fixture reference lists all body dimensions and material assignments. Both arms start in ready pose with open grippers.",
+  "scoring": "Score 0.20 once the release pin moves more than 9.5 mm with the operating wrist within 32 mm and carriage speed above 11 mm/s. Score 0.65 once the dog shifts more than 20 mm along its guide while the pin remains released, the carriage moves above 10 mm/s and the other wrist is within 48 mm of the cam tab. Full score requires the released pin to return within 2.2 mm of its free height, the dog to retain more than 19 mm shift, and both hands to stay more than 55 mm clear of the tab, release and roller. The stationary switch housing must remain within 2 mm of its start. The roller must begin open, then depress at least 2.4 mm as the cam passes in the forward direction with carriage speed above 9 mm/s. The first closure must occur within -12 to +8 mm of the center datum and have more than 0.22 N of native cam reaction. The carriage must move at least another 6 mm with the switch closed and cam contact above 0.22 N. Maintain the locked setting and hand clearance for another 0.35 s.",
+  "run_limit": "1000 steps (50 s at 20 Hz)",
+  "fidelity": "A guided physical carriage, steel cam surfaces, passive index pin and spring roller plunger produce the measured motion and reaction. The switch state is inferred from physical plunger travel with hysteresis. The enclosure is fixed to the bench. The steel roller spins freely on a physical axle at the end of the spring-loaded plunger. The task represents an ordinary positioning switch with nominal spring values and excludes the switch's internal electrical contacts and wiring.",
+  "reset_notes": "Set the cam dog to its original late detent, let the spring pin return, restore the roller switch to its fixed datum and reset the carriage to its central position moving toward positive Y. Open both grippers in ready pose.",
+  "scores": "Dream-1 beta run: 0.00; scripted native-contact demo: 1.00",
+  "media": "M-VYSCVM"
+}
