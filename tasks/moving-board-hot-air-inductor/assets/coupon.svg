@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120mm" height="95mm" viewBox="-20 -15 120 95">
+ <rect x="-20" y="-15" width="120" height="95" fill="white"/>
+ <g font-family="sans-serif" fill="#111" font-size="2.7">
+  <text x="40" y="-10" text-anchor="middle" font-size="3.5">Unpowered rework coupon — dimensions in mm</text>
+  <rect x="0" y="0" width="80" height="60" fill="#e4f0e5" stroke="#172e20" stroke-width="0.3"/>
+  <g fill="#bb752a" stroke="#bb752a" stroke-width="1">
+   <path d="M10,30 H34.7 M45.3,30 H70" fill="none"/>
+   <circle cx="10" cy="30" r="1.5" stroke="none"/>
+   <circle cx="70" cy="30" r="1.5" stroke="none"/>
+   <rect x="33.11" y="23.4" width="3.18" height="13.2" stroke="none"/>
+   <rect x="43.71" y="23.4" width="3.18" height="13.2" stroke="none"/>
+  </g>
+  <rect x="32.4" y="21.9" width="15.2" height="16.2" fill="none" stroke="#28549b" stroke-width="0.25" stroke-dasharray="1,0.7"/>
+  <text x="10" y="26" text-anchor="middle">TP1</text>
+  <text x="70" y="26" text-anchor="middle">TP2</text>
+  <text x="40" y="44" text-anchor="middle">Lands 3.18 × 13.2; centre pitch 10.6</text>
+  <text x="40" y="48" text-anchor="middle">Dashed body outline 15.2 × 16.2</text>
+  <text x="40" y="52" text-anchor="middle">FR-4 thickness 3; no electrical function claimed</text>
+  <g stroke="#222" stroke-width="0.2" fill="none">
+   <path d="M0,-5 H80 M0,-7 V-3 M80,-7 V-3 M-6,0 V60 M-8,0 H-4 M-8,60 H-4"/>
+  </g>
+  <text x="40" y="-6" text-anchor="middle">80</text>
+  <text x="-8" y="31" text-anchor="middle" transform="rotate(-90,-8,31)">60</text>
+  <text x="40" y="67" text-anchor="middle">Test continuity from each land to its matching test point.</text>
+  <text x="40" y="72" text-anchor="middle">Original reference layout; not machine-ready manufacturing data.</text>
+ </g>
+</svg>
