@@ -1,0 +1,19 @@
+{
+  "title": "Remove a press-fit pinion with a guided extractor on a moving carriage",
+  "keywords": [
+    "press-fit pinion",
+    "guided puller",
+    "axial load",
+    "moving service fixture"
+  ],
+  "category": "Other",
+  "instruction": "Press the gold fork down behind the pinion. While holding the fork down, press the orange wedge to pull the gear off the shaft. Release both controls and let the pinion settle in the teal tray while the carriage moves.",
+  "context": "Service teams remove tightly fitted pinions to reuse or replace motors and gears. This fixture tests coordinated fork seating and controlled axial extraction, with the released pinion recovered in a tray.",
+  "setup": "A rail carriage centered at (0.335, 0.025, 0.7625) m is 260 by 244 by 30 mm and travels along Y with amplitude 30 mm and period 8 s. An unpowered 37 mm diameter by 66 mm motor carries a 6 mm diameter shaft protruding 22 mm toward the robot. The 18 mm diameter, 8 mm wide pinion starts fitted to that shaft. The gold fork travels downward up to 23 mm. An orange wedge ram has 47 mm of nominal vertical stroke and drives the metal crosshead through up to 16.8 mm of axial travel. The teal tray measures 72 by 61 mm and lies below the pinion. The included CAD gives all fixed positions, masses and material assignments. Both wrists start at ready pose.",
+  "scoring": "Score 0.20 for seating the fork at least 20 mm while the stage is moving at least 11 mm/s and the left wrist is within 34 mm of the fork pad. Score 0.60 when the fork and wedge have registered axial contact above 1.1 N and 1.0 N respectively and the complete gear clears the shaft by 0.5 mm. For full credit, the lower gear surface must be within 2.5 mm of the tray floor, its center must lie within 29 mm and 23 mm of the tray center on X and Y, and native tray reaction must exceed 0.025 N. The gear must travel with the tray at less than 12 mm/s relative speed and less than 0.5 rad/s of rotation. With both wrists more than 62 mm from both controls, the tray must travel at least 7 mm, then retain these conditions for 0.65 s.",
+  "run_limit": "900 steps (45 s at 20 Hz)",
+  "fidelity": "The extractor uses a steel fork, a passive rolling press pad, a guided wedge and native sliding joints. A native fixed joint rated at 10 N represents initial interference retention. Its rating and the finite pinion teeth are nominal geometry and force approximations for the bench fixture. The shaft and pinion continue to collide after release.",
+  "reset_notes": "Replace or refit the gear at the shown starting position on the unpowered motor. Restore the centered carriage phase, raised fork and ram, returned crosshead and empty tray. Set both grippers to the ready position.",
+  "scores": "Dream-1 beta run: 0.00; scripted native-contact demo: 1.00",
+  "media": "M-UQ9VEK"
+}
