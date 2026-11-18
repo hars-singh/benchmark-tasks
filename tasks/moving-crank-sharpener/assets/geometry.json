@@ -1,0 +1,419 @@
+{
+  "world_table_z_m": 0.7475,
+  "objects": [
+    {
+      "name": "stage",
+      "position_m": [
+        0.245,
+        -0.04,
+        0.7625000000000001
+      ],
+      "bounding_size_m": [
+        0.18,
+        0.14,
+        0.085
+      ],
+      "mass_kg": 5.0,
+      "fixed": false,
+      "color_rgb": [
+        0.28,
+        0.28,
+        0.3
+      ],
+      "solids": [
+        {
+          "kind": "box",
+          "size": [
+            0.18,
+            0.14,
+            0.03
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z"
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.025,
+            0.05,
+            0.055
+          ],
+          "offset": [
+            0,
+            0,
+            0.0425
+          ],
+          "yaw": 0.0,
+          "axis": "Z"
+        }
+      ]
+    },
+    {
+      "name": "tool",
+      "position_m": [
+        0.245,
+        -0.04,
+        0.8675
+      ],
+      "bounding_size_m": [
+        0.06,
+        0.07,
+        0.07
+      ],
+      "mass_kg": 0.5,
+      "fixed": false,
+      "color_rgb": [
+        0.15,
+        0.3,
+        0.65
+      ],
+      "solids": [
+        {
+          "kind": "box",
+          "size": [
+            0.06,
+            0.030500000000000003,
+            0.07
+          ],
+          "offset": [
+            0,
+            -0.01975,
+            0
+          ],
+          "yaw": 0.0,
+          "axis": "Z"
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.06,
+            0.030500000000000003,
+            0.07
+          ],
+          "offset": [
+            0,
+            0.01975,
+            0
+          ],
+          "yaw": 0.0,
+          "axis": "Z"
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.06,
+            0.009,
+            0.030500000000000003
+          ],
+          "offset": [
+            0,
+            0,
+            -0.01975
+          ],
+          "yaw": 0.0,
+          "axis": "Z"
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.06,
+            0.009,
+            0.030500000000000003
+          ],
+          "offset": [
+            0,
+            0,
+            0.01975
+          ],
+          "yaw": 0.0,
+          "axis": "Z"
+        }
+      ]
+    },
+    {
+      "name": "wheel",
+      "position_m": [
+        0.285,
+        -0.04,
+        0.8675
+      ],
+      "bounding_size_m": [
+        0.008,
+        0.09,
+        0.09
+      ],
+      "mass_kg": 0.08,
+      "fixed": false,
+      "color_rgb": [
+        0.75,
+        0.2,
+        0.15
+      ],
+      "solids": [
+        {
+          "kind": "cylinder",
+          "size": [
+            0.008,
+            0.018
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "X"
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.008,
+            0.012,
+            0.043
+          ],
+          "offset": [
+            0,
+            0,
+            -0.0175
+          ],
+          "yaw": 0.0,
+          "axis": "Z"
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.003,
+            0.04
+          ],
+          "offset": [
+            0.02,
+            0,
+            -0.035
+          ],
+          "yaw": 0.0,
+          "axis": "X"
+        }
+      ]
+    },
+    {
+      "name": "knob",
+      "position_m": [
+        0.331,
+        -0.04,
+        0.8325
+      ],
+      "bounding_size_m": [
+        0.03,
+        0.016,
+        0.016
+      ],
+      "mass_kg": 0.008,
+      "fixed": false,
+      "color_rgb": [
+        0.12,
+        0.12,
+        0.14
+      ],
+      "solids": [
+        {
+          "kind": "cylinder",
+          "size": [
+            0.008,
+            0.03
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "X"
+        }
+      ]
+    },
+    {
+      "name": "cutter",
+      "position_m": [
+        0.232,
+        -0.04,
+        0.8675
+      ],
+      "bounding_size_m": [
+        0.003,
+        0.008,
+        0.008
+      ],
+      "mass_kg": 0.005,
+      "fixed": false,
+      "color_rgb": [
+        0.45,
+        0.45,
+        0.48
+      ],
+      "solids": []
+    },
+    {
+      "name": "pencil",
+      "position_m": [
+        0.12,
+        0.1,
+        0.781
+      ],
+      "bounding_size_m": [
+        0.14,
+        0.007,
+        0.007
+      ],
+      "mass_kg": 0.006,
+      "fixed": false,
+      "color_rgb": [
+        0.95,
+        0.68,
+        0.1
+      ],
+      "solids": [
+        {
+          "kind": "cylinder",
+          "size": [
+            0.0035,
+            0.14
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "X"
+        }
+      ]
+    },
+    {
+      "name": "cradle_left",
+      "position_m": [
+        0.055,
+        0.1,
+        0.7625000000000001
+      ],
+      "bounding_size_m": [
+        0.016,
+        0.04,
+        0.03
+      ],
+      "mass_kg": null,
+      "fixed": true,
+      "color_rgb": [
+        0.28,
+        0.28,
+        0.3
+      ],
+      "solids": []
+    },
+    {
+      "name": "cradle_right",
+      "position_m": [
+        0.16,
+        0.1,
+        0.7625000000000001
+      ],
+      "bounding_size_m": [
+        0.016,
+        0.04,
+        0.03
+      ],
+      "mass_kg": null,
+      "fixed": true,
+      "color_rgb": [
+        0.28,
+        0.28,
+        0.3
+      ],
+      "solids": []
+    }
+  ],
+  "support_joints": {
+    "stage": {
+      "axis": "Y",
+      "lower": -0.02,
+      "upper": 0.02
+    }
+  },
+  "object_joints": {
+    "tool": {
+      "kind": "fixed",
+      "parent": "stage",
+      "anchor": [
+        0.245,
+        -0.04,
+        0.8675
+      ]
+    },
+    "wheel": {
+      "kind": "revolute",
+      "parent": "tool",
+      "anchor": [
+        0.285,
+        -0.04,
+        0.8675
+      ],
+      "axis": "X",
+      "drive": {
+        "damping": 0.02,
+        "max_force": 0.08
+      }
+    },
+    "knob": {
+      "kind": "revolute",
+      "parent": "wheel",
+      "anchor": [
+        0.331,
+        -0.04,
+        0.8325
+      ],
+      "axis": "X",
+      "drive": {
+        "damping": 0.0001,
+        "max_force": 0.005
+      }
+    },
+    "cutter": {
+      "kind": "prismatic",
+      "parent": "tool",
+      "anchor": [
+        0.232,
+        -0.04,
+        0.8675
+      ],
+      "axis": "X",
+      "lower": 0.0,
+      "upper": 0.006,
+      "drive": {
+        "stiffness": 500.0,
+        "damping": 3.0,
+        "max_force": 5.0
+      }
+    }
+  },
+  "motion": {
+    "stage": {
+      "center": [
+        0.245,
+        -0.04,
+        0.7625000000000001
+      ],
+      "amplitude": [
+        0,
+        0.005,
+        0
+      ],
+      "period_s": 8.0,
+      "phase": 0.0,
+      "yaw_amplitude": 0.0
+    }
+  }
+}
