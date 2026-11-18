@@ -1,0 +1,19 @@
+{
+  "title": "Damp the swing of a suspended fixture while its trolley moves",
+  "keywords": [
+    "pendulum damping",
+    "overhead trolley",
+    "bimanual stabilization",
+    "hands-off verification"
+  ],
+  "category": "Other",
+  "instruction": "Grasp the two gold tabs on the swinging suspended load, steady the load upright while the blue trolley keeps travelling, then let go and move both hands clear so the load stays quiet on the moving trolley.",
+  "context": "Swinging parts are harder to guide through narrow stations on overhead handling equipment. This lightweight bench fixture tests direct damping during transfer and proves that the load stays quiet after release.",
+  "setup": "A blue trolley on an aluminum gantry moves on the Y axis with nominal amplitude 52 mm and period 8 s. The frame is centered at X 433 mm. The hinge is 226 mm above the tabletop. A 270 g fixture hangs from a pivot with a 142 mm nominal pivot-to-body reference length. The body is 55 by 148 by 52 mm. Its two 18 by 36 by 17 mm gold tabs are at Y offsets of 86 mm on opposite sides. The pendulum starts at 16 degrees from vertical and is released after 0.35 s. Both grippers start open at ready pose. All frame and fixture dimensions, materials and joints are in the included CAD and JSON.",
+  "scoring": "Score 0.25 when both arms grip the tabs while the trolley moves faster than 12 mm/s and the swing exceeds 4 degrees or 0.38 rad/s after the initial release. Score 0.65 after holding both tabs for 0.25 s continuously while the moving load is within 2.4 degrees of upright and turns more slowly than 0.17 rad/s. Full score requires both wrists at least 48 mm from both tabs, the pivot within 2 mm of its rail-linked reference, and at least 10 mm of continued trolley translation while those quiet limits hold, for a subsequent 0.80 s.",
+  "run_limit": "800 steps (40 s at 20 Hz)",
+  "fidelity": "The low-energy bench load uses one native revolute joint with passive damping after the reset latch releases. The trolley translates on a native world guide. The hinge models one axis of pendulum sway. The bench rig excludes hoisting, cable twist and multiple suspension modes.",
+  "reset_notes": "Return the trolley to center, reset the hinge to 16 degrees and reset the phase and latch. Verify that the swing arc is clear and open both grippers at ready pose.",
+  "scores": "Dream-1 beta run: 0.00; scripted native-contact demo: 1.00",
+  "media": "M-K2QA4N"
+}
