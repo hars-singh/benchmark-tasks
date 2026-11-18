@@ -1,0 +1,19 @@
+{
+  "title": "Secure a moving enclosure lid with its over-center latch",
+  "keywords": [
+    "over-center latch",
+    "enclosure",
+    "spring lid",
+    "moving carriage"
+  ],
+  "category": "Other",
+  "instruction": "Press down on the blue lid pad while moving the orange latch paddle past center. Release the lid and the latch, then keep both hands clear while the carriage keeps moving.",
+  "context": "Over-center latches retain enclosure lids against a compliant seal. This fixture moves while one arm compresses the lid and the other turns the eccentric latch. It verifies that the latch carries the compression after both arms withdraw.",
+  "setup": "The aluminum carriage measures 200 by 226 mm and starts at (0.326, 0.040, 0.7625) m. It travels on fixed rails with 39 mm amplitude along Y and an 8 s period. The 116 by 110 by 12 mm aluminum lid starts at (0.333, 0.044, 0.8325) m with a blue polymer press patch centered at (0.367, 0.071) m in plan. A spring guide supports the lid over the enclosure. The steel eccentric latch pivots around Y at (0.295, 0.021, 0.8535) m. It starts 65 degrees before center and its closed stop is 23 degrees beyond center. The orange polymer paddle is at the near end of the cam axle. Both arms start in ready pose with open grippers. The fixture geometry gives all rail, lid, cam and bracket dimensions and material assignments.",
+  "scoring": "Score 0.20 when the lid has at least 5.2 mm compression while the carriage is moving at 12 mm/s or faster, the operating hand is within 30 mm of the lid pad and the latch is still at least 10 degrees before center. Score 0.60 when the compressed-lid operation reaches at least 11 degrees past center, the cam has more than 0.5 N of native lid reaction and the other hand is within 40 mm of the paddle. Full score requires both hands more than 62 mm from both contact patches, at least 15 degrees past center, at least 3.3 mm compression, more than 0.85 N of native cam reaction and angular speed below 0.32 rad/s. Maintain that condition until the carriage moves at least 8 mm and sustain it for an additional 0.75 s. Opening the latch or losing compression during verification interrupts the hold.",
+  "run_limit": "900 steps (45 s at 20 Hz)",
+  "fidelity": "The guided carriage, spring-loaded lid, cam joint, mechanical stops and contact loads are simulated with native rigid-body physics. A linear spring represents the lid seal. The model omits distributed gasket deformation and measurement of sealing against an ingress rating. This is a bench eccentric fixture based on over-center retention, with nominal forces and geometry declared in the fixture protocol.",
+  "reset_notes": "Reset the latch to its open stop, let the lid return to its free height, reset the carriage to the central datum moving toward positive Y and place both arms in ready pose with open grippers.",
+  "scores": "Dream-1 beta run: 0.00; scripted native-contact demo: 1.00",
+  "media": "M-X694XA"
+}
