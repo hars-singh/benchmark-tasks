@@ -1,0 +1,19 @@
+{
+  "title": "Seat and lock a ribbon cable on a moving connector fixture",
+  "keywords": [
+    "ribbon connector",
+    "slider latch",
+    "moving fixture",
+    "proof pull"
+  ],
+  "context": "A fixture can align a stiffened ribbon cable while its contact clamp is closed and connection retention is checked. This bench test asks the robot to move the compliant insertion handle and two-tab latch before a calibrated proof pull.",
+  "setup": "The YAM arms start ready and open. The table is at z = 0.7475 m. The guided 3 kg aluminum carriage moves along Y with a 16 mm amplitude and 10 s period. The connector is mounted 85 mm above the table. Its mouth is at x = 0.282 m. The stiffened ribbon is 16 mm wide, 7 mm long and 0.30 mm thick, starting 0.8 mm short of the connector mouth. The teal handle translates along X through a 4.20 mm stroke and carries a compliant insertion clip. The gold fork has two 1.05 mm prongs positioned on 19.1 mm centers. It drives the unpowered slider by contact. The geometry file gives the mounting solid, housing, guide, leaf, follower, pusher and clip dimensions and poses.",
+  "scoring": "Score 0.70 only after active insertion to at least 3.0 mm while the carriage is moving faster than 6 mm/s and the fork closes the native latch with opposed contact forces beyond 0.25 N and more than 0.05 N axial fork contact. Insertion must be made with the teal handle traveling past 3.6 mm and the left TCP within 40 mm. A probe starts when both TCPs are at least 57 mm from both fixture handles. The probe sets a 0.65 N force limit on a withdrawal drive. Score 1.0 after at least 1.6 s of proof with insertion at least 2.8 mm and latch stroke at least 1.3 mm, held for another 0.45 s with both hands clear. Otherwise the result is zero or the earned closure score.",
+  "reset_notes": "Restore the open connector, reset all guides and board phase, and leave the ribbon just short of the mouth. Reset the two passive operators and instrument state.",
+  "fidelity": "Rigid primitives model the stiffened ribbon tip, cam and contact leaf. A compliant clip guides insertion. Both robot actuations use native contact. The withdrawal instrument engages after both hands clear. The trial measures mechanical retention of the inserted tip.",
+  "category": "Other",
+  "instruction": "Slide the teal handle forward to seat the ribbon in the moving connector. Keep it seated while pressing the gold fork to close both latch tabs. Move both hands clear for the pull test.",
+  "run_limit": "900 steps (45 s at 20 Hz)",
+  "scores": "Dream-1 beta run: 0.00; scripted native-contact demo: 1.00",
+  "media": "M-T5NHFE"
+}

@@ -1,0 +1,1023 @@
+{
+  "units": "metres; rotations radians; primitive cylinders store radius and full height",
+  "source_sha256": "5085aa3cb36f58e1aa7ef021e1dedad03f858bbd1e3898d52b2e66d4b0d053b4",
+  "objects": [
+    {
+      "name": "fixture",
+      "position_m": [
+        0.286,
+        0.0,
+        0.7535000000000001
+      ],
+      "yaw_rad": 0.0,
+      "mass_kg": 3.0,
+      "fixed": false,
+      "material": "aluminum moving base with steel posts",
+      "solids": [
+        {
+          "kind": "box",
+          "size": [
+            0.126,
+            0.115,
+            0.012
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.004,
+            0.071
+          ],
+          "offset": [
+            0.008,
+            -0.015,
+            0.0415
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.58,
+            0.62,
+            0.66
+          ]
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.004,
+            0.071
+          ],
+          "offset": [
+            0.008,
+            0.015,
+            0.0415
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.58,
+            0.62,
+            0.66
+          ]
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.004,
+            0.071
+          ],
+          "offset": [
+            0.028,
+            -0.015,
+            0.0415
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.58,
+            0.62,
+            0.66
+          ]
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.004,
+            0.071
+          ],
+          "offset": [
+            0.028,
+            0.015,
+            0.0415
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.58,
+            0.62,
+            0.66
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.027,
+            0.052,
+            0.058
+          ],
+          "offset": [
+            -0.025,
+            0.0,
+            0.035
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.25,
+            0.29,
+            0.31
+          ]
+        }
+      ]
+    },
+    {
+      "name": "board",
+      "position_m": [
+        0.302,
+        0.0,
+        0.8317
+      ],
+      "yaw_rad": 0.0,
+      "mass_kg": 0.0042,
+      "fixed": false,
+      "material": "FR4 assembly board",
+      "solids": [
+        {
+          "kind": "box",
+          "size": [
+            0.039,
+            0.042,
+            0.0016
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    },
+    {
+      "name": "housing",
+      "position_m": [
+        0.28474999999999995,
+        0.0,
+        0.83385
+      ],
+      "yaw_rad": 0.0,
+      "mass_kg": 0.00024,
+      "fixed": false,
+      "material": "molded polymer housing",
+      "solids": [
+        {
+          "kind": "box",
+          "size": [
+            0.0055,
+            0.0208,
+            0.00026
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            -0.0012200000000000002
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.0055,
+            0.0208,
+            0.00077
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0009649999999999997
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.0055,
+            0.00225,
+            0.00158
+          ],
+          "offset": [
+            0.0,
+            -0.009275,
+            -0.0002000000000000001
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.0055,
+            0.00225,
+            0.00158
+          ],
+          "offset": [
+            0.0,
+            0.009275,
+            -0.0002000000000000001
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.00034,
+            0.0163,
+            0.00043
+          ],
+          "offset": [
+            0.0007700000000000003,
+            0.0,
+            0.00013999999999999993
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    },
+    {
+      "name": "cam_guide",
+      "position_m": [
+        0.2838,
+        0.0,
+        0.83265
+      ],
+      "yaw_rad": 0.0,
+      "mass_kg": 0.00014,
+      "fixed": false,
+      "material": "molded polymer guide",
+      "solids": [
+        {
+          "kind": "box",
+          "size": [
+            0.0084,
+            0.0158,
+            0.00022
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    },
+    {
+      "name": "slide_wedge",
+      "position_m": [
+        0.2814,
+        0.0,
+        0.8333200000000001
+      ],
+      "yaw_rad": 0.0,
+      "mass_kg": 0.00012,
+      "fixed": false,
+      "material": "molded polymer latch",
+      "solids": [
+        {
+          "kind": "box",
+          "size": [
+            0.0022,
+            0.0155,
+            0.00016
+          ],
+          "offset": [
+            0.001,
+            0.0,
+            -3e-05
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.4188790204786391,
+          "color": null
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.0033,
+            0.0016,
+            0.00125
+          ],
+          "offset": [
+            0.0,
+            -0.00955,
+            0.00067
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.0033,
+            0.0016,
+            0.00125
+          ],
+          "offset": [
+            0.0,
+            0.00955,
+            0.00067
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.0037,
+            0.0011,
+            8.5e-05
+          ],
+          "offset": [
+            0.001,
+            -0.0066,
+            -0.00049
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.0037,
+            0.0011,
+            8.5e-05
+          ],
+          "offset": [
+            0.001,
+            0.0066,
+            -0.00049
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    },
+    {
+      "name": "contact_follower",
+      "position_m": [
+        0.28314999999999996,
+        0.0,
+        0.8336600000000001
+      ],
+      "yaw_rad": 0.0,
+      "mass_kg": 8e-05,
+      "fixed": false,
+      "material": "molded polymer follower",
+      "solids": [
+        {
+          "kind": "box",
+          "size": [
+            0.0022,
+            0.0156,
+            0.00018
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        },
+        {
+          "kind": "sphere",
+          "size": [
+            0.00022
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            -0.00019
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    },
+    {
+      "name": "upper_contact_leaf",
+      "position_m": [
+        0.28385,
+        0.0,
+        0.834255
+      ],
+      "yaw_rad": 0.0,
+      "mass_kg": 8e-05,
+      "fixed": false,
+      "material": "spring alloy contact",
+      "solids": [
+        {
+          "kind": "box",
+          "size": [
+            0.0029,
+            0.0147,
+            0.00018
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    },
+    {
+      "name": "conductor_tip",
+      "position_m": [
+        0.27769999999999995,
+        0.0,
+        0.834
+      ],
+      "yaw_rad": 0.0,
+      "mass_kg": 6e-05,
+      "fixed": false,
+      "material": "copper-polyimide stiffened ribbon",
+      "solids": [
+        {
+          "kind": "box",
+          "size": [
+            0.007,
+            0.016,
+            0.0003
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    },
+    {
+      "name": "pull_clip",
+      "position_m": [
+        0.27269999999999994,
+        0.0,
+        0.8354999999999999
+      ],
+      "yaw_rad": 0.0,
+      "mass_kg": 0.007,
+      "fixed": false,
+      "material": "steel fixture clip",
+      "solids": [
+        {
+          "kind": "box",
+          "size": [
+            0.003,
+            0.017,
+            0.0015
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    },
+    {
+      "name": "clip_jaw",
+      "position_m": [
+        0.27469999999999994,
+        0.0,
+        0.834
+      ],
+      "yaw_rad": 0.0,
+      "mass_kg": 0.0002,
+      "fixed": false,
+      "material": "steel fixture jaw",
+      "solids": [
+        {
+          "kind": "box",
+          "size": [
+            0.002,
+            0.018,
+            0.0003
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            -0.00033
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.002,
+            0.018,
+            0.0003
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.00033
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    },
+    {
+      "name": "latch_pusher",
+      "position_m": [
+        0.24699999999999997,
+        0.0,
+        0.83399
+      ],
+      "yaw_rad": 0.0,
+      "mass_kg": 0.014,
+      "fixed": false,
+      "material": "steel fork and polymer pad",
+      "solids": [
+        {
+          "kind": "box",
+          "size": [
+            0.01,
+            0.033,
+            0.014
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.028,
+            0.00105,
+            0.00105
+          ],
+          "offset": [
+            0.0185,
+            -0.00955,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.7,
+            0.72,
+            0.74
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.028,
+            0.00105,
+            0.00105
+          ],
+          "offset": [
+            0.0185,
+            0.00955,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.7,
+            0.72,
+            0.74
+          ]
+        }
+      ]
+    },
+    {
+      "name": "cable_seater",
+      "position_m": [
+        0.232,
+        0.065,
+        0.8665
+      ],
+      "yaw_rad": 0.0,
+      "mass_kg": 0.038,
+      "fixed": false,
+      "material": "steel yoke and polymer pad",
+      "solids": [
+        {
+          "kind": "box",
+          "size": [
+            0.012,
+            0.028,
+            0.014
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.01,
+            0.012,
+            0.041
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            -0.023
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.033,
+            0.009,
+            0.007
+          ],
+          "offset": [
+            0.015,
+            0.0,
+            -0.044
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.009,
+            0.067,
+            0.006
+          ],
+          "offset": [
+            0.024,
+            -0.0325,
+            -0.044
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.021,
+            0.009,
+            0.006
+          ],
+          "offset": [
+            0.032,
+            -0.065,
+            -0.044
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    },
+    {
+      "name": "carriage_rails",
+      "position_m": [
+        0.286,
+        0.0,
+        0.7515000000000001
+      ],
+      "yaw_rad": 0.0,
+      "mass_kg": null,
+      "fixed": true,
+      "material": "steel guide beams",
+      "solids": [
+        {
+          "kind": "box",
+          "size": [
+            0.009,
+            0.183,
+            0.008
+          ],
+          "offset": [
+            -0.072,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.009,
+            0.183,
+            0.008
+          ],
+          "offset": [
+            0.072,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    }
+  ],
+  "support_trajectories": {
+    "fixture": {
+      "center": [
+        0.286,
+        0.0,
+        0.7535000000000001
+      ],
+      "amplitude": [
+        0.0,
+        0.016,
+        0.0
+      ],
+      "period_s": 10.0,
+      "phase": 0.0,
+      "yaw_amplitude": 0.0
+    }
+  },
+  "world_guides": {
+    "fixture": {
+      "axis": "Y",
+      "lower": -0.022,
+      "upper": 0.022
+    }
+  },
+  "fixture_joints": {
+    "housing": {
+      "kind": "fixed",
+      "parent": "board",
+      "anchor": [
+        0.28474999999999995,
+        0.0,
+        0.83385
+      ]
+    },
+    "cam_guide": {
+      "kind": "fixed",
+      "parent": "housing",
+      "anchor": [
+        0.2838,
+        0.0,
+        0.83265
+      ]
+    },
+    "slide_wedge": {
+      "kind": "prismatic",
+      "parent": "housing",
+      "anchor": [
+        0.2814,
+        0.0,
+        0.8333200000000001
+      ],
+      "axis": "X",
+      "lower": 0.0,
+      "upper": 0.0016,
+      "drive": {
+        "stiffness": 0.0,
+        "damping": 1.2,
+        "max_force": 1.0
+      }
+    },
+    "contact_follower": {
+      "kind": "prismatic",
+      "parent": "housing",
+      "anchor": [
+        0.28314999999999996,
+        0.0,
+        0.8336600000000001
+      ],
+      "axis": "Z",
+      "lower": -2e-05,
+      "upper": 0.00046,
+      "drive": {
+        "stiffness": 520.0,
+        "damping": 0.4,
+        "max_force": 0.25
+      }
+    },
+    "upper_contact_leaf": {
+      "kind": "prismatic",
+      "parent": "housing",
+      "anchor": [
+        0.28385,
+        0.0,
+        0.834255
+      ],
+      "axis": "Z",
+      "lower": 0.0,
+      "upper": 0.00021,
+      "drive": {
+        "stiffness": 9000.0,
+        "damping": 0.5,
+        "max_force": 1.8
+      }
+    },
+    "board": {
+      "kind": "fixed",
+      "parent": "fixture",
+      "anchor": [
+        0.302,
+        0.0,
+        0.8317
+      ]
+    },
+    "pull_clip": {
+      "kind": "prismatic",
+      "parent": "cable_seater",
+      "anchor": [
+        0.27269999999999994,
+        0.0,
+        0.8354999999999999
+      ],
+      "axis": "X",
+      "lower": -0.012,
+      "upper": 0.0005,
+      "drive": {
+        "stiffness": 12000.0,
+        "damping": 4.0,
+        "max_force": 0.28
+      }
+    },
+    "clip_jaw": {
+      "kind": "prismatic",
+      "parent": "pull_clip",
+      "anchor": [
+        0.27469999999999994,
+        0.0,
+        0.834
+      ],
+      "axis": "Z",
+      "lower": -0.00018,
+      "upper": 0.00033,
+      "drive": {
+        "stiffness": 100.0,
+        "damping": 0.15,
+        "max_force": 0.032
+      }
+    },
+    "conductor_tip": {
+      "kind": "fixed",
+      "parent": "clip_jaw",
+      "anchor": [
+        0.27769999999999995,
+        0.0,
+        0.834
+      ]
+    },
+    "latch_pusher": {
+      "kind": "prismatic",
+      "parent": "fixture",
+      "anchor": [
+        0.24699999999999997,
+        0.0,
+        0.83399
+      ],
+      "axis": "X",
+      "lower": 0.0,
+      "upper": 0.00225,
+      "drive": {
+        "stiffness": 70.0,
+        "damping": 0.4,
+        "max_force": 0.3
+      }
+    },
+    "cable_seater": {
+      "kind": "prismatic",
+      "parent": "fixture",
+      "anchor": [
+        0.232,
+        0.065,
+        0.8665
+      ],
+      "axis": "X",
+      "lower": 0.0,
+      "upper": 0.0042,
+      "drive": {
+        "stiffness": 0.0,
+        "damping": 1.2,
+        "max_force": 0.3
+      }
+    }
+  },
+  "contact_patch_radii_m": {},
+  "passive_cutting_loads": {}
+}

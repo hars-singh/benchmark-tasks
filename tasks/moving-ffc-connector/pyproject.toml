@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "dynamic-task-moving-ffc-connector"
+version = "0.1.0"
+requires-python = ">=3.12"
+[project.entry-points."inspect_robots.embodiments"]
+moving_ffc_connector_yam = "dynamic_task_moving_ffc_connector.yam_dynamic:make_embodiment"
+[project.entry-points."inspect_robots.policies"]
+moving_ffc_connector_demo = "dynamic_task_moving_ffc_connector.yam_dynamic:make_scripted_policy"
+moving_ffc_connector_idle = "dynamic_task_moving_ffc_connector.yam_dynamic:make_idle_policy"
+moving_ffc_connector_dream_guard = "dynamic_task_moving_ffc_connector.budget:make_guarded_dream_policy"
+[tool.setuptools.packages.find]
+include = ["dynamic_task_moving_ffc_connector*"]
