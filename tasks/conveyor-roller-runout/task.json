@@ -1,0 +1,19 @@
+{
+  "title": "Measure and record the radial runout of a conveyor roller",
+  "category": "Impact on jobs",
+  "keywords": [
+    "conveyor inspection",
+    "radial runout",
+    "dial indicator",
+    "quality control"
+  ],
+  "instruction": "Turn the crank slowly through at least one full turn to measure the roller. Read the runout on the gauge. Press the green button if the reading is 0.40 millimetres or less, or the orange button if it is higher. Let go and wait for the roller to stop.",
+  "context": "Conveyor roller inspection checks the difference between the highest and lowest surface positions as the part turns against a spring indicator. A stationary check cannot detect radial runout. The inspection fixture uses a compact roller and a measuring limit specified in the work order.",
+  "setup": "YAM station with x forward, y left and z up in metres. Table top z=0.7475; arms start in the stock ready pose, open, seed 0 and zero jitter. The 5 kg rigid aluminum inspection stand has a 230 x 145 x 20 mm base at (0.520,-0.050,0.7575), two 12 x 54 x 110 mm upright supports and an 8 mm steel axle. A 365 g steel roller has a 50 mm outside diameter and a 150 mm measuring face. Its horizontal X axis passes through (0.529,-0.050,0.8685). The 81 mm crank extension and 6 x 11 x 40 mm crank arm carry a free-spinning, 16 x 30 mm polymer grip at (0.374,-0.050,0.8335). The 25 g steel indicator plunger has a 7 x 48 mm stem and 3 mm spherical tip. Its tip centre starts at (0.529,-0.050,0.89535), with the spring pressing toward the measuring face. A weighted result panel has a 180 x 135 x 32 mm base at (0.160,0.205,0.7635), a 51 x 75 x 21 mm readout housing and a 40 x 57 mm screen. Its spring-return green and orange polymer caps are 30 x 30 x 18 mm. Green starts at (0.160,0.239,0.7855) and orange at (0.160,0.171,0.7855). See assets/geometry.json for every solid and joint.",
+  "scoring": "Award 0.50 for obtaining a valid measurement. One contiguous measurement window must span at least 360 degrees of actual roller angle. Filtered indicator contact force must be 0.15 to 2 N at each control sample. Rotation must remain below 2.15 rad/s. Runout is the difference between highest and lowest native plunger positions relative to the stand. Full score additionally requires an accurate decision for the test roller, a press of at least 4 mm on the corresponding button, both grippers clear of the crank by more than 65 mm, and roller speed below 0.12 rad/s for 0.75 seconds.",
+  "run_limit": "1200 control steps (60 simulated seconds at 20 Hz)",
+  "reset_notes": "Reload the station at seed 0, restore all parts and the crank with its grip hanging down, leave both buttons up, clear the gauge display, and reset the recorder.",
+  "fidelity": "The roller, free-spinning crank grip, spring indicator and result buttons use native rigid-body joints and contact. Tube bending and bearing internals are omitted. The test eccentricity is defined in the roller geometry. The visible readout displays measured native displacement. Its digits have no mass or collision.",
+  "scores": "Dream-1 beta run: 0.00; scripted native-contact demo: 1.00",
+  "media": "M-SA82X9"
+}

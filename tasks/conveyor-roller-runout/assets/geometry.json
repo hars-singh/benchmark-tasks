@@ -1,0 +1,530 @@
+{
+  "units": "metres; rotations radians; primitive cylinders store radius and full height",
+  "source_sha256": "1e75e14972626e525cb9eaea6f7035d3df9ec993e67947920a7be6a4e04561a7",
+  "objects": [
+    {
+      "name": "check_stand",
+      "position_m": [
+        0.52,
+        -0.05,
+        0.7575000000000001
+      ],
+      "yaw_rad": 0.0,
+      "mass_kg": 5.0,
+      "fixed": false,
+      "material": "rigid aluminum inspection fixture, steel axle and sensor bracket",
+      "solids": [
+        {
+          "kind": "box",
+          "size": [
+            0.23,
+            0.145,
+            0.02
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.012,
+            0.054,
+            0.11
+          ],
+          "offset": [
+            -0.08,
+            0.0,
+            0.065
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.012,
+            0.054,
+            0.11
+          ],
+          "offset": [
+            0.092,
+            0.0,
+            0.065
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.004,
+            0.181
+          ],
+          "offset": [
+            0.009,
+            0.0,
+            0.111
+          ],
+          "yaw": 0.0,
+          "axis": "X",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.39,
+            0.42,
+            0.46
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.018,
+            0.015,
+            0.199
+          ],
+          "offset": [
+            0.009,
+            0.061,
+            0.109
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.018,
+            0.071,
+            0.015
+          ],
+          "offset": [
+            0.009,
+            0.03,
+            0.193
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.022,
+            0.024,
+            0.029
+          ],
+          "offset": [
+            0.009,
+            0.003,
+            0.189
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.11,
+            0.15,
+            0.18
+          ]
+        }
+      ]
+    },
+    {
+      "name": "roller",
+      "position_m": [
+        0.529,
+        -0.05,
+        0.8685
+      ],
+      "yaw_rad": 0.0,
+      "mass_kg": 0.365,
+      "fixed": false,
+      "material": "50 mm steel conveyor roller with crank extension",
+      "solids": [
+        {
+          "kind": "cylinder",
+          "size": [
+            0.025,
+            0.15
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.00035
+          ],
+          "yaw": 0.0,
+          "axis": "X",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.005,
+            0.081
+          ],
+          "offset": [
+            -0.1075,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "X",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.006,
+            0.011,
+            0.04
+          ],
+          "offset": [
+            -0.146,
+            0.0,
+            -0.016
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.19,
+            0.3,
+            0.45
+          ]
+        }
+      ]
+    },
+    {
+      "name": "crank_grip",
+      "position_m": [
+        0.374,
+        -0.05,
+        0.8335
+      ],
+      "yaw_rad": 0.0,
+      "mass_kg": 0.009,
+      "fixed": false,
+      "material": "polymer free-spinning handle",
+      "solids": [
+        {
+          "kind": "cylinder",
+          "size": [
+            0.008,
+            0.03
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "X",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    },
+    {
+      "name": "indicator_plunger",
+      "position_m": [
+        0.529,
+        -0.05,
+        0.89535
+      ],
+      "yaw_rad": 0.0,
+      "mass_kg": 0.025,
+      "fixed": false,
+      "material": "steel measuring stem and spherical tip",
+      "solids": [
+        {
+          "kind": "sphere",
+          "size": [
+            0.0015
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.0035,
+            0.048
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.025
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    },
+    {
+      "name": "result_panel",
+      "position_m": [
+        0.16,
+        0.205,
+        0.7635000000000001
+      ],
+      "yaw_rad": 0.0,
+      "mass_kg": 3.0,
+      "fixed": false,
+      "material": "weighted display and result switch station",
+      "solids": [
+        {
+          "kind": "box",
+          "size": [
+            0.18,
+            0.135,
+            0.032
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.051,
+            0.075,
+            0.021
+          ],
+          "offset": [
+            0.056,
+            0.0,
+            0.025
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.12,
+            0.16,
+            0.19
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.04,
+            0.057,
+            0.001
+          ],
+          "offset": [
+            0.056,
+            0.0,
+            0.036
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.02,
+            0.07,
+            0.06
+          ]
+        }
+      ]
+    },
+    {
+      "name": "pass_button",
+      "position_m": [
+        0.16,
+        0.239,
+        0.7855000000000001
+      ],
+      "yaw_rad": 0.0,
+      "mass_kg": 0.032,
+      "fixed": false,
+      "material": "green polymer cap",
+      "solids": [
+        {
+          "kind": "box",
+          "size": [
+            0.03,
+            0.03,
+            0.018
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    },
+    {
+      "name": "fail_button",
+      "position_m": [
+        0.16,
+        0.171,
+        0.7855000000000001
+      ],
+      "yaw_rad": 0.0,
+      "mass_kg": 0.032,
+      "fixed": false,
+      "material": "orange polymer cap",
+      "solids": [
+        {
+          "kind": "box",
+          "size": [
+            0.03,
+            0.03,
+            0.018
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    }
+  ],
+  "support_trajectories": {},
+  "world_guides": {},
+  "fixture_joints": {
+    "roller": {
+      "kind": "revolute",
+      "parent": "check_stand",
+      "anchor": [
+        0.529,
+        -0.05,
+        0.8685
+      ],
+      "axis": "X",
+      "drive": {
+        "stiffness": 0.0,
+        "damping": 0.0018,
+        "max_force": 0.06
+      }
+    },
+    "crank_grip": {
+      "kind": "revolute",
+      "parent": "roller",
+      "anchor": [
+        0.374,
+        -0.05,
+        0.8335
+      ],
+      "axis": "X",
+      "drive": {
+        "damping": 0.0001,
+        "max_force": 0.005
+      }
+    },
+    "indicator_plunger": {
+      "kind": "prismatic",
+      "parent": "check_stand",
+      "anchor": [
+        0.529,
+        -0.05,
+        0.89535
+      ],
+      "axis": "Z",
+      "lower": -0.008,
+      "upper": 0.003,
+      "drive": {
+        "stiffness": 250.0,
+        "damping": 1.0,
+        "max_force": 1.5,
+        "target": -0.003
+      }
+    },
+    "pass_button": {
+      "kind": "prismatic",
+      "parent": "result_panel",
+      "anchor": [
+        0.16,
+        0.239,
+        0.7855000000000001
+      ],
+      "axis": "Z",
+      "lower": -0.008,
+      "upper": 0.0,
+      "drive": {
+        "stiffness": 1000.0,
+        "damping": 3.0,
+        "max_force": 9.0,
+        "target": 0.0
+      }
+    },
+    "fail_button": {
+      "kind": "prismatic",
+      "parent": "result_panel",
+      "anchor": [
+        0.16,
+        0.171,
+        0.7855000000000001
+      ],
+      "axis": "Z",
+      "lower": -0.008,
+      "upper": 0.0,
+      "drive": {
+        "stiffness": 1000.0,
+        "damping": 3.0,
+        "max_force": 9.0,
+        "target": 0.0
+      }
+    }
+  },
+  "contact_patch_radii_m": {},
+  "passive_cutting_loads": {}
+}
