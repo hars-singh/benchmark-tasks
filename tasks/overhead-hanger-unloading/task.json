@@ -1,0 +1,19 @@
+{
+  "title": "Unload a closed-eye workpiece from a moving overhead hanger",
+  "keywords": [
+    "overhead trolley",
+    "retaining collar",
+    "unloading",
+    "contact-supported workpiece"
+  ],
+  "context": "A suspended finishing-line workpiece can ride on a moving load pin. An end collar retains its closed eye. Unloading requires meeting the moving grip flange, lifting to clear the collar, withdrawing axially, and setting the part in its receiving rack.",
+  "setup": "The two YAM arms start in ready pose, with open grippers. The table is at z = 0.7475 m. The rail center is (0.367, 0.095, 1.0125) m. The 1.5 kg trolley starts at (0.367, 0.095, 0.9775) m and oscillates along Y with 55 mm amplitude and an 8 s period. A 118 mm long, 12 mm diameter cantilever pin carries a 20 mm diameter, 4 mm thick end collar. Its horizontal axis is at z = 0.9275 m. The 88 g orange workpiece has a 14 x 64 x 78 mm body, a closed eye, and a 27 x 28 x 17 mm front flange. It starts hanging at (0.282, 0.095, 0.8645) m. The 1.4 kg green cradle center is (0.202, 0.235, 0.7535) m. The fixture geometry file lists every solid and reset position.",
+  "scoring": "Score 0.25 for grasping while the moving pin supports the part with more than 0.07 N upward reaction and the trolley moves faster than 20 mm/s. The workpiece center stays within 12 mm of the pin in Y and within 12 mm of its starting X. A grasp requires a gripper opening fraction below 0.65 and its TCP within 35 mm of the flange. Score 0.50 after lifting the held part at least 6 mm while it is still aligned, then withdrawing until its full X extent clears the pin end by at least 3 mm. Full score requires center offsets within 8.5 mm in X and 11 mm in Y from the cradle, a base within 3 mm of the cradle floor, and tilt under 14.1 degrees. It must have at least 0.15 N upward support, linear speed below 10 mm/s, spin below 0.5 rad/s, and both hands more than 55 mm from the flange for 0.55 s. With none of the checkpoints met, or with any final position more than 20 mm below the table at the part base, score zero.",
+  "reset_notes": "Restore seed 0, phase 0, an empty cradle, and the closed eye resting on the pin behind the collar.",
+  "fidelity": "Rigid compound bodies model the eye, pin and collar. The trolley uses a guided native drive. The tabletop fixture represents an overhead carrier. The workpiece rides and releases through native contact.",
+  "category": "Other",
+  "instruction": "Lift the orange workpiece over the silver collar on the moving hanger. Pull it off the pin, place it upright in the green cradle, and release it.",
+  "run_limit": "900 steps (45 s at 20 Hz)",
+  "scores": "Dream-1 beta run: 0.00; scripted native-contact demo: 1.00",
+  "media": "M-QNZP93"
+}
