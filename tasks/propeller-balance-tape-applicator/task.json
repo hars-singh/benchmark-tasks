@@ -1,0 +1,19 @@
+{
+  "title": "Apply a balancing strip to a propeller and verify it stays balanced",
+  "keywords": [
+    "propeller balance",
+    "pressure-sensitive tape",
+    "tamp applicator",
+    "rotating fixture"
+  ],
+  "category": "Other",
+  "instruction": "Use the gold applicator to press its balancing strip onto the light blade. Return the applicator to its stand and keep both hands clear for the balance check.",
+  "context": "A small mass error creates static imbalance in a light propeller. The robot uses a removable tamp pad to place the correction on the lighter blade. A fixture sweep tests retention before a separate unpowered balance check.",
+  "setup": "The 254 mm two-blade propeller starts horizontally with its bearing at (0.337, 0.063, 0.8975) m. Its heavy blade carries an extra 50 mg 101 mm from the axis. The opposite blade rests over a steel backing pad after the fixture's first free release. The gold applicator begins at (0.181, 0.225, 0.8085) m on a fixed cradle with a 15 by 17 by 0.14 mm, 50 mg balancing strip attached to its narrow pad. Both arms start in ready pose with open grippers. Complete solid dimensions, nominal masses, contact geometry and materials are in the fixture reference.",
+  "scoring": "Score 0.15 for lifting the applicator in a closed grip. Press the strip within 2 mm of the light blade datum, with strip reaction 0.9 to 12 N and backing reaction above 0.20 N and at most 15 N for a continuous 0.20 s. Lift the pad at least 1.5 mm away while the strip stays seated within 1 mm of its pressed position and shows physical blade support, allowing the adhesive to engage. Score 0.35 while the transferred strip remains bonded and 0.60 once it survives a native sweep of at least 64 degrees. Full score additionally requires an initial unpowered swing of at least 15 degrees and less than 7 degrees of drift after the corrected rotor is released. Return the applicator to its starting cradle, move both wrists more than 65 mm clear, and preserve the balanced result for 0.50 s. A broken bond loses transfer credit.",
+  "run_limit": "1000 steps (50 s at 20 Hz)",
+  "fidelity": "The rotor pivots on a native hinge and swings under gravity. A bounded fixture drive clears it for application and performs the retention sweep. The foil is a rigid thin patch. Two native attachments approximate the removable pickup and pressure-sensitive bond. The second engages only after verified press and supported release. Balance is measured with the drive released. No powered propeller or aerodynamic load is modeled.",
+  "reset_notes": "Return the applicator to its cradle, restore its untransferred strip, restore the unbalanced rotor, and reset the fixture and both arms to their starting states. Replace used tape in a physical trial.",
+  "scores": "Dream-1 beta run: 0.00; scripted native-contact demo: 1.00",
+  "media": "M-CA6F7C"
+}
