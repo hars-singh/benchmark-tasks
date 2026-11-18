@@ -1,0 +1,934 @@
+{
+  "units": "metres; rotations radians; primitive cylinders store radius and full height",
+  "source_sha256": "32715d75c7106ffe74180650626e3089851e002b0ab85a81887b5b09d376a55f",
+  "objects": [
+    {
+      "name": "scale_carriage",
+      "position_m": [
+        0.31,
+        0.071,
+        0.7625000000000001
+      ],
+      "yaw_rad": 0.0,
+      "mass_kg": 2.4,
+      "fixed": false,
+      "material": "anodized aluminum carriage",
+      "solids": [
+        {
+          "kind": "box",
+          "size": [
+            0.134,
+            0.114,
+            0.008
+          ],
+          "offset": [
+            0,
+            0,
+            0.011
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.58,
+            0.63,
+            0.68
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.003,
+            0.05,
+            0.014
+          ],
+          "offset": [
+            -0.0475,
+            0,
+            -0.005
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.055,
+            0.19,
+            0.32
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.003,
+            0.05,
+            0.014
+          ],
+          "offset": [
+            -0.036500000000000005,
+            0,
+            -0.005
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.055,
+            0.19,
+            0.32
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.008,
+            0.05,
+            0.003
+          ],
+          "offset": [
+            -0.042,
+            0,
+            -0.010499999999999999
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.055,
+            0.19,
+            0.32
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.008,
+            0.05,
+            0.003
+          ],
+          "offset": [
+            -0.042,
+            0,
+            0.0004999999999999996
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.055,
+            0.19,
+            0.32
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.014,
+            0.05,
+            0.006
+          ],
+          "offset": [
+            -0.042,
+            0,
+            0.0045
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.055,
+            0.19,
+            0.32
+          ]
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.0025,
+            0.001
+          ],
+          "offset": [
+            -0.057,
+            -0.047,
+            0.0155
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.055,
+            0.065,
+            0.075
+          ]
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.0025,
+            0.001
+          ],
+          "offset": [
+            -0.057,
+            0.047,
+            0.0155
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.055,
+            0.065,
+            0.075
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.003,
+            0.05,
+            0.014
+          ],
+          "offset": [
+            0.036500000000000005,
+            0,
+            -0.005
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.055,
+            0.19,
+            0.32
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.003,
+            0.05,
+            0.014
+          ],
+          "offset": [
+            0.0475,
+            0,
+            -0.005
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.055,
+            0.19,
+            0.32
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.008,
+            0.05,
+            0.003
+          ],
+          "offset": [
+            0.042,
+            0,
+            -0.010499999999999999
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.055,
+            0.19,
+            0.32
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.008,
+            0.05,
+            0.003
+          ],
+          "offset": [
+            0.042,
+            0,
+            0.0004999999999999996
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.055,
+            0.19,
+            0.32
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.014,
+            0.05,
+            0.006
+          ],
+          "offset": [
+            0.042,
+            0,
+            0.0045
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.055,
+            0.19,
+            0.32
+          ]
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.0025,
+            0.001
+          ],
+          "offset": [
+            0.057,
+            -0.047,
+            0.0155
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.055,
+            0.065,
+            0.075
+          ]
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.0025,
+            0.001
+          ],
+          "offset": [
+            0.057,
+            0.047,
+            0.0155
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.055,
+            0.065,
+            0.075
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.018,
+            0.014,
+            0.012
+          ],
+          "offset": [
+            -0.03,
+            -0.023,
+            0.021
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.21,
+            0.27,
+            0.32
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.018,
+            0.014,
+            0.012
+          ],
+          "offset": [
+            -0.03,
+            0.023,
+            0.021
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.21,
+            0.27,
+            0.32
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.018,
+            0.014,
+            0.012
+          ],
+          "offset": [
+            0.03,
+            -0.023,
+            0.021
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.21,
+            0.27,
+            0.32
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.018,
+            0.014,
+            0.012
+          ],
+          "offset": [
+            0.03,
+            0.023,
+            0.021
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.21,
+            0.27,
+            0.32
+          ]
+        }
+      ]
+    },
+    {
+      "name": "weighing_pan",
+      "position_m": [
+        0.31,
+        0.071,
+        0.7935000000000001
+      ],
+      "yaw_rad": 0.0,
+      "mass_kg": 0.115,
+      "fixed": false,
+      "material": "stainless steel pan",
+      "solids": [
+        {
+          "kind": "box",
+          "size": [
+            0.098,
+            0.084,
+            0.008
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    },
+    {
+      "name": "reference_weight",
+      "position_m": [
+        0.172,
+        0.188,
+        0.7675000000000001
+      ],
+      "yaw_rad": 0.0,
+      "mass_kg": 0.3,
+      "fixed": false,
+      "material": "300 g brass reference block",
+      "solids": [
+        {
+          "kind": "box",
+          "size": [
+            0.036,
+            0.032,
+            0.04
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    },
+    {
+      "name": "verification_pack",
+      "position_m": [
+        0.208,
+        0.276,
+        0.765
+      ],
+      "yaw_rad": 0.0,
+      "mass_kg": 0.195,
+      "fixed": false,
+      "material": "rigid carton with independent 195 g mass",
+      "solids": [
+        {
+          "kind": "box",
+          "size": [
+            0.047,
+            0.038,
+            0.035
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    },
+    {
+      "name": "scale_panel",
+      "position_m": [
+        0.191,
+        -0.181,
+        0.7645000000000001
+      ],
+      "yaw_rad": 0.0,
+      "mass_kg": 2.0,
+      "fixed": false,
+      "material": "aluminum gauge enclosure",
+      "solids": [
+        {
+          "kind": "box",
+          "size": [
+            0.102,
+            0.165,
+            0.034
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.024,
+            0.144,
+            0.005
+          ],
+          "offset": [
+            0.029,
+            0.0,
+            0.0195
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.035,
+            0.059,
+            0.063
+          ]
+        }
+      ]
+    },
+    {
+      "name": "zero_button",
+      "position_m": [
+        0.175,
+        -0.136,
+        0.7875000000000001
+      ],
+      "yaw_rad": 0.0,
+      "mass_kg": 0.025,
+      "fixed": false,
+      "material": "polymer spring button cap",
+      "solids": [
+        {
+          "kind": "box",
+          "size": [
+            0.028,
+            0.03,
+            0.018
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    },
+    {
+      "name": "span_button",
+      "position_m": [
+        0.175,
+        -0.181,
+        0.7875000000000001
+      ],
+      "yaw_rad": 0.0,
+      "mass_kg": 0.025,
+      "fixed": false,
+      "material": "polymer spring button cap",
+      "solids": [
+        {
+          "kind": "box",
+          "size": [
+            0.028,
+            0.03,
+            0.018
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    },
+    {
+      "name": "verify_button",
+      "position_m": [
+        0.175,
+        -0.22599999999999998,
+        0.7875000000000001
+      ],
+      "yaw_rad": 0.0,
+      "mass_kg": 0.025,
+      "fixed": false,
+      "material": "polymer spring button cap",
+      "solids": [
+        {
+          "kind": "box",
+          "size": [
+            0.028,
+            0.03,
+            0.018
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    },
+    {
+      "name": "scale_carriage_rail_left",
+      "position_m": [
+        0.268,
+        0.071,
+        0.7575000000000001
+      ],
+      "yaw_rad": 0.0,
+      "mass_kg": null,
+      "fixed": true,
+      "material": "machined steel or aluminum rail hardware",
+      "solids": [
+        {
+          "kind": "cylinder",
+          "size": [
+            0.0035,
+            0.234
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Y",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.58,
+            0.63,
+            0.68
+          ]
+        }
+      ]
+    },
+    {
+      "name": "scale_carriage_rail_right",
+      "position_m": [
+        0.352,
+        0.071,
+        0.7575000000000001
+      ],
+      "yaw_rad": 0.0,
+      "mass_kg": null,
+      "fixed": true,
+      "material": "machined steel or aluminum rail hardware",
+      "solids": [
+        {
+          "kind": "cylinder",
+          "size": [
+            0.0035,
+            0.234
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Y",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.58,
+            0.63,
+            0.68
+          ]
+        }
+      ]
+    },
+    {
+      "name": "scale_carriage_base",
+      "position_m": [
+        0.31,
+        0.071,
+        0.74875
+      ],
+      "yaw_rad": 0.0,
+      "mass_kg": null,
+      "fixed": true,
+      "material": "machined steel or aluminum rail hardware",
+      "solids": [
+        {
+          "kind": "box",
+          "size": [
+            0.169,
+            0.269,
+            0.0025
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    },
+    {
+      "name": "scale_carriage_end_front",
+      "position_m": [
+        0.31,
+        -0.053500000000000006,
+        0.7585000000000001
+      ],
+      "yaw_rad": 0.0,
+      "mass_kg": null,
+      "fixed": true,
+      "material": "machined steel or aluminum rail hardware",
+      "solids": [
+        {
+          "kind": "box",
+          "size": [
+            0.169,
+            0.015,
+            0.022
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    },
+    {
+      "name": "scale_carriage_end_back",
+      "position_m": [
+        0.31,
+        0.1955,
+        0.7585000000000001
+      ],
+      "yaw_rad": 0.0,
+      "mass_kg": null,
+      "fixed": true,
+      "material": "machined steel or aluminum rail hardware",
+      "solids": [
+        {
+          "kind": "box",
+          "size": [
+            0.169,
+            0.015,
+            0.022
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    }
+  ],
+  "support_trajectories": {
+    "scale_carriage": {
+      "center": [
+        0.31,
+        0.071,
+        0.7625000000000001
+      ],
+      "amplitude": [
+        0.0,
+        0.04,
+        0.0
+      ],
+      "period_s": 7.0,
+      "phase": 0.0,
+      "yaw_amplitude": 0.0
+    }
+  },
+  "world_guides": {
+    "scale_carriage": {
+      "axis": "Y",
+      "lower": -0.055,
+      "upper": 0.055
+    }
+  },
+  "fixture_joints": {
+    "weighing_pan": {
+      "kind": "fixed",
+      "parent": "scale_carriage",
+      "anchor": [
+        0.31,
+        0.071,
+        0.7935000000000001
+      ]
+    },
+    "zero_button": {
+      "kind": "prismatic",
+      "parent": "scale_panel",
+      "anchor": [
+        0.175,
+        -0.136,
+        0.7875000000000001
+      ],
+      "axis": "Z",
+      "lower": -0.008,
+      "upper": 0.0,
+      "drive": {
+        "stiffness": 650.0,
+        "damping": 2.0,
+        "max_force": 7.0
+      }
+    },
+    "span_button": {
+      "kind": "prismatic",
+      "parent": "scale_panel",
+      "anchor": [
+        0.175,
+        -0.181,
+        0.7875000000000001
+      ],
+      "axis": "Z",
+      "lower": -0.008,
+      "upper": 0.0,
+      "drive": {
+        "stiffness": 650.0,
+        "damping": 2.0,
+        "max_force": 7.0
+      }
+    },
+    "verify_button": {
+      "kind": "prismatic",
+      "parent": "scale_panel",
+      "anchor": [
+        0.175,
+        -0.22599999999999998,
+        0.7875000000000001
+      ],
+      "axis": "Z",
+      "lower": -0.008,
+      "upper": 0.0,
+      "drive": {
+        "stiffness": 650.0,
+        "damping": 2.0,
+        "max_force": 7.0
+      }
+    }
+  },
+  "contact_patch_radii_m": {},
+  "passive_cutting_loads": {}
+}

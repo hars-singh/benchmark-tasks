@@ -1,0 +1,19 @@
+{
+  "title": "Calibrate and verify a moving checkweigher",
+  "keywords": [
+    "checkweigher",
+    "load cell calibration",
+    "reference weight",
+    "moving inspection pan"
+  ],
+  "context": "Checkweighers monitor package mass in motion. The calibration starts with an empty pan and a known reference load. A separate pack verifies that the resulting zero and span give a correct reading under movement. This compact bench fixture uses a guided moving load cell and physical calibration buttons.",
+  "setup": "Start both YAM arms ready, grippers open, and the 98 by 84 mm pan empty. The carriage is centered at (0.310, 0.071, 0.7625) m and travels along Y with 40 mm amplitude and a 7 s period. The brass reference weighs 300 g and starts at (0.172, 0.188, 0.7675) m. The separate verification pack weighs 195 g and starts at (0.208, 0.276, 0.7650) m. The blue ZERO, yellow SPAN and green VERIFY buttons are on the fixed console.",
+  "scoring": "Score 0.20 after obtaining zero and 0.50 after obtaining span. Each calibration or verification captures nine consecutive 20 Hz samples with carriage speed at least 12 mm/s, both hands at least 66 mm from the pan center, and a raw sensor range of at most 12 counts over the window. Press the matching physical button more than 4 mm to capture. Zero requires an empty pan. Span and verification each require the appropriate released load near the pan center and supported by more than 1 N of native vertical contact. Full score requires verification within 6 g of the pack's reference mass, the 300 g reference at rest within 18 mm of its starting center, the verification pack still seated on the pan, and both hands more than 65 mm clear of the pack for 0.50 s. A piece falling below the table scores zero.",
+  "reset_notes": "Empty the pan, clear the indicator, return each piece to its start, reset carriage phase to center moving toward positive Y, and open both grippers in ready pose.",
+  "fidelity": "The support moves on a guided physical actuator. The simulated load cell reads filtered native contact forces and applies a fixed offset and gain. The button travel, load placement and support contacts are physical. The bench model excludes electronic noise, load-cell flexure and certification of a production checkweigher.",
+  "category": "Other",
+  "instruction": "Calibrate the moving checkweigher. Press the blue ZERO button with the pan empty. Place the brass reference weight on the pan and press the yellow SPAN button while the weight rides the pan. Return the reference weight to its starting spot. Place the verification pack on the pan, press the green VERIFY button, and keep both hands clear.",
+  "run_limit": "1200 steps (60 s at 20 Hz)",
+  "scores": "Dream-1 beta run: 0.00; scripted native-contact demo: 1.00",
+  "media": "M-2967KZ"
+}
