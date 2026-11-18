@@ -1,0 +1,19 @@
+{
+  "title": "Find the undersize bore on a moving inspection carriage",
+  "keywords": [
+    "minimum bore diameter",
+    "plug gage",
+    "moving inspection",
+    "native axial reaction"
+  ],
+  "context": "A loose minimum-size plug gage provides a functional lower-size check. This bench inspection uses a moving carrier and two bores, requiring an actual free pass through the conforming one and a coaxial mouth reaction at the undersize one.",
+  "setup": "The YAM arms start ready and open on a table at z = 0.7475 m. A guided 1.8 kg aluminum carriage centered at (0.323, 0.084, 0.7625) m moves along Y with 38 mm amplitude and a 7.5 s period. The two 19 mm long steel bores lie 47 mm on either side of the trolley center. Their nominal IDs are 15.6 mm and 10.2 mm. The loose 95 g plug gage has a 12 mm diameter, 50 mm long steel pin beneath a 25 mm diameter polymer grip. It starts upright in a holder with a shoulder supporting the handle at (0.184, 0.233, 0.8205) m. Two color-matched spring result buttons are at x = 0.205 m, y = -0.144 and -0.226 m. The geometry file defines plate, stand, guide, button and tube dimensions and exact poses.",
+  "scoring": "Each qualifying bore check earns 0.30. Hold the loose gage coaxially with tip center within 1.6 mm and axis within about 5.1 degrees from vertical while the carrier moves at least 10 mm/s, continuously for 0.20 s. The passing bore requires at least 19 mm travel and axial reaction magnitude below 0.55 N. The undersize bore requires a tip within 1.2 mm above to 1.4 mm below its mouth and 0.7 to 12 N upward reaction. After both checks, press the matching undersize button at least 4 mm. Full score also needs the gage released upright in its stand with at least 0.12 N actual support and both hands at least 60 mm clear for 0.50 s. For full score the gage axis stays within about 8.1 degrees of vertical, the gage center is within 4 mm in plan of the holder center, and its lowest point is within 4 mm of the holder floor. Rest requires linear speed below 10 mm/s and angular speed below 0.5 rad/s.",
+  "reset_notes": "Reset carriage phase, both buttons, the two fixed bore samples, and the loose gage upright in the stand.",
+  "fidelity": "The bores are compound polygonal contact solids. The loose gage, guided carriage and spring buttons use native physics and the undersize check uses a measured axial reaction. This bench Go check establishes a minimum passing diameter. Precise bore diameter and the upper size limit are outside the score.",
+  "category": "Other",
+  "instruction": "Use the plug gage to check both moving bores. Press the button matching the bore that is too small for the gage, then return the gage upright to its stand.",
+  "run_limit": "1000 steps (50 s at 20 Hz)",
+  "scores": "Dream-1 beta run: 0.00; scripted native-contact demo: 1.00",
+  "media": "M-X83RYB"
+}

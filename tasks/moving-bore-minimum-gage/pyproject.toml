@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "dynamic-task-moving-bore-minimum-gage"
+version = "0.1.0"
+requires-python = ">=3.12"
+[project.entry-points."inspect_robots.embodiments"]
+moving_bore_minimum_gage_yam = "dynamic_task_moving_bore_minimum_gage.yam_dynamic:make_embodiment"
+[project.entry-points."inspect_robots.policies"]
+moving_bore_minimum_gage_demo = "dynamic_task_moving_bore_minimum_gage.yam_dynamic:make_scripted_policy"
+moving_bore_minimum_gage_idle = "dynamic_task_moving_bore_minimum_gage.yam_dynamic:make_idle_policy"
+moving_bore_minimum_gage_dream_guard = "dynamic_task_moving_bore_minimum_gage.budget:make_guarded_dream_policy"
+[tool.setuptools.packages.find]
+include = ["dynamic_task_moving_bore_minimum_gage*"]
