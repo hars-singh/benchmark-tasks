@@ -1,0 +1,19 @@
+{
+  "title": "Feed three workpieces one at a time through two conveyor gates",
+  "category": "Other",
+  "keywords": [
+    "conveyor escapement",
+    "workpiece singulation",
+    "spring-return stop",
+    "machine feeding"
+  ],
+  "instruction": "Feed three pucks through the running conveyor one at a time. Press the blue lever to admit one puck while the orange lever stays up. Let the blue lever return, then press the orange lever to release that puck. Repeat and let both levers return.",
+  "context": "Two-stop escapements feed individual workpieces from a running conveyor into an assembly or machine-tending station. The bench fixture exposes the two spring-return stops so the robot executes the physical sequence that an industrial escapement normally controls mechanically or pneumatically.",
+  "setup": "The stock YAM arms begin in the ready pose with open grippers. The tabletop is at z=0.7475 m. A 118 x 568 mm rubber conveyor presents a horizontal bed at z=0.7775 m and moves along -Y at 70 mm/s. Two 536 x 8 x 10 mm aluminum guides form a 52 mm wide lane centered at x=0.248 m. Three 48 g cylindrical workpieces have 44 mm bases and 14 mm total height. Their initial y coordinates are 0.096, 0.147 and 0.198 m. Their colored polymer bases carry exposed 32 mm metal inserts. The blue and orange spring-return stop levers have axes at y=-0.018 and -0.062 m, 12 mm above the belt. Each carries a 4 mm thick steel stop and a 24 x 24 mm polymer press cap. A 65 x 12 x 20 mm end block retains the pieces in the downstream lane. The exact center positions, primitive shapes, joint settings and materials are in assets/geometry.json.",
+  "scoring": "Each valid workpiece collected downstream earns 0.22 while the trial is incomplete. Admission is the puck center passing 5 mm beyond the blue pivot. The pocket must be empty, blue must clear the puck by at least 1 mm, and orange must intrude at least 3 mm into its height. Release is the center passing 9 mm beyond the orange pivot. Orange must clear by 1 mm and blue must intrude by 3 mm. Consecutive releases must be at least 1 s apart. Collection occurs when the trailing edge passes y=-0.152 m. Full score requires all three pieces downstream, both stops blocking, and each piece below 10 mm/s and 0.5 rad/s for 0.5 s. Ending during that final hold before reaching 0.5 s gives zero. Any invalid passage, center more than 11 mm off the lane centerline, or lowest point more than 7 mm from belt height gives zero.",
+  "run_limit": "1200 control steps (60 simulated seconds at 20 Hz)",
+  "reset_notes": "Reload seed 0, restore the three pieces at their documented starting positions, and leave both levers released. Start the belt at the documented speed.",
+  "fidelity": "PhysX contact carries the workpieces on the conveyor bed. Only the visible tread markings are animated. Two passive torsion springs return the steel paddles. The example is a manually actuated bench escapement. Industrial pneumatic interlocks and powered control systems are outside the scene.",
+  "scores": "Dream-1 beta run: 0.00; scripted native-contact demo: 1.00",
+  "media": "M-BQM6HY"
+}
