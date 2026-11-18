@@ -1,0 +1,19 @@
+{
+  "title": "Lift a flexible profile from a moving carriage and support it at three saddles",
+  "keywords": [
+    "flexible profile",
+    "polyamide strip",
+    "material handling",
+    "moving carriage"
+  ],
+  "category": "Other",
+  "instruction": "Grip both ends of the long blue profile while it rides on the moving carriage. Lift it level, move it to the three receiving saddles without bending it, and let go once it rests on all three supports.",
+  "context": "Long insulation profiles are susceptible to sag and distortion during handling. The moving carrier presents both ends for a synchronized lift. The fixed rack provides three contacts so the profile remains supported after the wrists let go.",
+  "setup": "The aluminum rail carriage starts at (0.269, 0, 0.7625) m, measures 94 by 382 mm and travels along Y with amplitude 27 mm and period 7.5 s. The 359 by 20 by 7 mm nominal polyamide channel is supported at 0.8395 m. Its 18 g center and two 12 g end spans start collinear. The fixed receiving rack is centered at (0.386, 0, 0.7815) m. It has three padded saddles at Y offsets -95, 0 and +95 mm. The spring-mounted center saddle starts 0.45 mm above the rigid outer saddles and has up to 2 mm of travel. Both robots start in ready pose with open grippers. The included geometry specifies the complete fixture, material assignments, body origins and flexure constraints.",
+  "scoring": "A bend above 8 degrees between either end span and the center, or dropping any span onto the base deck, scores zero. Score 0.20 when both closed wrists are within 37 mm of their profile grip points and the part is still on the source moving faster than 12 mm/s. Score 0.55 if the profile subsequently lifts more than 24 mm at all three spans while both wrists stay on the grip points. Full score requires at least 0.026 N native vertical support at each receiving saddle, every span within 9 mm laterally and 13 mm lengthwise of its receiving alignment, speed below 22 mm/s, and bend below 2.5 degrees. Both wrists must stay more than 60 mm from both grip points for 0.60 s while these conditions hold.",
+  "run_limit": "800 steps (40 s at 20 Hz)",
+  "fidelity": "The profile uses three rigid spans and two passive spring hinges to approximate bending. Its motion comes from native contacts and joints. The receiving rack is anchored to the world and its center saddle slides against a passive spring. Spring and bend thresholds are nominal bench values. The model represents bending around one axis and omits continuous twist, fracture and supplier-specific material behavior.",
+  "reset_notes": "Inspect the profile for deformation, reset the carriage to its center moving toward positive Y and put all three spans in their source saddles. Verify that each source saddle supports its span and that the receiving rack is unobstructed. Open both grippers at their ready positions.",
+  "scores": "Dream-1 beta run: 0.00; scripted native-contact demo: 1.00",
+  "media": "M-3MXHJL"
+}

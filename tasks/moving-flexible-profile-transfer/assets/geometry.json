@@ -1,0 +1,1238 @@
+{
+  "units": "metres; rotations radians; primitive cylinders store radius and full height",
+  "source_sha256": "94f34a7056a9d24379da1dac9f9b9d27ac03e0cb14ce7981b4b7693647e8a8c4",
+  "objects": [
+    {
+      "name": "profile_carriage",
+      "position_m": [
+        0.269,
+        0.0,
+        0.7625000000000001
+      ],
+      "yaw_rad": 0.0,
+      "mass_kg": 3.7,
+      "fixed": false,
+      "material": "aluminum rail carriage and polymer saddles",
+      "solids": [
+        {
+          "kind": "box",
+          "size": [
+            0.094,
+            0.382,
+            0.008
+          ],
+          "offset": [
+            0,
+            0,
+            0.011
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.58,
+            0.63,
+            0.68
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.003,
+            0.05,
+            0.014
+          ],
+          "offset": [
+            -0.027499999999999997,
+            0,
+            -0.005
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.055,
+            0.19,
+            0.32
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.003,
+            0.05,
+            0.014
+          ],
+          "offset": [
+            -0.0165,
+            0,
+            -0.005
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.055,
+            0.19,
+            0.32
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.008,
+            0.05,
+            0.003
+          ],
+          "offset": [
+            -0.022,
+            0,
+            -0.010499999999999999
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.055,
+            0.19,
+            0.32
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.008,
+            0.05,
+            0.003
+          ],
+          "offset": [
+            -0.022,
+            0,
+            0.0004999999999999996
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.055,
+            0.19,
+            0.32
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.014,
+            0.05,
+            0.006
+          ],
+          "offset": [
+            -0.022,
+            0,
+            0.0045
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.055,
+            0.19,
+            0.32
+          ]
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.0025,
+            0.001
+          ],
+          "offset": [
+            -0.037,
+            -0.181,
+            0.0155
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.055,
+            0.065,
+            0.075
+          ]
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.0025,
+            0.001
+          ],
+          "offset": [
+            -0.037,
+            0.181,
+            0.0155
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.055,
+            0.065,
+            0.075
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.003,
+            0.05,
+            0.014
+          ],
+          "offset": [
+            0.0165,
+            0,
+            -0.005
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.055,
+            0.19,
+            0.32
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.003,
+            0.05,
+            0.014
+          ],
+          "offset": [
+            0.027499999999999997,
+            0,
+            -0.005
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.055,
+            0.19,
+            0.32
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.008,
+            0.05,
+            0.003
+          ],
+          "offset": [
+            0.022,
+            0,
+            -0.010499999999999999
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.055,
+            0.19,
+            0.32
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.008,
+            0.05,
+            0.003
+          ],
+          "offset": [
+            0.022,
+            0,
+            0.0004999999999999996
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.055,
+            0.19,
+            0.32
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.014,
+            0.05,
+            0.006
+          ],
+          "offset": [
+            0.022,
+            0,
+            0.0045
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.055,
+            0.19,
+            0.32
+          ]
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.0025,
+            0.001
+          ],
+          "offset": [
+            0.037,
+            -0.181,
+            0.0155
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.055,
+            0.065,
+            0.075
+          ]
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.0025,
+            0.001
+          ],
+          "offset": [
+            0.037,
+            0.181,
+            0.0155
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.055,
+            0.065,
+            0.075
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.045,
+            0.024,
+            0.058499999999999996
+          ],
+          "offset": [
+            0.0,
+            -0.086,
+            0.04425000000000001
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.24,
+            0.33,
+            0.4
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.006,
+            0.023,
+            0.01
+          ],
+          "offset": [
+            -0.02,
+            -0.086,
+            0.07750000000000001
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.67,
+            0.57,
+            0.36
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.006,
+            0.023,
+            0.01
+          ],
+          "offset": [
+            0.02,
+            -0.086,
+            0.07750000000000001
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.67,
+            0.57,
+            0.36
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.045,
+            0.024,
+            0.058499999999999996
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.04425000000000001
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.24,
+            0.33,
+            0.4
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.006,
+            0.023,
+            0.01
+          ],
+          "offset": [
+            -0.02,
+            0.0,
+            0.07750000000000001
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.67,
+            0.57,
+            0.36
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.006,
+            0.023,
+            0.01
+          ],
+          "offset": [
+            0.02,
+            0.0,
+            0.07750000000000001
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.67,
+            0.57,
+            0.36
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.045,
+            0.024,
+            0.058499999999999996
+          ],
+          "offset": [
+            0.0,
+            0.086,
+            0.04425000000000001
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.24,
+            0.33,
+            0.4
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.006,
+            0.023,
+            0.01
+          ],
+          "offset": [
+            -0.02,
+            0.086,
+            0.07750000000000001
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.67,
+            0.57,
+            0.36
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.006,
+            0.023,
+            0.01
+          ],
+          "offset": [
+            0.02,
+            0.086,
+            0.07750000000000001
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.67,
+            0.57,
+            0.36
+          ]
+        }
+      ]
+    },
+    {
+      "name": "profile_center",
+      "position_m": [
+        0.269,
+        0.0,
+        0.8395
+      ],
+      "yaw_rad": 0.0,
+      "mass_kg": 0.018,
+      "fixed": false,
+      "material": "polyamide insulation profile",
+      "solids": [
+        {
+          "kind": "box",
+          "size": [
+            0.02,
+            0.131,
+            0.004
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            -0.0015
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.004,
+            0.131,
+            0.003
+          ],
+          "offset": [
+            -0.008,
+            0.0,
+            0.002
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.32,
+            0.48,
+            0.56
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.004,
+            0.131,
+            0.003
+          ],
+          "offset": [
+            0.008,
+            0.0,
+            0.002
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.32,
+            0.48,
+            0.56
+          ]
+        }
+      ]
+    },
+    {
+      "name": "profile_positive_end",
+      "position_m": [
+        0.269,
+        0.123,
+        0.8395
+      ],
+      "yaw_rad": 0.0,
+      "mass_kg": 0.012,
+      "fixed": false,
+      "material": "polyamide insulation profile",
+      "solids": [
+        {
+          "kind": "box",
+          "size": [
+            0.02,
+            0.113,
+            0.004
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            -0.0015
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.004,
+            0.113,
+            0.003
+          ],
+          "offset": [
+            -0.008,
+            0.0,
+            0.002
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.32,
+            0.48,
+            0.56
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.004,
+            0.113,
+            0.003
+          ],
+          "offset": [
+            0.008,
+            0.0,
+            0.002
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.32,
+            0.48,
+            0.56
+          ]
+        }
+      ]
+    },
+    {
+      "name": "profile_negative_end",
+      "position_m": [
+        0.269,
+        -0.123,
+        0.8395
+      ],
+      "yaw_rad": 0.0,
+      "mass_kg": 0.012,
+      "fixed": false,
+      "material": "polyamide insulation profile",
+      "solids": [
+        {
+          "kind": "box",
+          "size": [
+            0.02,
+            0.113,
+            0.004
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            -0.0015
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.004,
+            0.113,
+            0.003
+          ],
+          "offset": [
+            -0.008,
+            0.0,
+            0.002
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.32,
+            0.48,
+            0.56
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.004,
+            0.113,
+            0.003
+          ],
+          "offset": [
+            0.008,
+            0.0,
+            0.002
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.32,
+            0.48,
+            0.56
+          ]
+        }
+      ]
+    },
+    {
+      "name": "receiving_saddles",
+      "position_m": [
+        0.386,
+        0.0,
+        0.7815000000000001
+      ],
+      "yaw_rad": 0.0,
+      "mass_kg": 2.0,
+      "fixed": false,
+      "material": "bolted steel rack with polymer support pads",
+      "solids": [
+        {
+          "kind": "box",
+          "size": [
+            0.067,
+            0.322,
+            0.012
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            -0.028000000000000025
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.045,
+            0.024,
+            0.07650000000000001
+          ],
+          "offset": [
+            0.0,
+            -0.095,
+            0.016249999999999987
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.24,
+            0.33,
+            0.4
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.006,
+            0.023,
+            0.01
+          ],
+          "offset": [
+            -0.02,
+            -0.095,
+            0.058499999999999996
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.67,
+            0.57,
+            0.36
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.006,
+            0.023,
+            0.01
+          ],
+          "offset": [
+            0.02,
+            -0.095,
+            0.058499999999999996
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.67,
+            0.57,
+            0.36
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.045,
+            0.024,
+            0.07650000000000001
+          ],
+          "offset": [
+            0.0,
+            0.095,
+            0.016249999999999987
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.24,
+            0.33,
+            0.4
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.006,
+            0.023,
+            0.01
+          ],
+          "offset": [
+            -0.02,
+            0.095,
+            0.058499999999999996
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.67,
+            0.57,
+            0.36
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.006,
+            0.023,
+            0.01
+          ],
+          "offset": [
+            0.02,
+            0.095,
+            0.058499999999999996
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.67,
+            0.57,
+            0.36
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.045,
+            0.024,
+            0.062
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.009000000000000008
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.24,
+            0.33,
+            0.4
+          ]
+        }
+      ]
+    },
+    {
+      "name": "spring_middle_saddle",
+      "position_m": [
+        0.386,
+        0.0,
+        0.8329500000000001
+      ],
+      "yaw_rad": 0.0,
+      "mass_kg": 0.014,
+      "fixed": false,
+      "material": "guided steel saddle with compliant spring and polymer contact pad",
+      "solids": [
+        {
+          "kind": "box",
+          "size": [
+            0.045,
+            0.024,
+            0.007
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    },
+    {
+      "name": "profile_carriage_rail_left",
+      "position_m": [
+        0.24700000000000003,
+        0.0,
+        0.7575000000000001
+      ],
+      "yaw_rad": 0.0,
+      "mass_kg": null,
+      "fixed": true,
+      "material": "steel or aluminum rail hardware",
+      "solids": [
+        {
+          "kind": "cylinder",
+          "size": [
+            0.0035,
+            0.476
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Y",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.58,
+            0.63,
+            0.68
+          ]
+        }
+      ]
+    },
+    {
+      "name": "profile_carriage_rail_right",
+      "position_m": [
+        0.29100000000000004,
+        0.0,
+        0.7575000000000001
+      ],
+      "yaw_rad": 0.0,
+      "mass_kg": null,
+      "fixed": true,
+      "material": "steel or aluminum rail hardware",
+      "solids": [
+        {
+          "kind": "cylinder",
+          "size": [
+            0.0035,
+            0.476
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Y",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.58,
+            0.63,
+            0.68
+          ]
+        }
+      ]
+    },
+    {
+      "name": "profile_carriage_base",
+      "position_m": [
+        0.269,
+        0.0,
+        0.74875
+      ],
+      "yaw_rad": 0.0,
+      "mass_kg": null,
+      "fixed": true,
+      "material": "steel or aluminum rail hardware",
+      "solids": [
+        {
+          "kind": "box",
+          "size": [
+            0.129,
+            0.511,
+            0.0025
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    },
+    {
+      "name": "profile_carriage_end_front",
+      "position_m": [
+        0.269,
+        -0.2455,
+        0.7585000000000001
+      ],
+      "yaw_rad": 0.0,
+      "mass_kg": null,
+      "fixed": true,
+      "material": "steel or aluminum rail hardware",
+      "solids": [
+        {
+          "kind": "box",
+          "size": [
+            0.129,
+            0.015,
+            0.022
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    },
+    {
+      "name": "profile_carriage_end_back",
+      "position_m": [
+        0.269,
+        0.2455,
+        0.7585000000000001
+      ],
+      "yaw_rad": 0.0,
+      "mass_kg": null,
+      "fixed": true,
+      "material": "steel or aluminum rail hardware",
+      "solids": [
+        {
+          "kind": "box",
+          "size": [
+            0.129,
+            0.015,
+            0.022
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    }
+  ],
+  "support_trajectories": {
+    "profile_carriage": {
+      "center": [
+        0.269,
+        0.0,
+        0.7625000000000001
+      ],
+      "amplitude": [
+        0.0,
+        0.027,
+        0.0
+      ],
+      "period_s": 7.5,
+      "phase": 0.0,
+      "yaw_amplitude": 0.0
+    }
+  },
+  "world_guides": {
+    "profile_carriage": {
+      "axis": "Y",
+      "lower": -0.039,
+      "upper": 0.039
+    },
+    "receiving_saddles": {
+      "kind": "fixed"
+    }
+  },
+  "fixture_joints": {
+    "profile_positive_end": {
+      "kind": "revolute",
+      "parent": "profile_center",
+      "axis": "X",
+      "anchor": [
+        0.269,
+        0.066,
+        0.8395
+      ],
+      "lower": -30.0,
+      "upper": 30.0,
+      "drive": {
+        "stiffness": 0.18,
+        "damping": 0.013,
+        "max_force": 0.1
+      }
+    },
+    "profile_negative_end": {
+      "kind": "revolute",
+      "parent": "profile_center",
+      "axis": "X",
+      "anchor": [
+        0.269,
+        -0.066,
+        0.8395
+      ],
+      "lower": -30.0,
+      "upper": 30.0,
+      "drive": {
+        "stiffness": 0.18,
+        "damping": 0.013,
+        "max_force": 0.1
+      }
+    },
+    "spring_middle_saddle": {
+      "kind": "prismatic",
+      "parent": "receiving_saddles",
+      "axis": "Z",
+      "anchor": [
+        0.386,
+        0.0,
+        0.8329500000000001
+      ],
+      "lower": -0.002,
+      "upper": 0.0,
+      "drive": {
+        "stiffness": 750.0,
+        "damping": 2.0,
+        "max_force": 3.0
+      }
+    }
+  },
+  "contact_patch_radii_m": {},
+  "passive_cutting_loads": {}
+}
