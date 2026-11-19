@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "dynamic-task-caster-directional-lock"
+version = "0.1.0"
+requires-python = ">=3.12"
+[project.entry-points."inspect_robots.embodiments"]
+caster_directional_lock_yam = "dynamic_task_caster_directional_lock.yam_dynamic:make_embodiment"
+[project.entry-points."inspect_robots.policies"]
+caster_directional_lock_demo = "dynamic_task_caster_directional_lock.yam_dynamic:make_scripted_policy"
+caster_directional_lock_idle = "dynamic_task_caster_directional_lock.yam_dynamic:make_idle_policy"
+caster_directional_lock_dream_guard = "dynamic_task_caster_directional_lock.budget:make_guarded_dream_policy"
+[tool.setuptools.packages.find]
+include = ["dynamic_task_caster_directional_lock*"]

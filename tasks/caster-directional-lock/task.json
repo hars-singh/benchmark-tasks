@@ -1,0 +1,19 @@
+{
+  "title": "Engage a swivel caster directional lock while rolling a cart",
+  "category": "Other",
+  "keywords": [
+    "caster",
+    "directional lock",
+    "wheel rotation",
+    "cart handling"
+  ],
+  "instruction": "Press the green directional-lock tab. Roll the service cart straight along the lane until its front caster latches in the forward direction. Keep rolling to the end with the wheel free to turn, then release the cart and move both hands clear.",
+  "context": "A directional lock lets a swivel caster track straight while the wheel keeps rolling. This task tests arming the lock and aligning the caster under travel.",
+  "setup": "A freely rolling aluminum cart sits on a 227 by 427 mm runway. Its 36 mm diameter front wheel starts swiveled about 33 degrees. A 21 mm trail aligns the wheel under carriage travel. The spring-loaded green tab acts on a steel lock pin above a slotted index collar. The fixed rear axle has two wheels. The fixture geometry specifies the installed casters, stop limits and materials.",
+  "scoring": "Score 0.20 after moving the lock pin 4 mm by pressing the green tab. Score 0.58 after more than 25 mm of forward rolling proof. For 1.00, prove at least 89 mm of forward rolling with the pin engaged beyond 11 mm and swivel error below 11 degrees, native front contact above 0.15 N, wheel angular speed above 0.3 rad/s, and the actuating hand more than 65 mm from the tab. Finish beyond the 102 mm runway coordinate within 20 mm of center. Both hands stay more than 70 mm from the cart center and 54 mm from the rear handle for 0.45 s while the cart rests below 16 mm/s and the rear wheels remain supported.",
+  "run_limit": "900 steps (45 s at 20 Hz)",
+  "fidelity": "Native bodies model the free-rolling wheels, swivel bearing, slotted collar and pin contact. A spring setpoint change represents the tab latching into its armed position, after a measured robot press. The wheel itself remains free to roll. A short spring-loaded mount keeps the front tire on the runway during small vertical perturbations.",
+  "reset_notes": "Put the cart back at the start of the runway, return the caster to its marked starting angle and release the directional lock. Return both wrists to ready pose.",
+  "scores": "Dream-1 beta run: 0.00; scripted native-contact demo: 1.00",
+  "media": "M-QX6TFV"
+}
