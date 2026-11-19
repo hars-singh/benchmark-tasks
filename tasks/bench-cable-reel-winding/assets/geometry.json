@@ -1,0 +1,2468 @@
+{
+  "units": "metres; rotations radians; primitive cylinders store radius and full height",
+  "source_sha256": "6433176990bbfbdbc0bf075edc1e33a52d60b6af312cb5e94ff78ca6a9788bb4",
+  "objects": [
+    {
+      "name": "reel_mount",
+      "position_m": [
+        0.57,
+        -0.278,
+        0.7555000000000001
+      ],
+      "yaw_rad": 0.0,
+      "mass_kg": 6.4,
+      "fixed": false,
+      "material": "steel reel stand",
+      "solids": [
+        {
+          "kind": "box",
+          "size": [
+            0.224,
+            0.382,
+            0.016
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.022,
+            0.078,
+            0.194
+          ],
+          "offset": [
+            -0.091,
+            0.0,
+            0.103
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.022,
+            0.078,
+            0.194
+          ],
+          "offset": [
+            0.091,
+            0.0,
+            0.103
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.021,
+            0.024
+          ],
+          "offset": [
+            -0.089,
+            0.0,
+            0.18799999999999994
+          ],
+          "yaw": 0.0,
+          "axis": "X",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.021,
+            0.024
+          ],
+          "offset": [
+            0.089,
+            0.0,
+            0.18799999999999994
+          ],
+          "yaw": 0.0,
+          "axis": "X",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    },
+    {
+      "name": "drum",
+      "position_m": [
+        0.57,
+        -0.278,
+        0.9435
+      ],
+      "yaw_rad": 0.0,
+      "mass_kg": 2.2,
+      "fixed": false,
+      "material": "aluminum drum and steel spindle",
+      "solids": [
+        {
+          "kind": "cylinder",
+          "size": [
+            0.076,
+            0.122
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "X",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.178,
+            0.005
+          ],
+          "offset": [
+            -0.0635,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "X",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.25,
+            0.3,
+            0.34
+          ]
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.178,
+            0.005
+          ],
+          "offset": [
+            0.0635,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "X",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.25,
+            0.3,
+            0.34
+          ]
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.012,
+            0.22
+          ],
+          "offset": [
+            -0.025,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "X",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.51,
+            0.55,
+            0.6
+          ]
+        }
+      ]
+    },
+    {
+      "name": "cable_guide",
+      "position_m": [
+        0.57,
+        -0.10400000000000004,
+        0.8545
+      ],
+      "yaw_rad": 0.0,
+      "mass_kg": 2.0,
+      "fixed": false,
+      "material": "aluminum cable guide with steel roller",
+      "solids": [
+        {
+          "kind": "box",
+          "size": [
+            0.104,
+            0.1,
+            0.012
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            -0.101
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.014,
+            0.06,
+            0.208
+          ],
+          "offset": [
+            -0.039,
+            0.0,
+            0.004
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.014,
+            0.06,
+            0.208
+          ],
+          "offset": [
+            0.039,
+            0.0,
+            0.004
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.03,
+            0.065
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.115
+          ],
+          "yaw": 0.0,
+          "axis": "X",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.53,
+            0.58,
+            0.63
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.008,
+            0.038,
+            0.056
+          ],
+          "offset": [
+            -0.032,
+            0.0,
+            0.137
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.008,
+            0.038,
+            0.056
+          ],
+          "offset": [
+            0.032,
+            0.0,
+            0.137
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    },
+    {
+      "name": "guide_retainer",
+      "position_m": [
+        0.618,
+        -0.10400000000000004,
+        1.0315
+      ],
+      "yaw_rad": 0.0,
+      "mass_kg": 0.082,
+      "fixed": false,
+      "material": "steel hinged guide with polymer press pad",
+      "solids": [
+        {
+          "kind": "cylinder",
+          "size": [
+            0.009,
+            0.044
+          ],
+          "offset": [
+            -0.048,
+            0.0,
+            0.005
+          ],
+          "yaw": 0.0,
+          "axis": "X",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.58,
+            0.64,
+            0.69
+          ]
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.007,
+            0.071
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Y",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.19,
+            0.017,
+            0.012
+          ],
+          "offset": [
+            -0.09,
+            0.0,
+            0.024
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.015,
+            0.264,
+            0.012
+          ],
+          "offset": [
+            -0.165,
+            0.125,
+            0.024
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.014,
+            0.021,
+            0.138
+          ],
+          "offset": [
+            -0.165,
+            0.252,
+            -0.045
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.17,
+            0.025,
+            0.01
+          ],
+          "offset": [
+            -0.245,
+            0.252,
+            -0.114
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.022,
+            0.025,
+            0.021
+          ],
+          "offset": [
+            -0.325,
+            0.252,
+            -0.114
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    },
+    {
+      "name": "reel_switch_box",
+      "position_m": [
+        0.265,
+        -0.164,
+        0.7585000000000001
+      ],
+      "yaw_rad": 0.0,
+      "mass_kg": 0.35,
+      "fixed": false,
+      "material": "polymer switch housing",
+      "solids": [
+        {
+          "kind": "box",
+          "size": [
+            0.062,
+            0.064,
+            0.022
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    },
+    {
+      "name": "motor_start_button",
+      "position_m": [
+        0.265,
+        -0.164,
+        0.7855000000000001
+      ],
+      "yaw_rad": 0.0,
+      "mass_kg": 0.022,
+      "fixed": false,
+      "material": "polymer cap and steel switch spring",
+      "solids": [
+        {
+          "kind": "box",
+          "size": [
+            0.026,
+            0.026,
+            0.012
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    },
+    {
+      "name": "cable_00",
+      "position_m": [
+        0.57,
+        -0.2685,
+        1.0231
+      ],
+      "yaw_rad": 1.5707963267948966,
+      "mass_kg": 0.000988,
+      "fixed": false,
+      "material": "polymer-insulated cable",
+      "solids": [
+        {
+          "kind": "capsule_x",
+          "size": [
+            0.003,
+            0.013
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    },
+    {
+      "name": "cable_01",
+      "position_m": [
+        0.57,
+        -0.24950000000000003,
+        1.0231
+      ],
+      "yaw_rad": 1.5707963267948966,
+      "mass_kg": 0.000988,
+      "fixed": false,
+      "material": "polymer-insulated cable",
+      "solids": [
+        {
+          "kind": "capsule_x",
+          "size": [
+            0.003,
+            0.013
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    },
+    {
+      "name": "cable_02",
+      "position_m": [
+        0.57,
+        -0.23050000000000004,
+        1.0231
+      ],
+      "yaw_rad": 1.5707963267948966,
+      "mass_kg": 0.000988,
+      "fixed": false,
+      "material": "polymer-insulated cable",
+      "solids": [
+        {
+          "kind": "capsule_x",
+          "size": [
+            0.003,
+            0.013
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    },
+    {
+      "name": "cable_03",
+      "position_m": [
+        0.57,
+        -0.21150000000000002,
+        1.0231
+      ],
+      "yaw_rad": 1.5707963267948966,
+      "mass_kg": 0.000988,
+      "fixed": false,
+      "material": "polymer-insulated cable",
+      "solids": [
+        {
+          "kind": "capsule_x",
+          "size": [
+            0.003,
+            0.013
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    },
+    {
+      "name": "cable_04",
+      "position_m": [
+        0.57,
+        -0.19250000000000003,
+        1.0231
+      ],
+      "yaw_rad": 1.5707963267948966,
+      "mass_kg": 0.000988,
+      "fixed": false,
+      "material": "polymer-insulated cable",
+      "solids": [
+        {
+          "kind": "capsule_x",
+          "size": [
+            0.003,
+            0.013
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    },
+    {
+      "name": "cable_05",
+      "position_m": [
+        0.57,
+        -0.17350000000000004,
+        1.0231
+      ],
+      "yaw_rad": 1.5707963267948966,
+      "mass_kg": 0.000988,
+      "fixed": false,
+      "material": "polymer-insulated cable",
+      "solids": [
+        {
+          "kind": "capsule_x",
+          "size": [
+            0.003,
+            0.013
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    },
+    {
+      "name": "cable_06",
+      "position_m": [
+        0.57,
+        -0.15450000000000003,
+        1.0231
+      ],
+      "yaw_rad": 1.5707963267948966,
+      "mass_kg": 0.000988,
+      "fixed": false,
+      "material": "polymer-insulated cable",
+      "solids": [
+        {
+          "kind": "capsule_x",
+          "size": [
+            0.003,
+            0.013
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    },
+    {
+      "name": "cable_07",
+      "position_m": [
+        0.57,
+        -0.13550000000000004,
+        1.0231
+      ],
+      "yaw_rad": 1.5707963267948966,
+      "mass_kg": 0.000988,
+      "fixed": false,
+      "material": "polymer-insulated cable",
+      "solids": [
+        {
+          "kind": "capsule_x",
+          "size": [
+            0.003,
+            0.013
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    },
+    {
+      "name": "cable_08",
+      "position_m": [
+        0.57,
+        -0.11650000000000002,
+        1.0231
+      ],
+      "yaw_rad": 1.5707963267948966,
+      "mass_kg": 0.000988,
+      "fixed": false,
+      "material": "polymer-insulated cable",
+      "solids": [
+        {
+          "kind": "capsule_x",
+          "size": [
+            0.003,
+            0.013
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    },
+    {
+      "name": "cable_09",
+      "position_m": [
+        0.57,
+        -0.09750000000000003,
+        1.0231
+      ],
+      "yaw_rad": 1.5707963267948966,
+      "mass_kg": 0.000988,
+      "fixed": false,
+      "material": "polymer-insulated cable",
+      "solids": [
+        {
+          "kind": "capsule_x",
+          "size": [
+            0.003,
+            0.013
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    },
+    {
+      "name": "cable_10",
+      "position_m": [
+        0.57,
+        -0.07850000000000004,
+        1.0231
+      ],
+      "yaw_rad": 1.5707963267948966,
+      "mass_kg": 0.000988,
+      "fixed": false,
+      "material": "polymer-insulated cable",
+      "solids": [
+        {
+          "kind": "capsule_x",
+          "size": [
+            0.003,
+            0.013
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    },
+    {
+      "name": "cable_11",
+      "position_m": [
+        0.57,
+        -0.059500000000000025,
+        1.0231
+      ],
+      "yaw_rad": 1.5707963267948966,
+      "mass_kg": 0.000988,
+      "fixed": false,
+      "material": "polymer-insulated cable",
+      "solids": [
+        {
+          "kind": "capsule_x",
+          "size": [
+            0.003,
+            0.013
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    },
+    {
+      "name": "cable_12",
+      "position_m": [
+        0.57,
+        -0.040500000000000036,
+        1.0231
+      ],
+      "yaw_rad": 1.5707963267948966,
+      "mass_kg": 0.000988,
+      "fixed": false,
+      "material": "polymer-insulated cable",
+      "solids": [
+        {
+          "kind": "capsule_x",
+          "size": [
+            0.003,
+            0.013
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    },
+    {
+      "name": "cable_13",
+      "position_m": [
+        0.57,
+        -0.02150000000000002,
+        1.0231
+      ],
+      "yaw_rad": 1.5707963267948966,
+      "mass_kg": 0.000988,
+      "fixed": false,
+      "material": "polymer-insulated cable",
+      "solids": [
+        {
+          "kind": "capsule_x",
+          "size": [
+            0.003,
+            0.013
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    },
+    {
+      "name": "cable_14",
+      "position_m": [
+        0.57,
+        -0.0025000000000000577,
+        1.0231
+      ],
+      "yaw_rad": 1.5707963267948966,
+      "mass_kg": 0.000988,
+      "fixed": false,
+      "material": "polymer-insulated cable",
+      "solids": [
+        {
+          "kind": "capsule_x",
+          "size": [
+            0.003,
+            0.013
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    },
+    {
+      "name": "cable_15",
+      "position_m": [
+        0.57,
+        0.01649999999999996,
+        1.0231
+      ],
+      "yaw_rad": 1.5707963267948966,
+      "mass_kg": 0.000988,
+      "fixed": false,
+      "material": "polymer-insulated cable",
+      "solids": [
+        {
+          "kind": "capsule_x",
+          "size": [
+            0.003,
+            0.013
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    },
+    {
+      "name": "cable_16",
+      "position_m": [
+        0.57,
+        0.035499999999999976,
+        1.0231
+      ],
+      "yaw_rad": 1.5707963267948966,
+      "mass_kg": 0.000988,
+      "fixed": false,
+      "material": "polymer-insulated cable",
+      "solids": [
+        {
+          "kind": "capsule_x",
+          "size": [
+            0.003,
+            0.013
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    },
+    {
+      "name": "cable_17",
+      "position_m": [
+        0.57,
+        0.05449999999999999,
+        1.0231
+      ],
+      "yaw_rad": 1.5707963267948966,
+      "mass_kg": 0.000988,
+      "fixed": false,
+      "material": "polymer-insulated cable",
+      "solids": [
+        {
+          "kind": "capsule_x",
+          "size": [
+            0.003,
+            0.013
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    },
+    {
+      "name": "cable_18",
+      "position_m": [
+        0.57,
+        0.07349999999999995,
+        1.0231
+      ],
+      "yaw_rad": 1.5707963267948966,
+      "mass_kg": 0.000988,
+      "fixed": false,
+      "material": "polymer-insulated cable",
+      "solids": [
+        {
+          "kind": "capsule_x",
+          "size": [
+            0.003,
+            0.013
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    },
+    {
+      "name": "cable_19",
+      "position_m": [
+        0.57,
+        0.09249999999999997,
+        1.0231
+      ],
+      "yaw_rad": 1.5707963267948966,
+      "mass_kg": 0.000988,
+      "fixed": false,
+      "material": "polymer-insulated cable",
+      "solids": [
+        {
+          "kind": "capsule_x",
+          "size": [
+            0.003,
+            0.013
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    },
+    {
+      "name": "cable_20",
+      "position_m": [
+        0.57,
+        0.11149999999999999,
+        1.0231
+      ],
+      "yaw_rad": 1.5707963267948966,
+      "mass_kg": 0.000988,
+      "fixed": false,
+      "material": "polymer-insulated cable",
+      "solids": [
+        {
+          "kind": "capsule_x",
+          "size": [
+            0.003,
+            0.013
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    },
+    {
+      "name": "cable_21",
+      "position_m": [
+        0.57,
+        0.13049999999999995,
+        1.0231
+      ],
+      "yaw_rad": 1.5707963267948966,
+      "mass_kg": 0.000988,
+      "fixed": false,
+      "material": "polymer-insulated cable",
+      "solids": [
+        {
+          "kind": "capsule_x",
+          "size": [
+            0.003,
+            0.013
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    },
+    {
+      "name": "cable_22",
+      "position_m": [
+        0.57,
+        0.14949999999999997,
+        1.0231
+      ],
+      "yaw_rad": 1.5707963267948966,
+      "mass_kg": 0.000988,
+      "fixed": false,
+      "material": "polymer-insulated cable",
+      "solids": [
+        {
+          "kind": "capsule_x",
+          "size": [
+            0.003,
+            0.013
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    },
+    {
+      "name": "cable_23",
+      "position_m": [
+        0.57,
+        0.16849999999999998,
+        1.0231
+      ],
+      "yaw_rad": 1.5707963267948966,
+      "mass_kg": 0.000988,
+      "fixed": false,
+      "material": "polymer-insulated cable",
+      "solids": [
+        {
+          "kind": "capsule_x",
+          "size": [
+            0.003,
+            0.013
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    },
+    {
+      "name": "cable_24",
+      "position_m": [
+        0.57,
+        0.18749999999999994,
+        1.0231
+      ],
+      "yaw_rad": 1.5707963267948966,
+      "mass_kg": 0.000988,
+      "fixed": false,
+      "material": "polymer-insulated cable",
+      "solids": [
+        {
+          "kind": "capsule_x",
+          "size": [
+            0.003,
+            0.013
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    },
+    {
+      "name": "cable_25",
+      "position_m": [
+        0.57,
+        0.20649999999999996,
+        1.0231
+      ],
+      "yaw_rad": 1.5707963267948966,
+      "mass_kg": 0.000988,
+      "fixed": false,
+      "material": "polymer-insulated cable",
+      "solids": [
+        {
+          "kind": "capsule_x",
+          "size": [
+            0.003,
+            0.013
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    },
+    {
+      "name": "cable_26",
+      "position_m": [
+        0.57,
+        0.22549999999999992,
+        1.0231
+      ],
+      "yaw_rad": 1.5707963267948966,
+      "mass_kg": 0.000988,
+      "fixed": false,
+      "material": "polymer-insulated cable",
+      "solids": [
+        {
+          "kind": "capsule_x",
+          "size": [
+            0.003,
+            0.013
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    },
+    {
+      "name": "cable_27",
+      "position_m": [
+        0.57,
+        0.24449999999999994,
+        1.0231
+      ],
+      "yaw_rad": 1.5707963267948966,
+      "mass_kg": 0.000988,
+      "fixed": false,
+      "material": "polymer-insulated cable",
+      "solids": [
+        {
+          "kind": "capsule_x",
+          "size": [
+            0.003,
+            0.013
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    },
+    {
+      "name": "cable_28",
+      "position_m": [
+        0.57,
+        0.26349999999999996,
+        1.0231
+      ],
+      "yaw_rad": 1.5707963267948966,
+      "mass_kg": 0.000988,
+      "fixed": false,
+      "material": "polymer-insulated cable",
+      "solids": [
+        {
+          "kind": "capsule_x",
+          "size": [
+            0.003,
+            0.013
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    },
+    {
+      "name": "cable_29",
+      "position_m": [
+        0.57,
+        0.2825,
+        1.0231
+      ],
+      "yaw_rad": 1.5707963267948966,
+      "mass_kg": 0.000988,
+      "fixed": false,
+      "material": "polymer-insulated cable",
+      "solids": [
+        {
+          "kind": "capsule_x",
+          "size": [
+            0.003,
+            0.013
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    },
+    {
+      "name": "cable_30",
+      "position_m": [
+        0.57,
+        0.3015,
+        1.0231
+      ],
+      "yaw_rad": 1.5707963267948966,
+      "mass_kg": 0.000988,
+      "fixed": false,
+      "material": "polymer-insulated cable",
+      "solids": [
+        {
+          "kind": "capsule_x",
+          "size": [
+            0.003,
+            0.013
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    },
+    {
+      "name": "cable_31",
+      "position_m": [
+        0.57,
+        0.3205,
+        1.0231
+      ],
+      "yaw_rad": 1.5707963267948966,
+      "mass_kg": 0.000988,
+      "fixed": false,
+      "material": "polymer-insulated cable",
+      "solids": [
+        {
+          "kind": "capsule_x",
+          "size": [
+            0.003,
+            0.013
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    },
+    {
+      "name": "cable_32",
+      "position_m": [
+        0.57,
+        0.3394999999999999,
+        1.0231
+      ],
+      "yaw_rad": 1.5707963267948966,
+      "mass_kg": 0.000988,
+      "fixed": false,
+      "material": "polymer-insulated cable",
+      "solids": [
+        {
+          "kind": "capsule_x",
+          "size": [
+            0.003,
+            0.013
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    },
+    {
+      "name": "cable_33",
+      "position_m": [
+        0.57,
+        0.35849999999999993,
+        1.0231
+      ],
+      "yaw_rad": 1.5707963267948966,
+      "mass_kg": 0.000988,
+      "fixed": false,
+      "material": "polymer-insulated cable",
+      "solids": [
+        {
+          "kind": "capsule_x",
+          "size": [
+            0.003,
+            0.013
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    },
+    {
+      "name": "cable_34",
+      "position_m": [
+        0.57,
+        0.37749999999999995,
+        1.0231
+      ],
+      "yaw_rad": 1.5707963267948966,
+      "mass_kg": 0.000988,
+      "fixed": false,
+      "material": "polymer-insulated cable",
+      "solids": [
+        {
+          "kind": "capsule_x",
+          "size": [
+            0.003,
+            0.013
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    },
+    {
+      "name": "cable_35",
+      "position_m": [
+        0.57,
+        0.39649999999999996,
+        1.0231
+      ],
+      "yaw_rad": 1.5707963267948966,
+      "mass_kg": 0.000988,
+      "fixed": false,
+      "material": "polymer-insulated cable",
+      "solids": [
+        {
+          "kind": "capsule_x",
+          "size": [
+            0.003,
+            0.013
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    },
+    {
+      "name": "cable_36",
+      "position_m": [
+        0.57,
+        0.4155,
+        1.0231
+      ],
+      "yaw_rad": 1.5707963267948966,
+      "mass_kg": 0.000988,
+      "fixed": false,
+      "material": "polymer-insulated cable",
+      "solids": [
+        {
+          "kind": "capsule_x",
+          "size": [
+            0.003,
+            0.013
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    },
+    {
+      "name": "cable_37",
+      "position_m": [
+        0.57,
+        0.4345,
+        1.0231
+      ],
+      "yaw_rad": 1.5707963267948966,
+      "mass_kg": 0.000988,
+      "fixed": false,
+      "material": "polymer-insulated cable",
+      "solids": [
+        {
+          "kind": "capsule_x",
+          "size": [
+            0.003,
+            0.013
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    },
+    {
+      "name": "cable_38",
+      "position_m": [
+        0.57,
+        0.4534999999999999,
+        1.0231
+      ],
+      "yaw_rad": 1.5707963267948966,
+      "mass_kg": 0.000988,
+      "fixed": false,
+      "material": "polymer-insulated cable",
+      "solids": [
+        {
+          "kind": "capsule_x",
+          "size": [
+            0.003,
+            0.013
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    },
+    {
+      "name": "cable_39",
+      "position_m": [
+        0.57,
+        0.4724999999999999,
+        1.0231
+      ],
+      "yaw_rad": 1.5707963267948966,
+      "mass_kg": 0.000988,
+      "fixed": false,
+      "material": "polymer-insulated cable",
+      "solids": [
+        {
+          "kind": "capsule_x",
+          "size": [
+            0.003,
+            0.013
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    },
+    {
+      "name": "cable_40",
+      "position_m": [
+        0.57,
+        0.49149999999999994,
+        1.0231
+      ],
+      "yaw_rad": 1.5707963267948966,
+      "mass_kg": 0.000988,
+      "fixed": false,
+      "material": "polymer-insulated cable",
+      "solids": [
+        {
+          "kind": "capsule_x",
+          "size": [
+            0.003,
+            0.013
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    },
+    {
+      "name": "cable_41",
+      "position_m": [
+        0.57,
+        0.5105,
+        1.0231
+      ],
+      "yaw_rad": 1.5707963267948966,
+      "mass_kg": 0.000988,
+      "fixed": false,
+      "material": "polymer-insulated cable",
+      "solids": [
+        {
+          "kind": "capsule_x",
+          "size": [
+            0.003,
+            0.013
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    },
+    {
+      "name": "cable_42",
+      "position_m": [
+        0.57,
+        0.5295,
+        1.0231
+      ],
+      "yaw_rad": 1.5707963267948966,
+      "mass_kg": 0.047,
+      "fixed": false,
+      "material": "polymer-insulated cable with molded metal-weighted end plug",
+      "solids": [
+        {
+          "kind": "capsule_x",
+          "size": [
+            0.003,
+            0.013
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.019,
+            0.015,
+            0.012
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.24,
+            0.33,
+            0.39
+          ]
+        }
+      ]
+    }
+  ],
+  "support_trajectories": {},
+  "world_guides": {
+    "cable_guide": {
+      "kind": "fixed"
+    },
+    "reel_switch_box": {
+      "kind": "fixed"
+    }
+  },
+  "fixture_joints": {
+    "drum": {
+      "kind": "revolute",
+      "parent": "reel_mount",
+      "anchor": [
+        0.57,
+        -0.278,
+        0.9435
+      ],
+      "axis": "X",
+      "drive": {
+        "stiffness": 0.18,
+        "damping": 0.009,
+        "max_force": 1.0
+      }
+    },
+    "guide_retainer": {
+      "kind": "revolute",
+      "parent": "cable_guide",
+      "anchor": [
+        0.618,
+        -0.10400000000000004,
+        1.0315
+      ],
+      "axis": "Y",
+      "lower": -15.0,
+      "upper": 0.0,
+      "drive": {
+        "stiffness": 6.0,
+        "damping": 0.035,
+        "max_force": 0.55,
+        "target": 8.0
+      }
+    },
+    "motor_start_button": {
+      "kind": "prismatic",
+      "parent": "reel_switch_box",
+      "anchor": [
+        0.265,
+        -0.164,
+        0.7855000000000001
+      ],
+      "axis": "Z",
+      "lower": -0.008,
+      "upper": 0.0,
+      "drive": {
+        "stiffness": 180.0,
+        "damping": 0.8,
+        "max_force": 4.0,
+        "target": 0.002
+      }
+    },
+    "cable_00": {
+      "kind": "spherical",
+      "parent": "drum",
+      "anchor": [
+        0.57,
+        -0.278,
+        1.0231
+      ],
+      "axis": "Y",
+      "swing_limit_degrees": 36.0,
+      "collision_enabled": true
+    },
+    "cable_01": {
+      "kind": "spherical",
+      "parent": "cable_00",
+      "anchor": [
+        0.57,
+        -0.259,
+        1.0231
+      ],
+      "axis": "X",
+      "swing_limit_degrees": 36.0,
+      "collision_enabled": false
+    },
+    "cable_02": {
+      "kind": "spherical",
+      "parent": "cable_01",
+      "anchor": [
+        0.57,
+        -0.24000000000000002,
+        1.0231
+      ],
+      "axis": "X",
+      "swing_limit_degrees": 36.0,
+      "collision_enabled": false
+    },
+    "cable_03": {
+      "kind": "spherical",
+      "parent": "cable_02",
+      "anchor": [
+        0.57,
+        -0.22100000000000003,
+        1.0231
+      ],
+      "axis": "X",
+      "swing_limit_degrees": 36.0,
+      "collision_enabled": false
+    },
+    "cable_04": {
+      "kind": "spherical",
+      "parent": "cable_03",
+      "anchor": [
+        0.57,
+        -0.202,
+        1.0231
+      ],
+      "axis": "X",
+      "swing_limit_degrees": 36.0,
+      "collision_enabled": false
+    },
+    "cable_05": {
+      "kind": "spherical",
+      "parent": "cable_04",
+      "anchor": [
+        0.57,
+        -0.18300000000000002,
+        1.0231
+      ],
+      "axis": "X",
+      "swing_limit_degrees": 36.0,
+      "collision_enabled": false
+    },
+    "cable_06": {
+      "kind": "spherical",
+      "parent": "cable_05",
+      "anchor": [
+        0.57,
+        -0.16400000000000003,
+        1.0231
+      ],
+      "axis": "X",
+      "swing_limit_degrees": 36.0,
+      "collision_enabled": false
+    },
+    "cable_07": {
+      "kind": "spherical",
+      "parent": "cable_06",
+      "anchor": [
+        0.57,
+        -0.14500000000000002,
+        1.0231
+      ],
+      "axis": "X",
+      "swing_limit_degrees": 36.0,
+      "collision_enabled": false
+    },
+    "cable_08": {
+      "kind": "spherical",
+      "parent": "cable_07",
+      "anchor": [
+        0.57,
+        -0.12600000000000003,
+        1.0231
+      ],
+      "axis": "X",
+      "swing_limit_degrees": 36.0,
+      "collision_enabled": false
+    },
+    "cable_09": {
+      "kind": "spherical",
+      "parent": "cable_08",
+      "anchor": [
+        0.57,
+        -0.10700000000000004,
+        1.0231
+      ],
+      "axis": "X",
+      "swing_limit_degrees": 36.0,
+      "collision_enabled": false
+    },
+    "cable_10": {
+      "kind": "spherical",
+      "parent": "cable_09",
+      "anchor": [
+        0.57,
+        -0.08800000000000002,
+        1.0231
+      ],
+      "axis": "X",
+      "swing_limit_degrees": 36.0,
+      "collision_enabled": false
+    },
+    "cable_11": {
+      "kind": "spherical",
+      "parent": "cable_10",
+      "anchor": [
+        0.57,
+        -0.06900000000000003,
+        1.0231
+      ],
+      "axis": "X",
+      "swing_limit_degrees": 36.0,
+      "collision_enabled": false
+    },
+    "cable_12": {
+      "kind": "spherical",
+      "parent": "cable_11",
+      "anchor": [
+        0.57,
+        -0.050000000000000044,
+        1.0231
+      ],
+      "axis": "X",
+      "swing_limit_degrees": 36.0,
+      "collision_enabled": false
+    },
+    "cable_13": {
+      "kind": "spherical",
+      "parent": "cable_12",
+      "anchor": [
+        0.57,
+        -0.031000000000000028,
+        1.0231
+      ],
+      "axis": "X",
+      "swing_limit_degrees": 36.0,
+      "collision_enabled": false
+    },
+    "cable_14": {
+      "kind": "spherical",
+      "parent": "cable_13",
+      "anchor": [
+        0.57,
+        -0.01200000000000001,
+        1.0231
+      ],
+      "axis": "X",
+      "swing_limit_degrees": 36.0,
+      "collision_enabled": false
+    },
+    "cable_15": {
+      "kind": "spherical",
+      "parent": "cable_14",
+      "anchor": [
+        0.57,
+        0.006999999999999951,
+        1.0231
+      ],
+      "axis": "X",
+      "swing_limit_degrees": 36.0,
+      "collision_enabled": false
+    },
+    "cable_16": {
+      "kind": "spherical",
+      "parent": "cable_15",
+      "anchor": [
+        0.57,
+        0.025999999999999968,
+        1.0231
+      ],
+      "axis": "X",
+      "swing_limit_degrees": 36.0,
+      "collision_enabled": false
+    },
+    "cable_17": {
+      "kind": "spherical",
+      "parent": "cable_16",
+      "anchor": [
+        0.57,
+        0.044999999999999984,
+        1.0231
+      ],
+      "axis": "X",
+      "swing_limit_degrees": 36.0,
+      "collision_enabled": false
+    },
+    "cable_18": {
+      "kind": "spherical",
+      "parent": "cable_17",
+      "anchor": [
+        0.57,
+        0.06399999999999995,
+        1.0231
+      ],
+      "axis": "X",
+      "swing_limit_degrees": 36.0,
+      "collision_enabled": false
+    },
+    "cable_19": {
+      "kind": "spherical",
+      "parent": "cable_18",
+      "anchor": [
+        0.57,
+        0.08299999999999996,
+        1.0231
+      ],
+      "axis": "X",
+      "swing_limit_degrees": 36.0,
+      "collision_enabled": false
+    },
+    "cable_20": {
+      "kind": "spherical",
+      "parent": "cable_19",
+      "anchor": [
+        0.57,
+        0.10199999999999998,
+        1.0231
+      ],
+      "axis": "X",
+      "swing_limit_degrees": 36.0,
+      "collision_enabled": false
+    },
+    "cable_21": {
+      "kind": "spherical",
+      "parent": "cable_20",
+      "anchor": [
+        0.57,
+        0.12099999999999994,
+        1.0231
+      ],
+      "axis": "X",
+      "swing_limit_degrees": 36.0,
+      "collision_enabled": false
+    },
+    "cable_22": {
+      "kind": "spherical",
+      "parent": "cable_21",
+      "anchor": [
+        0.57,
+        0.13999999999999996,
+        1.0231
+      ],
+      "axis": "X",
+      "swing_limit_degrees": 36.0,
+      "collision_enabled": false
+    },
+    "cable_23": {
+      "kind": "spherical",
+      "parent": "cable_22",
+      "anchor": [
+        0.57,
+        0.15899999999999997,
+        1.0231
+      ],
+      "axis": "X",
+      "swing_limit_degrees": 36.0,
+      "collision_enabled": false
+    },
+    "cable_24": {
+      "kind": "spherical",
+      "parent": "cable_23",
+      "anchor": [
+        0.57,
+        0.17799999999999994,
+        1.0231
+      ],
+      "axis": "X",
+      "swing_limit_degrees": 36.0,
+      "collision_enabled": false
+    },
+    "cable_25": {
+      "kind": "spherical",
+      "parent": "cable_24",
+      "anchor": [
+        0.57,
+        0.19699999999999995,
+        1.0231
+      ],
+      "axis": "X",
+      "swing_limit_degrees": 36.0,
+      "collision_enabled": false
+    },
+    "cable_26": {
+      "kind": "spherical",
+      "parent": "cable_25",
+      "anchor": [
+        0.57,
+        0.21599999999999997,
+        1.0231
+      ],
+      "axis": "X",
+      "swing_limit_degrees": 36.0,
+      "collision_enabled": false
+    },
+    "cable_27": {
+      "kind": "spherical",
+      "parent": "cable_26",
+      "anchor": [
+        0.57,
+        0.235,
+        1.0231
+      ],
+      "axis": "X",
+      "swing_limit_degrees": 36.0,
+      "collision_enabled": false
+    },
+    "cable_28": {
+      "kind": "spherical",
+      "parent": "cable_27",
+      "anchor": [
+        0.57,
+        0.254,
+        1.0231
+      ],
+      "axis": "X",
+      "swing_limit_degrees": 36.0,
+      "collision_enabled": false
+    },
+    "cable_29": {
+      "kind": "spherical",
+      "parent": "cable_28",
+      "anchor": [
+        0.57,
+        0.2729999999999999,
+        1.0231
+      ],
+      "axis": "X",
+      "swing_limit_degrees": 36.0,
+      "collision_enabled": false
+    },
+    "cable_30": {
+      "kind": "spherical",
+      "parent": "cable_29",
+      "anchor": [
+        0.57,
+        0.2919999999999999,
+        1.0231
+      ],
+      "axis": "X",
+      "swing_limit_degrees": 36.0,
+      "collision_enabled": false
+    },
+    "cable_31": {
+      "kind": "spherical",
+      "parent": "cable_30",
+      "anchor": [
+        0.57,
+        0.31099999999999994,
+        1.0231
+      ],
+      "axis": "X",
+      "swing_limit_degrees": 36.0,
+      "collision_enabled": false
+    },
+    "cable_32": {
+      "kind": "spherical",
+      "parent": "cable_31",
+      "anchor": [
+        0.57,
+        0.32999999999999996,
+        1.0231
+      ],
+      "axis": "X",
+      "swing_limit_degrees": 36.0,
+      "collision_enabled": false
+    },
+    "cable_33": {
+      "kind": "spherical",
+      "parent": "cable_32",
+      "anchor": [
+        0.57,
+        0.349,
+        1.0231
+      ],
+      "axis": "X",
+      "swing_limit_degrees": 36.0,
+      "collision_enabled": false
+    },
+    "cable_34": {
+      "kind": "spherical",
+      "parent": "cable_33",
+      "anchor": [
+        0.57,
+        0.368,
+        1.0231
+      ],
+      "axis": "X",
+      "swing_limit_degrees": 36.0,
+      "collision_enabled": false
+    },
+    "cable_35": {
+      "kind": "spherical",
+      "parent": "cable_34",
+      "anchor": [
+        0.57,
+        0.387,
+        1.0231
+      ],
+      "axis": "X",
+      "swing_limit_degrees": 36.0,
+      "collision_enabled": false
+    },
+    "cable_36": {
+      "kind": "spherical",
+      "parent": "cable_35",
+      "anchor": [
+        0.57,
+        0.4059999999999999,
+        1.0231
+      ],
+      "axis": "X",
+      "swing_limit_degrees": 36.0,
+      "collision_enabled": false
+    },
+    "cable_37": {
+      "kind": "spherical",
+      "parent": "cable_36",
+      "anchor": [
+        0.57,
+        0.42499999999999993,
+        1.0231
+      ],
+      "axis": "X",
+      "swing_limit_degrees": 36.0,
+      "collision_enabled": false
+    },
+    "cable_38": {
+      "kind": "spherical",
+      "parent": "cable_37",
+      "anchor": [
+        0.57,
+        0.44399999999999995,
+        1.0231
+      ],
+      "axis": "X",
+      "swing_limit_degrees": 36.0,
+      "collision_enabled": false
+    },
+    "cable_39": {
+      "kind": "spherical",
+      "parent": "cable_38",
+      "anchor": [
+        0.57,
+        0.46299999999999997,
+        1.0231
+      ],
+      "axis": "X",
+      "swing_limit_degrees": 36.0,
+      "collision_enabled": false
+    },
+    "cable_40": {
+      "kind": "spherical",
+      "parent": "cable_39",
+      "anchor": [
+        0.57,
+        0.482,
+        1.0231
+      ],
+      "axis": "X",
+      "swing_limit_degrees": 36.0,
+      "collision_enabled": false
+    },
+    "cable_41": {
+      "kind": "spherical",
+      "parent": "cable_40",
+      "anchor": [
+        0.57,
+        0.501,
+        1.0231
+      ],
+      "axis": "X",
+      "swing_limit_degrees": 36.0,
+      "collision_enabled": false
+    },
+    "cable_42": {
+      "kind": "spherical",
+      "parent": "cable_41",
+      "anchor": [
+        0.57,
+        0.5199999999999999,
+        1.0231
+      ],
+      "axis": "X",
+      "swing_limit_degrees": 36.0,
+      "collision_enabled": false
+    }
+  },
+  "contact_patch_radii_m": {},
+  "passive_cutting_loads": {}
+}

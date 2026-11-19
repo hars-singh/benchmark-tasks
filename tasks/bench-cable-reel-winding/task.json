@@ -1,0 +1,19 @@
+{
+  "title": "Wind a cable onto a powered reel while holding its hinged guide",
+  "category": "Other",
+  "keywords": [
+    "powered reel",
+    "cable guide",
+    "momentary switch",
+    "bimanual operation"
+  ],
+  "instruction": "Hold the gold hinged guide down with one hand and hold the orange motor switch with the other. Release both controls and move both hands clear once the cable is wound and stays on the drum.",
+  "context": "Powered reels use guides to control the incoming line and momentary switches to control rewinding. The bench fixture tests holding the guide closed while operating the drive and leaving the cable on the drum.",
+  "setup": "A steel stand holds a 152 mm diameter, 122 mm wide drum with 356 mm diameter flanges. A spring-open hinged guide starts raised over the incoming line. An orange momentary switch sits on a fixed housing. The 6 mm diameter cable uses 43 connected segments at a 19 mm pitch. The free end has a 47 g weighted plug that tensions the lead during winding. The geometry lists the exact component dimensions, locations and materials.",
+  "scoring": "Score 0.20 at 0.21 wraps and 0.55 at 0.75 wraps while the guide is closed more than 11.5 degrees and the orange button is more than 4.8 mm down. Both wrists must stay within 42 mm of the guide handle and 32 mm of the switch respectively while the drum winds. For 1.00, reach 1.10 wraps with both controls held and retain 1.10 wraps with at least 32 contiguous links in the winding envelope. The guide must return to within 2 degrees of open and the switch to within 1.5 mm of reset. Both hands must be more than 55 mm from both controls for 0.60 s with drum speed below 0.16 rad/s. Stretch beyond 4 mm above the 19 mm link pitch gives zero.",
+  "run_limit": "1,200 steps (60 s at 20 Hz)",
+  "fidelity": "The cable uses articulated, overlapping capsule segments. A torque-limited angular drive represents the rewind motor. The native guide hinge and switch slider physically move and spring back. Their sensed positions and wrist proximity enable drive. The bench controls approximate a low-speed guarded reel workflow.",
+  "reset_notes": "Unwind the cable to its initial lead-out line with the weighted plug at the free end. Return the guide to its spring-open position and the switch to its raised position. Return both wrists to ready pose.",
+  "scores": "Dream-1 beta run: 0.00; scripted native-contact demo: 1.00",
+  "media": "M-3ZDGK8"
+}
