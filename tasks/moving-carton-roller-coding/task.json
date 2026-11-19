@@ -1,0 +1,19 @@
+{
+  "title": "Roll a registered batch code onto a moving carton",
+  "category": "Other",
+  "keywords": [
+    "moving packaging",
+    "batch code",
+    "registration",
+    "friction driven roller"
+  ],
+  "instruction": "Use the blue roller coder to print one complete B7 batch code inside the outlined box on the carton while the carriage moves forward. Return the coder to the cradle and move your hands clear.",
+  "context": "Batch codes allow packaging lots to be traced. This fixture tests whether a robot can keep a handheld coder rolling on a carton while registering the mark to a printed box.",
+  "setup": "A 133 by 131 by 54 mm kraft carton sits on a 155 by 160 by 30 mm aluminum carriage. The carriage follows a 68 mm amplitude, 10 s sinusoidal path along one axis. The carton carries a 28 by 44 mm outlined inspection box. The coder has an aluminum body, polymer grip and a 50.8 mm diameter by 42 mm wide roller with elastomer type in a seven-column B7 pattern. It starts upright on the 107 by 75 mm polymer cradle. The included JSON and CAD specify the individual parts, locations and materials.",
+  "scoring": "Score 0.10 for lifting the coder at least 30 mm in a valid grasp. Add 0.68 times the fraction of the seven registered columns formed in order, including the blank separator. Each column must land within 4.5 mm of its prescribed registration, with the wheel aligned across the box and the carton moving forward above 22 mm/s. Valid die contact has a reaction between 0.60 and 14 N, advancing contact across the carton and less than 19 mm/s of slip. Repeated, reversed or invalid die contact spoils the mark. For 1.00, register every column without a smear and leave the tool upright, within 9 mm of the cradle target and 3 mm of seated height, with 0.58 to 1.7 N support, speed below 18 mm/s and both wrists more than 68 mm away for 0.45 s.",
+  "run_limit": "900 steps (45 s at 20 Hz)",
+  "fidelity": "The carriage, held coder, passive wheel joint and contact forces are native simulation bodies. The carton is fixed to the carriage. Ink deposition is approximated by revealing marks on the carton at the measured die contact locations. Ink transfer chemistry and pressure-dependent ink density are omitted.",
+  "reset_notes": "Return the carriage to its centered starting phase, fit a blank outlined carton, return the coder upright to the cradle and index the die to its starting angle. Return both arms to ready pose.",
+  "scores": "Dream-1 beta run: 0.00; scripted native-contact demo: 1.00",
+  "media": "M-3AN96B"
+}
