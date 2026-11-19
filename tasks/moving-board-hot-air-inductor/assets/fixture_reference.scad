@@ -1,23 +1,13 @@
 // Millimetre geometric reference; use real functional tools, not printed heated or cutting equipment.
-// Source SHA-256: 5360a3d8b4b2677d5ce19b166571389c749dcc95e154729432f4a35be8650a6e
+// Source SHA-256: 493e0b693f89c281eb8da39abb29a7e02fd7501da94857ba81c94d8b38a3dbba
 $fn=48;
 module stage(){
-translate([0, 0, 11]) rotate([0, 0, 0]) cube([120, 100, 8],center=true);
-translate([-40.5, 0, -5]) rotate([0, 0, 0]) cube([3, 50, 14],center=true);
-translate([-29.5, 0, -5]) rotate([0, 0, 0]) cube([3, 50, 14],center=true);
-translate([-35, 0, -10.5]) rotate([0, 0, 0]) cube([8, 50, 3],center=true);
-translate([-35, 0, 0.5]) rotate([0, 0, 0]) cube([8, 50, 3],center=true);
-translate([-35, 0, 4.5]) rotate([0, 0, 0]) cube([14, 50, 6],center=true);
-translate([-50, -40, 15.5]) rotate([0, 0, 0]) cylinder(r=2.5,h=1,center=true);
-translate([-50, 40, 15.5]) rotate([0, 0, 0]) cylinder(r=2.5,h=1,center=true);
-translate([29.5, 0, -5]) rotate([0, 0, 0]) cube([3, 50, 14],center=true);
-translate([40.5, 0, -5]) rotate([0, 0, 0]) cube([3, 50, 14],center=true);
-translate([35, 0, -10.5]) rotate([0, 0, 0]) cube([8, 50, 3],center=true);
-translate([35, 0, 0.5]) rotate([0, 0, 0]) cube([8, 50, 3],center=true);
-translate([35, 0, 4.5]) rotate([0, 0, 0]) cube([14, 50, 6],center=true);
-translate([50, -40, 15.5]) rotate([0, 0, 0]) cylinder(r=2.5,h=1,center=true);
-translate([50, 40, 15.5]) rotate([0, 0, 0]) cylinder(r=2.5,h=1,center=true);
+translate([0, 0, 0]) rotate([0, 0, 0]) cube([120, 100, 30],center=true);
 translate([0, 0, 29.25]) rotate([0, 0, 0]) cube([30, 30, 28.5],center=true);
+translate([-33, -32, 32]) rotate([0, 0, 0]) cube([9, 18, 34],center=true);
+translate([33, -32, 32]) rotate([0, 0, 0]) cube([9, 18, 34],center=true);
+translate([-33, -27, 49]) rotate([0, 0, 0]) cube([9, 18, 4],center=true);
+translate([33, -27, 49]) rotate([0, 0, 0]) cube([9, 18, 4],center=true);
 }
 module board(){
 translate([0, 0, 0]) rotate([0, 0, 0]) cube([80, 60, 3],center=true);
@@ -62,21 +52,6 @@ translate([0, 0, 0]) rotate([0, 0, 0]) cube([100, 10, 50],center=true);
 module tray_y_high(){
 translate([0, 0, 0]) rotate([0, 0, 0]) cube([100, 10, 50],center=true);
 }
-module stage_rail_left(){
-translate([0, 0, 0]) rotate([0, 0, 0]) rotate([90,0,0]) cylinder(r=3.5,h=160,center=true);
-}
-module stage_rail_right(){
-translate([0, 0, 0]) rotate([0, 0, 0]) rotate([90,0,0]) cylinder(r=3.5,h=160,center=true);
-}
-module stage_base(){
-translate([0, 0, 0]) rotate([0, 0, 0]) cube([155, 195, 2.5],center=true);
-}
-module stage_end_front(){
-translate([0, 0, 0]) rotate([0, 0, 0]) cube([155, 15, 22],center=true);
-}
-module stage_end_back(){
-translate([0, 0, 0]) rotate([0, 0, 0]) cube([155, 15, 22],center=true);
-}
 translate([240, 0, 762.5]) rotate([0,0,0]) stage();
 translate([240, 0, 807.5]) rotate([0,0,0]) board();
 translate([240, 0, 814.2]) rotate([0,0,0]) part();
@@ -88,8 +63,3 @@ translate([295, 200, 772.5]) rotate([0,0,0]) tray_x_low();
 translate([405, 200, 772.5]) rotate([0,0,0]) tray_x_high();
 translate([350, 145, 772.5]) rotate([0,0,0]) tray_y_low();
 translate([350, 255, 772.5]) rotate([0,0,0]) tray_y_high();
-translate([205, 0, 757.5]) rotate([0,0,0]) stage_rail_left();
-translate([275, 0, 757.5]) rotate([0,0,0]) stage_rail_right();
-translate([240, 0, 748.75]) rotate([0,0,0]) stage_base();
-translate([240, -87.5, 758.5]) rotate([0,0,0]) stage_end_front();
-translate([240, 87.5, 758.5]) rotate([0,0,0]) stage_end_back();

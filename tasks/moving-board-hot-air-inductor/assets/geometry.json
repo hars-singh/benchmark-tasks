@@ -1,6 +1,6 @@
 {
   "units": "metres; rotations radians; primitive cylinders store radius and full height",
-  "source_sha256": "5360a3d8b4b2677d5ce19b166571389c749dcc95e154729432f4a35be8650a6e",
+  "source_sha256": "493e0b693f89c281eb8da39abb29a7e02fd7501da94857ba81c94d8b38a3dbba",
   "objects": [
     {
       "name": "stage",
@@ -19,326 +19,18 @@
           "size": [
             0.12,
             0.1,
-            0.008
+            0.03
           ],
           "offset": [
-            0,
-            0,
-            0.011
+            0.0,
+            0.0,
+            0.0
           ],
           "yaw": 0.0,
           "axis": "Z",
           "roll": 0.0,
           "pitch": 0.0,
-          "color": [
-            0.58,
-            0.63,
-            0.68
-          ]
-        },
-        {
-          "kind": "box",
-          "size": [
-            0.003,
-            0.05,
-            0.014
-          ],
-          "offset": [
-            -0.040499999999999994,
-            0,
-            -0.005
-          ],
-          "yaw": 0.0,
-          "axis": "Z",
-          "roll": 0.0,
-          "pitch": 0.0,
-          "color": [
-            0.055,
-            0.19,
-            0.32
-          ]
-        },
-        {
-          "kind": "box",
-          "size": [
-            0.003,
-            0.05,
-            0.014
-          ],
-          "offset": [
-            -0.0295,
-            0,
-            -0.005
-          ],
-          "yaw": 0.0,
-          "axis": "Z",
-          "roll": 0.0,
-          "pitch": 0.0,
-          "color": [
-            0.055,
-            0.19,
-            0.32
-          ]
-        },
-        {
-          "kind": "box",
-          "size": [
-            0.008,
-            0.05,
-            0.003
-          ],
-          "offset": [
-            -0.034999999999999996,
-            0,
-            -0.010499999999999999
-          ],
-          "yaw": 0.0,
-          "axis": "Z",
-          "roll": 0.0,
-          "pitch": 0.0,
-          "color": [
-            0.055,
-            0.19,
-            0.32
-          ]
-        },
-        {
-          "kind": "box",
-          "size": [
-            0.008,
-            0.05,
-            0.003
-          ],
-          "offset": [
-            -0.034999999999999996,
-            0,
-            0.0004999999999999996
-          ],
-          "yaw": 0.0,
-          "axis": "Z",
-          "roll": 0.0,
-          "pitch": 0.0,
-          "color": [
-            0.055,
-            0.19,
-            0.32
-          ]
-        },
-        {
-          "kind": "box",
-          "size": [
-            0.014,
-            0.05,
-            0.006
-          ],
-          "offset": [
-            -0.034999999999999996,
-            0,
-            0.0045
-          ],
-          "yaw": 0.0,
-          "axis": "Z",
-          "roll": 0.0,
-          "pitch": 0.0,
-          "color": [
-            0.055,
-            0.19,
-            0.32
-          ]
-        },
-        {
-          "kind": "cylinder",
-          "size": [
-            0.0025,
-            0.001
-          ],
-          "offset": [
-            -0.049999999999999996,
-            -0.04,
-            0.0155
-          ],
-          "yaw": 0.0,
-          "axis": "Z",
-          "roll": 0.0,
-          "pitch": 0.0,
-          "color": [
-            0.055,
-            0.065,
-            0.075
-          ]
-        },
-        {
-          "kind": "cylinder",
-          "size": [
-            0.0025,
-            0.001
-          ],
-          "offset": [
-            -0.049999999999999996,
-            0.04,
-            0.0155
-          ],
-          "yaw": 0.0,
-          "axis": "Z",
-          "roll": 0.0,
-          "pitch": 0.0,
-          "color": [
-            0.055,
-            0.065,
-            0.075
-          ]
-        },
-        {
-          "kind": "box",
-          "size": [
-            0.003,
-            0.05,
-            0.014
-          ],
-          "offset": [
-            0.0295,
-            0,
-            -0.005
-          ],
-          "yaw": 0.0,
-          "axis": "Z",
-          "roll": 0.0,
-          "pitch": 0.0,
-          "color": [
-            0.055,
-            0.19,
-            0.32
-          ]
-        },
-        {
-          "kind": "box",
-          "size": [
-            0.003,
-            0.05,
-            0.014
-          ],
-          "offset": [
-            0.040499999999999994,
-            0,
-            -0.005
-          ],
-          "yaw": 0.0,
-          "axis": "Z",
-          "roll": 0.0,
-          "pitch": 0.0,
-          "color": [
-            0.055,
-            0.19,
-            0.32
-          ]
-        },
-        {
-          "kind": "box",
-          "size": [
-            0.008,
-            0.05,
-            0.003
-          ],
-          "offset": [
-            0.034999999999999996,
-            0,
-            -0.010499999999999999
-          ],
-          "yaw": 0.0,
-          "axis": "Z",
-          "roll": 0.0,
-          "pitch": 0.0,
-          "color": [
-            0.055,
-            0.19,
-            0.32
-          ]
-        },
-        {
-          "kind": "box",
-          "size": [
-            0.008,
-            0.05,
-            0.003
-          ],
-          "offset": [
-            0.034999999999999996,
-            0,
-            0.0004999999999999996
-          ],
-          "yaw": 0.0,
-          "axis": "Z",
-          "roll": 0.0,
-          "pitch": 0.0,
-          "color": [
-            0.055,
-            0.19,
-            0.32
-          ]
-        },
-        {
-          "kind": "box",
-          "size": [
-            0.014,
-            0.05,
-            0.006
-          ],
-          "offset": [
-            0.034999999999999996,
-            0,
-            0.0045
-          ],
-          "yaw": 0.0,
-          "axis": "Z",
-          "roll": 0.0,
-          "pitch": 0.0,
-          "color": [
-            0.055,
-            0.19,
-            0.32
-          ]
-        },
-        {
-          "kind": "cylinder",
-          "size": [
-            0.0025,
-            0.001
-          ],
-          "offset": [
-            0.049999999999999996,
-            -0.04,
-            0.0155
-          ],
-          "yaw": 0.0,
-          "axis": "Z",
-          "roll": 0.0,
-          "pitch": 0.0,
-          "color": [
-            0.055,
-            0.065,
-            0.075
-          ]
-        },
-        {
-          "kind": "cylinder",
-          "size": [
-            0.0025,
-            0.001
-          ],
-          "offset": [
-            0.049999999999999996,
-            0.04,
-            0.0155
-          ],
-          "yaw": 0.0,
-          "axis": "Z",
-          "roll": 0.0,
-          "pitch": 0.0,
-          "color": [
-            0.055,
-            0.065,
-            0.075
-          ]
+          "color": null
         },
         {
           "kind": "box",
@@ -359,6 +51,94 @@
           "color": [
             0.58,
             0.63,
+            0.68
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.009,
+            0.018,
+            0.034
+          ],
+          "offset": [
+            -0.033,
+            -0.032,
+            0.032
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.42,
+            0.46,
+            0.49
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.009,
+            0.018,
+            0.034
+          ],
+          "offset": [
+            0.033,
+            -0.032,
+            0.032
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.42,
+            0.46,
+            0.49
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.009,
+            0.018,
+            0.004
+          ],
+          "offset": [
+            -0.033,
+            -0.027,
+            0.049
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.64,
+            0.66,
+            0.68
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.009,
+            0.018,
+            0.004
+          ],
+          "offset": [
+            0.033,
+            -0.027,
+            0.049
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.64,
+            0.66,
             0.68
           ]
         }
@@ -1061,196 +841,12 @@
           "color": null
         }
       ]
-    },
-    {
-      "name": "stage_rail_left",
-      "position_m": [
-        0.205,
-        0,
-        0.7575000000000001
-      ],
-      "yaw_rad": 0.0,
-      "mass_kg": null,
-      "fixed": true,
-      "material": "aluminium and steel fixture",
-      "solids": [
-        {
-          "kind": "cylinder",
-          "size": [
-            0.0035,
-            0.16
-          ],
-          "offset": [
-            0.0,
-            0.0,
-            0.0
-          ],
-          "yaw": 0.0,
-          "axis": "Y",
-          "roll": 0.0,
-          "pitch": 0.0,
-          "color": [
-            0.58,
-            0.63,
-            0.68
-          ]
-        }
-      ]
-    },
-    {
-      "name": "stage_rail_right",
-      "position_m": [
-        0.27499999999999997,
-        0,
-        0.7575000000000001
-      ],
-      "yaw_rad": 0.0,
-      "mass_kg": null,
-      "fixed": true,
-      "material": "aluminium and steel fixture",
-      "solids": [
-        {
-          "kind": "cylinder",
-          "size": [
-            0.0035,
-            0.16
-          ],
-          "offset": [
-            0.0,
-            0.0,
-            0.0
-          ],
-          "yaw": 0.0,
-          "axis": "Y",
-          "roll": 0.0,
-          "pitch": 0.0,
-          "color": [
-            0.58,
-            0.63,
-            0.68
-          ]
-        }
-      ]
-    },
-    {
-      "name": "stage_base",
-      "position_m": [
-        0.24,
-        0,
-        0.74875
-      ],
-      "yaw_rad": 0.0,
-      "mass_kg": null,
-      "fixed": true,
-      "material": "aluminium and steel fixture",
-      "solids": [
-        {
-          "kind": "box",
-          "size": [
-            0.155,
-            0.195,
-            0.0025
-          ],
-          "offset": [
-            0.0,
-            0.0,
-            0.0
-          ],
-          "yaw": 0.0,
-          "axis": "Z",
-          "roll": 0.0,
-          "pitch": 0.0,
-          "color": null
-        }
-      ]
-    },
-    {
-      "name": "stage_end_front",
-      "position_m": [
-        0.24,
-        -0.0875,
-        0.7585000000000001
-      ],
-      "yaw_rad": 0.0,
-      "mass_kg": null,
-      "fixed": true,
-      "material": "aluminium and steel fixture",
-      "solids": [
-        {
-          "kind": "box",
-          "size": [
-            0.155,
-            0.015,
-            0.022
-          ],
-          "offset": [
-            0.0,
-            0.0,
-            0.0
-          ],
-          "yaw": 0.0,
-          "axis": "Z",
-          "roll": 0.0,
-          "pitch": 0.0,
-          "color": null
-        }
-      ]
-    },
-    {
-      "name": "stage_end_back",
-      "position_m": [
-        0.24,
-        0.0875,
-        0.7585000000000001
-      ],
-      "yaw_rad": 0.0,
-      "mass_kg": null,
-      "fixed": true,
-      "material": "aluminium and steel fixture",
-      "solids": [
-        {
-          "kind": "box",
-          "size": [
-            0.155,
-            0.015,
-            0.022
-          ],
-          "offset": [
-            0.0,
-            0.0,
-            0.0
-          ],
-          "yaw": 0.0,
-          "axis": "Z",
-          "roll": 0.0,
-          "pitch": 0.0,
-          "color": null
-        }
-      ]
     }
   ],
-  "support_trajectories": {
-    "stage": {
-      "center": [
-        0.24,
-        0,
-        0.7625000000000001
-      ],
-      "amplitude": [
-        0,
-        0.01,
-        0
-      ],
-      "period_s": 8.0,
-      "phase": 0.0,
-      "yaw_amplitude": 0.0
-    }
-  },
+  "support_trajectories": {},
   "world_guides": {
     "stage": {
-      "axis": "Y",
-      "lower": -0.025,
-      "upper": 0.025
+      "kind": "fixed"
     }
   },
   "fixture_joints": {

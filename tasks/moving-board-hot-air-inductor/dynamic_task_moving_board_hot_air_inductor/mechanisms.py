@@ -10,6 +10,31 @@ SILVER=(.58,.63,.68)
 BLUE=(.055,.19,.32)
 BLACK=(.055,.065,.075)
 
+def rotary_stage(stage):
+    """170 mm platter, clear spindle bore, stationary bearing and index marks."""
+    from yam_arena.task_file import Box
+    from dynamic_task_moving_board_hot_air_inductor.geometry import square_ring
+    if any(abs(v-e)>1e-6 for v,e in zip(stage.size,(.170,.170,.012))):
+        raise ValueError('This rotary fixture requires a170x170x12mm stage envelope')
+    x,y,z=stage.pos;prefix=stage.name
+    base=Box(prefix+'_rotary_base',pos=(x,y,z-.026),size=(.14,.14,.016),color=BLUE)
+    bearing=Box(prefix+'_bearing',pos=(x,y,z-.012),size=(.06,.06,.012),color=BLACK)
+    pointer=Box(prefix+'_pointer',pos=(x+.094,y,z+.006),size=(.018,.004,.006),color=(1.,.75,.04))
+    ring=[];marks=[]
+    for i in range(24):
+        angle=2*math.pi*i/24
+        ring.append(Solid('box',(.012,2*.030*math.tan(math.pi/24),.012),
+                          (.024*math.cos(angle),.024*math.sin(angle),0),yaw=angle))
+    for i in range(12):
+        angle=2*math.pi*i/12
+        marks.append(Solid('box',(.012,.002,.0002),
+            (.073*math.cos(angle),.073*math.sin(angle),.0062),yaw=angle,
+            color=(1.,.75,.04) if i==0 else BLACK))
+    bodies={prefix:(Solid('cylinder',(.085,.012)),
+                    Solid('cylinder',(.016,.028),(0,0,-.014),color=SILVER)),
+            base.name:square_ring(.14,.04,.016),bearing.name:tuple(ring)}
+    return [base,bearing,pointer],bodies,{prefix:tuple(marks)}
+
 def linear_stage(stage,amplitude):
     """Keep the original deck height while adding bearing blocks and fixed rails."""
     from yam_arena.task_file import Box

@@ -1,14 +1,11 @@
-"""Prototype: hot-air removal of a moulded power inductor from a moving PCB.
+"""Hot-air removal of a moulded power inductor from a clamped PCB.
 
 All acquisition, extraction and placement use native free bodies and robot
 grippers. A declared thermal rule releases an initial material bond only when
 both soldered terminals are molten. Native cold fracture permanently damages pads.
-This is a research prototype, without full-score or model evidence yet.
-
-A real surface-mount power inductor supplies graspable case area for the
-standard fingertips. This is the same thermal-release skill family as the
-held SO16 experiment, not an additional distinct public submission. Visible
-case surfaces absorb hot air before conduction heats two underside solder pads.
+A surface-mount power inductor supplies graspable case area for the standard
+fingertips. Visible case surfaces absorb hot air before conduction heats two
+underside solder pads.
 The geometry follows the reference footprint; the thermal coefficients are nominal.
 """
 import math
@@ -19,8 +16,6 @@ from yam_arena.constants import READY,FINGER_OPEN as OPEN,FINGER_CLOSED as CLOSE
 from yam_arena.demo import Waypoint,grip_rotation
 from yam_arena.task_file import Box,TABLE_TOP
 from dynamic_task_moving_board_hot_air_inductor.geometry import Solid
-from dynamic_task_moving_board_hot_air_inductor.motion import OscillatingPlatform
-from dynamic_task_moving_board_hot_air_inductor.mechanisms import linear_stage
 from dynamic_task_moving_board_hot_air_inductor.scoring import _rotate
 
 SCENE='station'
@@ -75,11 +70,14 @@ VISUAL_PARTS={
 for rest in RESTS:
  BODY_PARTS[rest.name]=(Solid('box',rest.size),
      *(Solid('box',(.006,.006,.012),(s*.0155,0,rest.size[2]/2+.006)) for s in (-1,1)))
-hardware,parts=linear_stage(STAGE,.010);OBJECTS.extend(hardware);BODY_PARTS.update(parts)
-BODY_PARTS['stage']+=(Solid('box',(.030,.030,.0285),(0,0,.02925),color=(.58,.63,.68)),)
-MOTIONS={'stage':OscillatingPlatform(STAGE.pos,(0,.010,0),8.)}
-MACHINE_VISUALS={'stage':{'kind':'linear_stage','amplitude':.010}}
-SUPPORT_JOINTS={'stage':{'axis':'Y','lower':-.025,'upper':.025}}
+BODY_PARTS['stage']=(
+ Solid('box',STAGE.size),
+ Solid('box',(.030,.030,.0285),(0,0,.02925),color=(.58,.63,.68)),
+ *(Solid('box',(.009,.018,.034),(side*.033,-.032,.032),color=(.42,.46,.49)) for side in (-1,1)),
+ *(Solid('box',(.009,.018,.004),(side*.033,-.027,.049),color=(.64,.66,.68)) for side in (-1,1)),
+)
+SUPPORT_JOINTS={'stage':{'kind':'fixed'}}
+STATIONARY_REWORK_BOARD_TOLERANCE=.001
 PAYLOAD_SUPPORTS={'part':{'body':'board','top_local_z':.0015,'penetration_tolerance_m':.0005}}
 OBJECT_JOINTS={'board':{'kind':'fixed','parent':'stage','anchor':BOARD.pos},
  'part':{'kind':'fixed','parent':'board','anchor':COMPONENT.pos,'break_force_N':20.,'break_torque_Nm':.08,
@@ -272,6 +270,7 @@ def observe(objects,context,dt):
  global _wet_contacts
  if _gun_home is None:_gun_home=np.asarray(context['body_origins']['hot_air']).copy()
  board=np.asarray(context['body_origins']['board']);part=np.asarray(context['body_origins']['part'])
+ if np.linalg.norm(board-np.asarray(BOARD.pos))>STATIONARY_REWORK_BOARD_TOLERANCE:_damaged=True
  if not _bond_released:
   # An actual cold fracture or wrenching displacement is permanent pad damage.
   if np.linalg.norm(matrix(objects['board'].quat_xyzw).T@(part-board)-_cold_anchor)>.002:_damaged=True

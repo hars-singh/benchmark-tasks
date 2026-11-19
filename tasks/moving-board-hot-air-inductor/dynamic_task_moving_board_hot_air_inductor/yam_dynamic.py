@@ -42,6 +42,8 @@ class DynamicYamEmbodiment(YamArenaEmbodiment):
         from dynamic_task_moving_board_hot_air_inductor.geometry import contact_patch_radii
         self.contact_patch_radii={name:contact_patch_radii(value) for name,value in
                                   getattr(self.task.module,'CONTACT_PATCH_RADII',{}).items()}
+        self.contact_offsets={name:float(value) for name,value in
+                              getattr(self.task.module,'CONTACT_OFFSETS_M',{}).items()}
         self._contact_views = {}
         self._contact_sums = {}
         self._contact_samples = 0
@@ -58,6 +60,9 @@ class DynamicYamEmbodiment(YamArenaEmbodiment):
                 raise ValueError('world-space planing resistance requires fixed stock')
         if any(name not in specs for name in self.contact_patch_radii):
             raise ValueError('contact patch settings require a declared task body')
+        if any(name not in specs or not math.isfinite(offset) or offset<=0.
+               for name,offset in self.contact_offsets.items()):
+            raise ValueError('contact offsets require declared task bodies and positive finite distances')
         for pair in self.contact_pairs.values():
             if len(pair)!=2 or any(name not in specs for name in pair):
                 raise ValueError("contact pairs require two declared bodies")
@@ -80,6 +85,9 @@ class DynamicYamEmbodiment(YamArenaEmbodiment):
                 raise ValueError("fixture joint requires distinct declared parent and child bodies")
             if not specs[child].free or not specs[joint["parent"]].free:
                 raise ValueError("fixture joints require declared rigid bodies")
+        for name in getattr(self.task.module, "SUPPORT_JOINTS", {}):
+            if name not in specs or not specs[name].free or name in self.fixture_joints:
+                raise ValueError("world guides require rigid bodies without a fixture parent")
         self._motion_time = 0.0
         self._motion_enabled = False
         self._driver_base = None
@@ -164,21 +172,26 @@ class DynamicYamEmbodiment(YamArenaEmbodiment):
                     return prim
 
                 obj.spawner_cfg.func = spawn_visual_parts
-            if spec.name in self.contact_patch_radii:
-                spawn_patch=obj.spawner_cfg.func
-                patch_radius,minimum_radius=self.contact_patch_radii[spec.name]
+            patch_radii=self.contact_patch_radii.get(spec.name)
+            contact_offset=self.contact_offsets.get(spec.name)
+            if patch_radii is not None or contact_offset is not None:
+                spawn_surface=obj.spawner_cfg.func
 
-                def spawn_contact_patch(prim_path,cfg,*args,**kwargs):
+                def spawn_contact_surface(prim_path,cfg,*args,**kwargs):
                     from pxr import PhysxSchema,Usd,UsdPhysics
-                    prim=spawn_patch(prim_path,cfg,*args,**kwargs)
+                    prim=spawn_surface(prim_path,cfg,*args,**kwargs)
                     for collider in Usd.PrimRange(prim):
                         if collider.HasAPI(UsdPhysics.CollisionAPI):
                             api=PhysxSchema.PhysxCollisionAPI.Apply(collider)
-                            api.CreateTorsionalPatchRadiusAttr(patch_radius)
-                            api.CreateMinTorsionalPatchRadiusAttr(minimum_radius)
+                            if patch_radii is not None:
+                                api.CreateTorsionalPatchRadiusAttr(patch_radii[0])
+                                api.CreateMinTorsionalPatchRadiusAttr(patch_radii[1])
+                            if contact_offset is not None:
+                                api.CreateContactOffsetAttr(contact_offset)
+                                api.CreateRestOffsetAttr(0.)
                     return prim
 
-                obj.spawner_cfg.func=spawn_contact_patch
+                obj.spawner_cfg.func=spawn_contact_surface
             if spec.name in self.conveyors:
                 obj.spawner_cfg.rigid_props.kinematic_enabled = True
                 obj.spawner_cfg.rigid_props.disable_gravity = True
@@ -202,26 +215,17 @@ class DynamicYamEmbodiment(YamArenaEmbodiment):
                 obj.spawner_cfg.rigid_props.kinematic_enabled = False
                 obj.spawner_cfg.rigid_props.disable_gravity = True
                 obj.spawner_cfg.rigid_props.enable_ccd = False
-                joint_spec = getattr(self.task.module, "SUPPORT_JOINTS", {}).get(spec.name)
-                if joint_spec:
-                    spawn_body = obj.spawner_cfg.func
+            joint_spec = getattr(self.task.module, "SUPPORT_JOINTS", {}).get(spec.name)
+            if joint_spec:
+                spawn_body = obj.spawner_cfg.func
 
-                    def spawn_guided(prim_path, cfg, *args, **kwargs):
-                        from pxr import Gf, Sdf, UsdPhysics
-                        prim = spawn_body(prim_path, cfg, *args, **kwargs)
-                        path = str(prim.GetPath())
-                        joint = UsdPhysics.PrismaticJoint.Define(prim.GetStage(), path+"_guide")
-                        joint.CreateBody1Rel().SetTargets([Sdf.Path(path)])
-                        joint.CreateAxisAttr(joint_spec.get("axis", "Y"))
-                        joint.CreateLocalPos0Attr().Set(Gf.Vec3f(*spec.pos))
-                        joint.CreateLocalPos1Attr().Set(Gf.Vec3f(0, 0, 0))
-                        joint.CreateLocalRot0Attr().Set(Gf.Quatf(1))
-                        joint.CreateLocalRot1Attr().Set(Gf.Quatf(1))
-                        joint.CreateLowerLimitAttr().Set(float(joint_spec["lower"]))
-                        joint.CreateUpperLimitAttr().Set(float(joint_spec["upper"]))
-                        return prim
+                def spawn_guided(prim_path, cfg, *args, **kwargs):
+                    from dynamic_task_moving_board_hot_air_inductor.fixtures import attach_world_guide
+                    prim = spawn_body(prim_path, cfg, *args, **kwargs)
+                    attach_world_guide(prim, joint_spec, spec.pos, spec.yaw)
+                    return prim
 
-                    obj.spawner_cfg.func = spawn_guided
+                obj.spawner_cfg.func = spawn_guided
             if spec.name in self.fixture_joints:
                 spawn_child = obj.spawner_cfg.func
                 joint_description = self.fixture_joints[spec.name]
@@ -326,7 +330,7 @@ class DynamicYamEmbodiment(YamArenaEmbodiment):
         solver_settings = getattr(self.task.module, "RIGID_SOLVER_ITERATIONS", {})
         contact_bodies={body for pair in self.contact_pairs.values() for body in pair}
         needed = (set(self.motions) | set(self.conveyors) | set(self.fixture_joints) | set(self.contact_patch_radii) | set(self.passive_loads)
-                  | set(getattr(self.task.module, 'VISUAL_PARTS', {}))
+                  | set(self.contact_offsets) | set(getattr(self.task.module, 'VISUAL_PARTS', {}))
                   | set(getattr(self.task.module, "BODY_PARTS", {})) | set(solver_settings) | contact_bodies)
         self._verified_body_paths={}
         specs={o.name:o for o in self.task.objects}
@@ -372,6 +376,19 @@ class DynamicYamEmbodiment(YamArenaEmbodiment):
                     actual.append({'path':str(collider.GetPath()),'radius_m':values[0],'minimum_m':values[1]})
                 if not actual:raise RuntimeError('contact patch body has no colliders')
                 entry['torsional_contact_patches']=actual
+            if name in self.contact_offsets:
+                from pxr import Usd
+                expected=self.contact_offsets[name]
+                colliders=[p for p in Usd.PrimRange(body) if p.HasAPI(UsdPhysics.CollisionAPI)]
+                if not colliders:
+                    raise RuntimeError('contact offset body has no colliders')
+                for collider in colliders:
+                    api=PhysxSchema.PhysxCollisionAPI(collider)
+                    offset=api.GetContactOffsetAttr().Get()
+                    if offset is None or not math.isclose(offset,expected,rel_tol=1e-6) or api.GetRestOffsetAttr().Get()!=0.:
+                        raise RuntimeError('native collision offsets differ from their declared values')
+                entry['contact_offset_m']=expected
+                entry['zero_rest_offset']=True
             parts = getattr(self.task.module, "BODY_PARTS", {}).get(name)
             if parts:
                 actual = [p for p in body.GetChild("geometry").GetChildren()
@@ -382,10 +399,20 @@ class DynamicYamEmbodiment(YamArenaEmbodiment):
                 entry["placeholder_mesh_removed"] = True
             guide = getattr(self.task.module, "SUPPORT_JOINTS", {}).get(name)
             if guide:
-                joint = UsdPhysics.PrismaticJoint.Get(stage, path+"_guide")
-                if not joint or joint.GetBody1Rel().GetTargets() != [body.GetPath()]:
-                    raise RuntimeError(f"world prismatic guide missing for {name}")
-                entry["world_prismatic_guide"] = True
+                from dynamic_task_moving_board_hot_air_inductor.fixtures import world_guide_settings
+                kind, axis, lower, upper = world_guide_settings(guide)
+                cls = {'fixed': UsdPhysics.FixedJoint, 'prismatic': UsdPhysics.PrismaticJoint,
+                       'revolute': UsdPhysics.RevoluteJoint}[kind]
+                joint = cls.Get(stage, path+"_guide")
+                if (not joint or joint.GetBody1Rel().GetTargets() != [body.GetPath()]
+                        or joint.GetBody0Rel().GetTargets()):
+                    raise RuntimeError(f"world {kind} guide missing or incorrect for {name}")
+                if axis is not None and (joint.GetAxisAttr().Get() != axis
+                                         or abs(joint.GetLowerLimitAttr().Get()-lower)>1e-6
+                                         or abs(joint.GetUpperLimitAttr().Get()-upper)>1e-6):
+                    raise RuntimeError(f"world {kind} guide limits are incorrect for {name}")
+                entry["world_"+kind+"_guide"] = True
+                entry['world_guide_axis'] = axis
             if name in self.motions:
                 if not PhysxSchema.PhysxRigidBodyAPI(body).GetDisableGravityAttr().Get():
                     raise RuntimeError(f"actuated support {name} still has gravity enabled")

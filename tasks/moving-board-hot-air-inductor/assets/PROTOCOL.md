@@ -2,8 +2,7 @@
 
 Remove a soldered power inductor from an unpowered PCB coupon using a free
 hot-air handpiece, preserve its board pads, place the removed component in the
-tray and return the released handpiece to its stand. A native full-score
-demonstration completes in 30.5 simulated seconds. The action limit is 80 seconds.
+tray and return the released handpiece to its stand. The action limit is 80 seconds.
 
 ## Hardware and reference footprint
 
@@ -15,8 +14,9 @@ The nominal mass is 13 g; the manufacturer's range is 12.4–15.0 g. The publish
 land pattern is 3.18 by 13.2 mm per pad. There are no invented side caps.
 `geometry.json` specifies all transforms, fixed hardware, materials and solids;
 `fixture_reference.scad` is the original dimensional reference. `coupon.svg`
-shows the original 80 by 60 mm FR-4 coupon with lands, tracks and test points;
-it is a reference drawing, not machine-ready manufacturing data.
+shows the original 80 by 60 mm FR-4 coupon with lands, tracks and test points.
+Both clamp jaws grip the near edge of the coupon on a fixed base. Confirm
+the coupon is stable and unpowered before enabling the tool.
 
 The unpowered coupon represents the component/PCB interface used in power-board
 rework. It is not a functioning commercial controller. The three neighboring
@@ -24,13 +24,26 @@ package proxies and copper markings are specified in the scene. The operation
 ends after removing the faulty component; installing its replacement and testing
 the converter are outside this trial.
 
-Use an ordinary regulated hot-air rework handpiece and suitable heat-resistant
-removable contact covers on the stock fingers in a physical counterpart. The
-simulation retains the stock finger shapes and nominal contact properties; it
-does not simulate heat conducted into the robot or the covers. The referenced
-part permits limited solder-reflow exposure, not indefinite heating or unlimited
-reuse. Follow its current processing limits and replace damaged components and
-coupons. The supplied CAD does not manufacture a functional heated tool.
+## Physical bench setup
+
+Use a regulated hot-air rework handpiece on an unpowered coupon. Bolt the fixture
+to the bench and clamp the board before enabling heat. Position a source-capture
+hood at the back of the work area, close to the coupon and out of the arm paths.
+Verify local exhaust is operating before heat is enabled and keep it running
+through cooldown while the component and handpiece can still emit fumes. If the
+coupon loosens or capture stops, switch off heat and halt the trial.
+[HSE guidance on local capture for solder-flux fumes](https://www.hse.gov.uk/pubns/indg249.pdf)
+
+Fit clean, removable, heat-rated sleeves over both contact fingers of each
+gripper. Cover the inner and outer fingertips and any exposed edge that could
+touch the handpiece, part or coupon. Inspect the sleeves for tears and verify the
+grip with the tool cold. After cooldown, remove the covers using the facility's
+contaminated-tools procedure and inspect the underlying fingers for residue.
+Clean contaminated covers before reuse, replace damaged covers, and keep the
+robot off shared work until its contact surfaces are clean. Keep the handpiece
+parked in its rated stand between runs. Follow the equipment manufacturer and
+component limits for heating and reuse. The simulator keeps the stock finger
+collision shapes and abstracts fume extraction, cover heat transfer and residue.
 
 ## Material rule
 
@@ -85,6 +98,15 @@ Normal contact and tangential friction are recorded separately; their signed
 vertical sum supplies the stand-support check. Normal load channels used by
 other scenes retain their previous meaning.
 
+## Recorded demonstration
+
+The clamped-board demonstration scored 1.00 in 569 control steps (28.45 s).
+The board position stayed within 0.033 mm and 0.099 degrees of its setup pose.
+The cooler solder node crossed 217 °C at 15.55 s. The robot removed the part at
+20.50 s, left it inside the tray, and returned the released handpiece to its
+stand. At the final sample the stand carried 1.723 N vertically. Independent
+replay agreed with the recorded score at every step and found intact pads.
+
 ## Outcome, reset and reproduction
 
 Score 0.5 requires a thermally released component with intact board pads still
@@ -107,8 +129,8 @@ Run a fresh simulator process for each trial. Restore all initial poses, carriag
 phase zero, four 25 C nodes, an intact bond, undamaged pads and an empty tray. The
 board is unpowered and the handpiece is already regulated and flowing. The
 submission's README gives the isolated installation, execution and scoring
-commands. Native state traces record carrier motion, support, thermal events and
-actual contact loads for independent score replay. A matching idle control keeps
+commands. Native state traces verify the clamped board stays within 1 mm of its
+setup position and record support, thermal events and actual contact loads. A matching idle control keeps
 all four thermal nodes at 25 C and earns zero. A separate engineering fixture
 test verifies actual thermal release followed by native joint solidification;
 it does not substitute for the free-handpiece robot demonstration.
@@ -119,8 +141,7 @@ Coilcraft describes power-inductor filters in supplies for robots and motor
 controls. Analog Devices lists robotics applications for a motor controller with
 a buck converter. Removing a faulty surface-mount component is a real hands-on
 step in developing and repairing these boards. This supports the proposed Impact
-on AI timelines category; fixture motion or a lab setting alone does not. These
-references do not identify the generic coupon as either manufacturer's circuit.
+on AI timelines category; the generic coupon represents the component-to-board interface.
 The defining physical operation is heating both hidden solder terminations
 through the case before extraction while preserving the pads. Polymer heat
 shrink, pressing heat-set inserts, depositing solder paste and mechanically
