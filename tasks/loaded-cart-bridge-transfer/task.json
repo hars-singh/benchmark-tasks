@@ -1,0 +1,19 @@
+{
+  "title": "Seat a removable bridge and roll a loaded cart across it",
+  "category": "Other",
+  "keywords": [
+    "bridge plate",
+    "rolling axle",
+    "cargo support",
+    "two-arm handling"
+  ],
+  "instruction": "Seat the gold bridge plate across the gap and let go. Roll the loaded cart over the bridge until both axles are on the far deck. Let go of the cart and move both hands clear. Keep the load stability and the plate seated.",
+  "context": "Removable plates let wheeled material carts cross gaps between fixed loading surfaces. This task tests plate placement and load transfer across both axles.",
+  "setup": "Two 196 mm wide fixed deck surfaces are separated by a 58 mm gap. A 124 by 94 by 7 mm aluminum plate has two underside locating tabs and a raised gold handle. The two-axle aluminum cart starts on the entry deck and carries a loose polymer test load. The axle wheels are 38 mm in diameter. The fixture geometry gives deck lip, catch rest, end stop and cart dimensions and fixed coordinates.",
+  "scoring": "Score 0.25 once the released plate lies within 7 mm of center with independently measured support on both deck lips above 0.12 N. Score 0.60 once a cart axle has crossed under load. Each axle must pass inside the 58 mm deck gap and track within 20 mm of center, stay within 4.5 mm of deck height while on the plate, and produce at least 0.12 N of plate reaction. For 1.00, both axles must cross, remain on the far deck with reaction above 0.15 N each, and the cart must stop with its center 90 mm beyond the gap midpoint and within 18 mm of track center. The load must remain in the cart and produce at least 0.15 N support at the end. The cart must stay below 20 mm/s with both wrists at least 70 mm from the cart and 55 mm from both the bridge and the cart handle for 0.55 s. An axle dropping more than 10 mm in the gap or a displaced load gives zero.",
+  "run_limit": "900 steps (45 s at 20 Hz)",
+  "fidelity": "The deck lips, bridge, axle rotation, cart and cargo are native rigid-body physics. The short tabletop decks and light cargo represent the installation and transfer sequence at bench scale.",
+  "reset_notes": "Return the cart and cargo to the entry deck and the loose bridge to the parking rest. Reset both arms to ready pose.",
+  "scores": "Dream-1 beta run: 0.00; scripted native-contact demo: 1.00",
+  "media": "M-6KBHCV"
+}

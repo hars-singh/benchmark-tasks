@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "dynamic-task-loaded-cart-bridge-transfer"
+version = "0.1.0"
+requires-python = ">=3.12"
+[project.entry-points."inspect_robots.embodiments"]
+loaded_cart_bridge_transfer_yam = "dynamic_task_loaded_cart_bridge_transfer.yam_dynamic:make_embodiment"
+[project.entry-points."inspect_robots.policies"]
+loaded_cart_bridge_transfer_demo = "dynamic_task_loaded_cart_bridge_transfer.yam_dynamic:make_scripted_policy"
+loaded_cart_bridge_transfer_idle = "dynamic_task_loaded_cart_bridge_transfer.yam_dynamic:make_idle_policy"
+loaded_cart_bridge_transfer_dream_guard = "dynamic_task_loaded_cart_bridge_transfer.budget:make_guarded_dream_policy"
+[tool.setuptools.packages.find]
+include = ["dynamic_task_loaded_cart_bridge_transfer*"]

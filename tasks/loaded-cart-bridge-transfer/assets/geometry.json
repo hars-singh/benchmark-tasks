@@ -1,0 +1,770 @@
+{
+  "units": "metres; rotations radians; primitive cylinders store radius and full height",
+  "source_sha256": "2a0534bf03a3a449a10b4e73da6e93da54e76e3affcbfef08af7dff53fa675af",
+  "objects": [
+    {
+      "name": "entry_deck",
+      "position_m": [
+        0.296,
+        -0.14,
+        0.7775000000000001
+      ],
+      "yaw_rad": 0.0,
+      "mass_kg": null,
+      "fixed": true,
+      "material": "aluminum work surface with steel side guides",
+      "solids": [
+        {
+          "kind": "box",
+          "size": [
+            0.196,
+            0.223,
+            0.058
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.15,
+            0.24,
+            0.31
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.196,
+            0.195,
+            0.007
+          ],
+          "offset": [
+            0.0,
+            -0.014499999999999985,
+            0.03250000000000003
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.196,
+            0.028,
+            0.008
+          ],
+          "offset": [
+            0.0,
+            0.097,
+            0.025000000000000033
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.008,
+            0.19,
+            0.009
+          ],
+          "offset": [
+            -0.088,
+            0.0,
+            0.039000000000000035
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.55,
+            0.59,
+            0.63
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.008,
+            0.19,
+            0.009
+          ],
+          "offset": [
+            0.088,
+            0.0,
+            0.039000000000000035
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.55,
+            0.59,
+            0.63
+          ]
+        }
+      ]
+    },
+    {
+      "name": "exit_deck",
+      "position_m": [
+        0.296,
+        0.14,
+        0.7775000000000001
+      ],
+      "yaw_rad": 0.0,
+      "mass_kg": null,
+      "fixed": true,
+      "material": "aluminum work surface with steel side guides",
+      "solids": [
+        {
+          "kind": "box",
+          "size": [
+            0.196,
+            0.223,
+            0.058
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.15,
+            0.24,
+            0.31
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.196,
+            0.195,
+            0.007
+          ],
+          "offset": [
+            0.0,
+            0.014499999999999985,
+            0.03250000000000003
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.196,
+            0.028,
+            0.008
+          ],
+          "offset": [
+            0.0,
+            -0.097,
+            0.025000000000000033
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.008,
+            0.19,
+            0.009
+          ],
+          "offset": [
+            -0.088,
+            0.0,
+            0.039000000000000035
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.55,
+            0.59,
+            0.63
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.008,
+            0.19,
+            0.009
+          ],
+          "offset": [
+            0.088,
+            0.0,
+            0.039000000000000035
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.55,
+            0.59,
+            0.63
+          ]
+        }
+      ]
+    },
+    {
+      "name": "cart_stop",
+      "position_m": [
+        0.296,
+        0.169,
+        0.8335000000000001
+      ],
+      "yaw_rad": 0.0,
+      "mass_kg": null,
+      "fixed": true,
+      "material": "elastomer end stop",
+      "solids": [
+        {
+          "kind": "box",
+          "size": [
+            0.158,
+            0.012,
+            0.04
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    },
+    {
+      "name": "bridge_rest",
+      "position_m": [
+        0.12,
+        0.142,
+        0.7545000000000001
+      ],
+      "yaw_rad": 0.0,
+      "mass_kg": null,
+      "fixed": true,
+      "material": "aluminum plate rest",
+      "solids": [
+        {
+          "kind": "box",
+          "size": [
+            0.131,
+            0.104,
+            0.014
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.02,
+            0.095,
+            0.015
+          ],
+          "offset": [
+            -0.051,
+            0.0,
+            0.015
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.02,
+            0.095,
+            0.015
+          ],
+          "offset": [
+            0.051,
+            0.0,
+            0.015
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    },
+    {
+      "name": "bridge_plate",
+      "position_m": [
+        0.12,
+        0.142,
+        0.7805
+      ],
+      "yaw_rad": 0.0,
+      "mass_kg": 0.078,
+      "fixed": false,
+      "material": "aluminum bridge plate with steel locating tabs",
+      "solids": [
+        {
+          "kind": "box",
+          "size": [
+            0.124,
+            0.094,
+            0.007
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.014,
+            0.048,
+            0.011
+          ],
+          "offset": [
+            -0.03,
+            0.0,
+            -0.009
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.014,
+            0.048,
+            0.011
+          ],
+          "offset": [
+            0.03,
+            0.0,
+            -0.009
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.016,
+            0.023,
+            0.014
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.009
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.83,
+            0.65,
+            0.34
+          ]
+        }
+      ]
+    },
+    {
+      "name": "loaded_cart",
+      "position_m": [
+        0.296,
+        -0.151,
+        0.8575000000000002
+      ],
+      "yaw_rad": 0.0,
+      "mass_kg": 0.177,
+      "fixed": false,
+      "material": "aluminum cart frame",
+      "solids": [
+        {
+          "kind": "box",
+          "size": [
+            0.104,
+            0.107,
+            0.015
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.008,
+            0.078,
+            0.017
+          ],
+          "offset": [
+            -0.044,
+            0.0,
+            0.01
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.008,
+            0.078,
+            0.017
+          ],
+          "offset": [
+            0.044,
+            0.0,
+            0.01
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.08,
+            0.008,
+            0.017
+          ],
+          "offset": [
+            0.0,
+            -0.047,
+            0.01
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.08,
+            0.008,
+            0.017
+          ],
+          "offset": [
+            0.0,
+            0.047,
+            0.01
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.025,
+            0.05,
+            0.014
+          ],
+          "offset": [
+            0.0,
+            -0.065,
+            -0.006
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.022,
+            0.022,
+            0.023
+          ],
+          "offset": [
+            0.0,
+            -0.077,
+            -0.006
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.78,
+            0.53,
+            0.23
+          ]
+        }
+      ]
+    },
+    {
+      "name": "front_axle",
+      "position_m": [
+        0.296,
+        -0.11099999999999999,
+        0.8325000000000001
+      ],
+      "yaw_rad": 0.0,
+      "mass_kg": 0.027,
+      "fixed": false,
+      "material": "steel axle and elastomer wheels",
+      "solids": [
+        {
+          "kind": "cylinder",
+          "size": [
+            0.005,
+            0.086
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "X",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.019,
+            0.016
+          ],
+          "offset": [
+            -0.037,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "X",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.019,
+            0.016
+          ],
+          "offset": [
+            0.037,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "X",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    },
+    {
+      "name": "rear_axle",
+      "position_m": [
+        0.296,
+        -0.191,
+        0.8325000000000001
+      ],
+      "yaw_rad": 0.0,
+      "mass_kg": 0.027,
+      "fixed": false,
+      "material": "steel axle and elastomer wheels",
+      "solids": [
+        {
+          "kind": "cylinder",
+          "size": [
+            0.005,
+            0.086
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "X",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.019,
+            0.016
+          ],
+          "offset": [
+            -0.037,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "X",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.019,
+            0.016
+          ],
+          "offset": [
+            0.037,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "X",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    },
+    {
+      "name": "cart_load",
+      "position_m": [
+        0.296,
+        -0.151,
+        0.8855000000000002
+      ],
+      "yaw_rad": 0.0,
+      "mass_kg": 0.092,
+      "fixed": false,
+      "material": "dry polymer test load",
+      "solids": [
+        {
+          "kind": "box",
+          "size": [
+            0.058,
+            0.055,
+            0.04
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    }
+  ],
+  "support_trajectories": {},
+  "world_guides": {},
+  "fixture_joints": {
+    "front_axle": {
+      "kind": "revolute",
+      "parent": "loaded_cart",
+      "anchor": [
+        0.296,
+        -0.11099999999999999,
+        0.8325000000000001
+      ],
+      "axis": "X",
+      "drive": {
+        "stiffness": 0.0,
+        "damping": 4.5e-05,
+        "max_force": 0.012
+      }
+    },
+    "rear_axle": {
+      "kind": "revolute",
+      "parent": "loaded_cart",
+      "anchor": [
+        0.296,
+        -0.191,
+        0.8325000000000001
+      ],
+      "axis": "X",
+      "drive": {
+        "stiffness": 0.0,
+        "damping": 4.5e-05,
+        "max_force": 0.012
+      }
+    }
+  },
+  "contact_patch_radii_m": {},
+  "passive_cutting_loads": {}
+}
