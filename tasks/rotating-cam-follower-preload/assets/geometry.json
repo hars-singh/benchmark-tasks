@@ -1,0 +1,582 @@
+{
+  "units": "metres; rotations radians; primitive cylinders store radius and full height",
+  "source_sha256": "650e873026d24b6a89a60aee12245d45feec5f8dad7a2ad750bedfeb6c092b5f",
+  "objects": [
+    {
+      "name": "cam_test_stand",
+      "position_m": [
+        0.324,
+        0.103,
+        0.755
+      ],
+      "yaw_rad": 0.0,
+      "mass_kg": 3.0,
+      "fixed": false,
+      "material": "aluminum base, stand and bearing mount",
+      "solids": [
+        {
+          "kind": "box",
+          "size": [
+            0.208,
+            0.162,
+            0.015
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.028,
+            0.039,
+            0.177
+          ],
+          "offset": [
+            -0.065,
+            -0.048,
+            0.096
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.27,
+            0.41,
+            0.48
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.028,
+            0.039,
+            0.177
+          ],
+          "offset": [
+            0.065,
+            -0.048,
+            0.096
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.27,
+            0.41,
+            0.48
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.021,
+            0.071,
+            0.051
+          ],
+          "offset": [
+            -0.064,
+            0.0,
+            0.03
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.29,
+            0.35,
+            0.39
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.021,
+            0.071,
+            0.051
+          ],
+          "offset": [
+            0.064,
+            0.0,
+            0.03
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.29,
+            0.35,
+            0.39
+          ]
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.009,
+            0.014
+          ],
+          "offset": [
+            -0.064,
+            0.0,
+            0.0565
+          ],
+          "yaw": 0.0,
+          "axis": "X",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.009,
+            0.014
+          ],
+          "offset": [
+            0.064,
+            0.0,
+            0.0565
+          ],
+          "yaw": 0.0,
+          "axis": "X",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.156,
+            0.024,
+            0.012
+          ],
+          "offset": [
+            0.0,
+            -0.048,
+            0.1785
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    },
+    {
+      "name": "eccentric_test_cam",
+      "position_m": [
+        0.324,
+        0.103,
+        0.8115000000000001
+      ],
+      "yaw_rad": 0.0,
+      "mass_kg": 0.122,
+      "fixed": false,
+      "material": "steel bearing and roller assembly",
+      "solids": [
+        {
+          "kind": "cylinder",
+          "size": [
+            0.027,
+            0.036
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0036
+          ],
+          "yaw": 0.0,
+          "axis": "X",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.005,
+            0.149
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "X",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.6,
+            0.63,
+            0.67
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.001,
+            0.004,
+            0.019
+          ],
+          "offset": [
+            -0.0186,
+            0.0,
+            0.013
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.8,
+            0.59,
+            0.24
+          ]
+        }
+      ]
+    },
+    {
+      "name": "preload_shoe",
+      "position_m": [
+        0.324,
+        0.103,
+        0.9155000000000001
+      ],
+      "yaw_rad": 0.0,
+      "mass_kg": 0.033,
+      "fixed": false,
+      "material": "steel bearing and roller assembly",
+      "solids": [
+        {
+          "kind": "box",
+          "size": [
+            0.043,
+            0.041,
+            0.012
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    },
+    {
+      "name": "follower_stem",
+      "position_m": [
+        0.324,
+        0.103,
+        0.8635
+      ],
+      "yaw_rad": 0.0,
+      "mass_kg": 0.022,
+      "fixed": false,
+      "material": "steel bearing and roller assembly",
+      "solids": [
+        {
+          "kind": "box",
+          "size": [
+            0.009,
+            0.013,
+            0.043
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.028
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.047,
+            0.014,
+            0.008
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.015
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.004,
+            0.014,
+            0.022
+          ],
+          "offset": [
+            -0.021,
+            0.0,
+            0.006
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.004,
+            0.014,
+            0.022
+          ],
+          "offset": [
+            0.021,
+            0.0,
+            0.006
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    },
+    {
+      "name": "preloaded_roller",
+      "position_m": [
+        0.324,
+        0.103,
+        0.8635
+      ],
+      "yaw_rad": 0.0,
+      "mass_kg": 0.01,
+      "fixed": false,
+      "material": "steel bearing and roller assembly",
+      "solids": [
+        {
+          "kind": "cylinder",
+          "size": [
+            0.011,
+            0.023
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "X",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
+    },
+    {
+      "name": "preload_toggle",
+      "position_m": [
+        0.324,
+        0.103,
+        0.9385000000000001
+      ],
+      "yaw_rad": 0.0,
+      "mass_kg": 0.078,
+      "fixed": false,
+      "material": "steel eccentric with polymer knob",
+      "solids": [
+        {
+          "kind": "cylinder",
+          "size": [
+            0.017,
+            0.031
+          ],
+          "offset": [
+            0.0,
+            0.0135,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "X",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.0045,
+            0.161
+          ],
+          "offset": [
+            -0.018,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "X",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.54,
+            0.59,
+            0.63
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.01,
+            0.05,
+            0.009
+          ],
+          "offset": [
+            -0.093,
+            0.022628404934126795,
+            0.0041176801887939565
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.18,
+          "pitch": 0.0,
+          "color": null
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.01,
+            0.022
+          ],
+          "offset": [
+            -0.093,
+            0.047224497253829836,
+            0.008593419524439594
+          ],
+          "yaw": 0.0,
+          "axis": "X",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": [
+            0.28,
+            0.64,
+            0.38
+          ]
+        }
+      ]
+    }
+  ],
+  "support_trajectories": {},
+  "world_guides": {
+    "cam_test_stand": {
+      "kind": "fixed"
+    }
+  },
+  "fixture_joints": {
+    "eccentric_test_cam": {
+      "kind": "revolute",
+      "parent": "cam_test_stand",
+      "anchor": [
+        0.324,
+        0.103,
+        0.8115000000000001
+      ],
+      "axis": "X",
+      "drive": {
+        "damping": 0.02,
+        "max_force": 0.16
+      }
+    },
+    "preload_shoe": {
+      "kind": "prismatic",
+      "parent": "cam_test_stand",
+      "anchor": [
+        0.324,
+        0.103,
+        0.9155000000000001
+      ],
+      "axis": "Z",
+      "lower": -0.016,
+      "upper": 0.0,
+      "drive": {
+        "stiffness": 290.0,
+        "damping": 2.0,
+        "max_force": 4.6
+      }
+    },
+    "follower_stem": {
+      "kind": "prismatic",
+      "parent": "preload_shoe",
+      "anchor": [
+        0.324,
+        0.103,
+        0.8635
+      ],
+      "axis": "Z",
+      "lower": -0.005,
+      "upper": 0.018,
+      "drive": {
+        "stiffness": 225.0,
+        "damping": 1.5,
+        "max_force": 5.2,
+        "target": -0.005
+      }
+    },
+    "preloaded_roller": {
+      "kind": "revolute",
+      "parent": "follower_stem",
+      "anchor": [
+        0.324,
+        0.103,
+        0.8635
+      ],
+      "axis": "X",
+      "drive": {
+        "damping": 1e-05,
+        "max_force": 0.009
+      }
+    },
+    "preload_toggle": {
+      "kind": "revolute",
+      "parent": "cam_test_stand",
+      "anchor": [
+        0.324,
+        0.103,
+        0.9385000000000001
+      ],
+      "axis": "X",
+      "lower": -92.0,
+      "upper": 2.0,
+      "drive": {
+        "stiffness": 0.00048,
+        "damping": 0.0007,
+        "max_force": 0.19
+      }
+    }
+  },
+  "contact_patch_radii_m": {},
+  "passive_cutting_loads": {}
+}

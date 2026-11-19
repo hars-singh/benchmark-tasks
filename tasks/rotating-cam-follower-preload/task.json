@@ -1,0 +1,19 @@
+{
+  "title": "Set the preload on a rolling cam follower",
+  "category": "Other",
+  "keywords": [
+    "cam follower",
+    "eccentric",
+    "rolling contact",
+    "preload adjustment"
+  ],
+  "instruction": "Move the green preload lever until it stays down. Take both hands away and let the rolling follower stay in contact for a full turn of the low-speed test cam.",
+  "context": "Machine service involves setting clearance between a roller follower and a mating surface. The bench fixture checks whether the follower maintains contact while its test cam turns.",
+  "setup": "An aluminum test stand holds a low-speed eccentric cam with a 27 mm radius and 3.6 mm eccentricity. The steel follower rolls on a wheel of radius 11 mm and sits on a sprung vertical slide. A green knob turns a separate steel adjuster with a 17 mm radius and 13.5 mm offset. Its bearing, guides, springs and bench locations are specified in the fixture geometry.",
+  "scoring": "Score 0.22 when the lever rotates more than 53 degrees toward the engaged position with the wrist within 44 mm of the knob. Require a measured gap in the initial unadjusted run. Score 0.62 after more than half a cam revolution of uninterrupted hands-off proof. For 1.00, the adjusted lever must remain 81 to 111 degrees from its initial reference, the follower reaction must remain 0.28 to 4.8 N and both wrists must stay more than 65 mm from the knob. The cam must turn in the positive direction above 0.35 rad/s for a full revolution under those conditions and hold them for another 0.60 s.",
+  "run_limit": "900 steps (45 s at 20 Hz)",
+  "fidelity": "Native rolling contact, spring joints and the eccentric surfaces determine follower motion. A two-position angular drive represents the lever detent. The slow test motor runs the cam at a nominal 72 degrees per second.",
+  "reset_notes": "Place the lever at zero, reset the test cam phase and verify the follower can lift off in the unloaded condition. Return both wrists to ready pose.",
+  "scores": "Dream-1 beta run: 0.00; scripted native-contact demo: 1.00",
+  "media": "M-UQWGQ4"
+}

@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "dynamic-task-rotating-cam-follower-preload"
+version = "0.1.0"
+requires-python = ">=3.12"
+[project.entry-points."inspect_robots.embodiments"]
+rotating_cam_follower_preload_yam = "dynamic_task_rotating_cam_follower_preload.yam_dynamic:make_embodiment"
+[project.entry-points."inspect_robots.policies"]
+rotating_cam_follower_preload_demo = "dynamic_task_rotating_cam_follower_preload.yam_dynamic:make_scripted_policy"
+rotating_cam_follower_preload_idle = "dynamic_task_rotating_cam_follower_preload.yam_dynamic:make_idle_policy"
+rotating_cam_follower_preload_dream_guard = "dynamic_task_rotating_cam_follower_preload.budget:make_guarded_dream_policy"
+[tool.setuptools.packages.find]
+include = ["dynamic_task_rotating_cam_follower_preload*"]
