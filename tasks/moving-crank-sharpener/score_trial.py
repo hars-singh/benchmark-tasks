@@ -3,11 +3,10 @@
 import argparse
 import json
 from pathlib import Path
+from evidence_results import trial_outcome
 p = argparse.ArgumentParser(description=__doc__)
 p.add_argument("report", type=Path)
 a = p.parse_args()
 d = json.loads(a.report.read_text())
-if d["status"] != "success" or d["results"]["errored_trials"]:
-    raise SystemExit("Execution failed; this report is not a valid scored trial.")
-print(json.dumps({"task_score": d["results"]["metrics"]["task_score"],
-                  "termination_reasons": d["samples"][0]["termination_reasons"]}))
+outcome = trial_outcome(a.report.parent, d, allow_recorded_refusal=True)
+print(json.dumps({**outcome, "termination_reasons": d["samples"][0]["termination_reasons"]}))

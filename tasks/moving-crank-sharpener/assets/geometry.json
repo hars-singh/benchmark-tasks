@@ -1,5 +1,6 @@
 {
-  "world_table_z_m": 0.7475,
+  "units": "metres; rotations radians; primitive cylinders store radius and full height",
+  "source_sha256": "97d97832c856c9dcbde0cf4b1b9216d82a9513e5030d10fc58a440a32c2207de",
   "objects": [
     {
       "name": "stage",
@@ -8,18 +9,10 @@
         -0.04,
         0.7625000000000001
       ],
-      "bounding_size_m": [
-        0.18,
-        0.14,
-        0.085
-      ],
+      "yaw_rad": 0.0,
       "mass_kg": 5.0,
       "fixed": false,
-      "color_rgb": [
-        0.28,
-        0.28,
-        0.3
-      ],
+      "material": "aluminum base and steel ballast",
       "solids": [
         {
           "kind": "box",
@@ -34,7 +27,10 @@
             0.0
           ],
           "yaw": 0.0,
-          "axis": "Z"
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
         },
         {
           "kind": "box",
@@ -49,7 +45,10 @@
             0.0425
           ],
           "yaw": 0.0,
-          "axis": "Z"
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
         }
       ]
     },
@@ -60,18 +59,10 @@
         -0.04,
         0.8675
       ],
-      "bounding_size_m": [
-        0.06,
-        0.07,
-        0.07
-      ],
+      "yaw_rad": 0.0,
       "mass_kg": 0.5,
       "fixed": false,
-      "color_rgb": [
-        0.15,
-        0.3,
-        0.65
-      ],
+      "material": "molded polymer housing",
       "solids": [
         {
           "kind": "box",
@@ -86,7 +77,10 @@
             0
           ],
           "yaw": 0.0,
-          "axis": "Z"
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
         },
         {
           "kind": "box",
@@ -101,7 +95,10 @@
             0
           ],
           "yaw": 0.0,
-          "axis": "Z"
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
         },
         {
           "kind": "box",
@@ -116,7 +113,10 @@
             -0.01975
           ],
           "yaw": 0.0,
-          "axis": "Z"
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
         },
         {
           "kind": "box",
@@ -131,7 +131,10 @@
             0.01975
           ],
           "yaw": 0.0,
-          "axis": "Z"
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
         }
       ]
     },
@@ -142,18 +145,10 @@
         -0.04,
         0.8675
       ],
-      "bounding_size_m": [
-        0.008,
-        0.09,
-        0.09
-      ],
+      "yaw_rad": 0.0,
       "mass_kg": 0.08,
       "fixed": false,
-      "color_rgb": [
-        0.75,
-        0.2,
-        0.15
-      ],
+      "material": "aluminum arm and steel spindle",
       "solids": [
         {
           "kind": "cylinder",
@@ -167,7 +162,10 @@
             0.0
           ],
           "yaw": 0.0,
-          "axis": "X"
+          "axis": "X",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
         },
         {
           "kind": "box",
@@ -182,7 +180,10 @@
             -0.0175
           ],
           "yaw": 0.0,
-          "axis": "Z"
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
         },
         {
           "kind": "cylinder",
@@ -196,7 +197,10 @@
             -0.035
           ],
           "yaw": 0.0,
-          "axis": "X"
+          "axis": "X",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
         }
       ]
     },
@@ -207,18 +211,10 @@
         -0.04,
         0.8325
       ],
-      "bounding_size_m": [
-        0.03,
-        0.016,
-        0.016
-      ],
+      "yaw_rad": 0.0,
       "mass_kg": 0.008,
       "fixed": false,
-      "color_rgb": [
-        0.12,
-        0.12,
-        0.14
-      ],
+      "material": "polymer",
       "solids": [
         {
           "kind": "cylinder",
@@ -232,7 +228,10 @@
             0.0
           ],
           "yaw": 0.0,
-          "axis": "X"
+          "axis": "X",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
         }
       ]
     },
@@ -243,19 +242,30 @@
         -0.04,
         0.8675
       ],
-      "bounding_size_m": [
-        0.003,
-        0.008,
-        0.008
-      ],
+      "yaw_rad": 0.0,
       "mass_kg": 0.005,
       "fixed": false,
-      "color_rgb": [
-        0.45,
-        0.45,
-        0.48
-      ],
-      "solids": []
+      "material": "steel cutter-face surrogate",
+      "solids": [
+        {
+          "kind": "box",
+          "size": [
+            0.003,
+            0.008,
+            0.008
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
     },
     {
       "name": "pencil",
@@ -264,18 +274,10 @@
         0.1,
         0.781
       ],
-      "bounding_size_m": [
-        0.14,
-        0.007,
-        0.007
-      ],
+      "yaw_rad": 0.0,
       "mass_kg": 0.006,
       "fixed": false,
-      "color_rgb": [
-        0.95,
-        0.68,
-        0.1
-      ],
+      "material": "wood and graphite",
       "solids": [
         {
           "kind": "cylinder",
@@ -289,7 +291,10 @@
             0.0
           ],
           "yaw": 0.0,
-          "axis": "X"
+          "axis": "X",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
         }
       ]
     },
@@ -300,19 +305,30 @@
         0.1,
         0.7625000000000001
       ],
-      "bounding_size_m": [
-        0.016,
-        0.04,
-        0.03
-      ],
+      "yaw_rad": 0.0,
       "mass_kg": null,
       "fixed": true,
-      "color_rgb": [
-        0.28,
-        0.28,
-        0.3
-      ],
-      "solids": []
+      "material": "aluminum",
+      "solids": [
+        {
+          "kind": "box",
+          "size": [
+            0.016,
+            0.04,
+            0.03
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
     },
     {
       "name": "cradle_right",
@@ -321,29 +337,57 @@
         0.1,
         0.7625000000000001
       ],
-      "bounding_size_m": [
-        0.016,
-        0.04,
-        0.03
-      ],
+      "yaw_rad": 0.0,
       "mass_kg": null,
       "fixed": true,
-      "color_rgb": [
-        0.28,
-        0.28,
-        0.3
-      ],
-      "solids": []
+      "material": "aluminum",
+      "solids": [
+        {
+          "kind": "box",
+          "size": [
+            0.016,
+            0.04,
+            0.03
+          ],
+          "offset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 0.0,
+          "axis": "Z",
+          "roll": 0.0,
+          "pitch": 0.0,
+          "color": null
+        }
+      ]
     }
   ],
-  "support_joints": {
+  "support_trajectories": {
+    "stage": {
+      "center": [
+        0.245,
+        -0.04,
+        0.7625000000000001
+      ],
+      "amplitude": [
+        0,
+        0.005,
+        0
+      ],
+      "period_s": 8.0,
+      "phase": 0.0,
+      "yaw_amplitude": 0.0
+    }
+  },
+  "world_guides": {
     "stage": {
       "axis": "Y",
       "lower": -0.02,
       "upper": 0.02
     }
   },
-  "object_joints": {
+  "fixture_joints": {
     "tool": {
       "kind": "fixed",
       "parent": "stage",
@@ -363,7 +407,7 @@
       ],
       "axis": "X",
       "drive": {
-        "damping": 0.02,
+        "damping": 0.006,
         "max_force": 0.08
       }
     },
@@ -391,29 +435,25 @@
       ],
       "axis": "X",
       "lower": 0.0,
-      "upper": 0.006,
+      "upper": 0.024,
       "drive": {
-        "stiffness": 500.0,
+        "stiffness": 780.0,
         "damping": 3.0,
-        "max_force": 5.0
+        "max_force": 8.0
       }
     }
   },
-  "motion": {
-    "stage": {
-      "center": [
-        0.245,
-        -0.04,
-        0.7625000000000001
-      ],
-      "amplitude": [
-        0,
-        0.005,
-        0
-      ],
-      "period_s": 8.0,
-      "phase": 0.0,
-      "yaw_amplitude": 0.0
-    }
+  "contact_patch_radii_m": {},
+  "passive_cutting_loads": {},
+  "material_model": {
+    "maximum_taper_mm": 18,
+    "axial_removal_per_net_loaded_turn_mm": 2.4,
+    "accepted_spring_compression_mm": [
+      1.4,
+      5.0
+    ],
+    "drive_damping_when_unloaded_Nm_s_per_degree": 0.006,
+    "drive_damping_when_cutting_Nm_s_per_degree": 0.026,
+    "crank_torque_cap_Nm": 0.08
   }
 }

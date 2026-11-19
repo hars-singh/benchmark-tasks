@@ -21,8 +21,9 @@ policy = {"demo": "moving_crank_sharpener_demo", "idle": "moving_crank_sharpener
 if a.budget_ledger and a.policy == "dream":
     policy = "moving_crank_sharpener_dream_guard"
 cmd = [cli, "run", "--embodiment", "moving_crank_sharpener_yam", "--policy", policy,
+       "-E", "device=cuda:0",
        "-E", "task="+str(root/"scene.py"), "-E", "object_jitter=0", "-E", "control_hz=20",
-       "-E", "cam_width=320", "-E", "cam_height=176", "--instruction", spec["instruction"],
+       "-E", "cam_width=640", "-E", "cam_height=352", "--instruction", spec["instruction"],
        "--scorer", "task_score", "--max-steps", "1600", "--seed", "0",
        "--store-frames", "--log-dir", str(a.out.resolve())]
 if a.policy == "dream":
