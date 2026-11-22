@@ -1,6 +1,7 @@
 """Dynamic support fixtures and feedback demonstrations for the YAM Arena adapter.
 
 Only explicitly named supports receive bounded actuator forces and torques.
+An optional, audited cutting rule applies passive resistance at a blade point.
 All bodies move through physics. Importing this module does not start Isaac.
 """
 
@@ -28,8 +29,43 @@ class DynamicYamEmbodiment(YamArenaEmbodiment):
         self.motions = dict(getattr(self.task.module, "MOTIONS", {}))
         self.conveyors = dict(getattr(self.task.module, "CONVEYORS", {}))
         self.fixture_joints = dict(getattr(self.task.module, "OBJECT_JOINTS", {}))
+        self.contact_pairs = dict(getattr(self.task.module, "CONTACT_PAIRS", {}))
+        self.contact_friction_pairs=set(getattr(self.task.module,'CONTACT_FRICTION_PAIRS',()))
+        if not self.contact_friction_pairs.issubset(self.contact_pairs):
+            raise ValueError('friction reporting requires a declared filtered contact pair')
+        self._friction_sums={name:np.zeros(3) for name in self.contact_friction_pairs}
+        from dynamic_task_moving_crank_sharpener.passive_loads import PlaningResistance
+        self.passive_loads=dict(getattr(self.task.module,'PASSIVE_CUTTING_LOADS',{}))
+        self._passive_sums={name:np.zeros(4) for name in self.passive_loads}
+        self._passive_work={name:0. for name in self.passive_loads}
+        self._passive_samples=0
+        from dynamic_task_moving_crank_sharpener.geometry import contact_patch_radii
+        self.contact_patch_radii={name:contact_patch_radii(value) for name,value in
+                                  getattr(self.task.module,'CONTACT_PATCH_RADII',{}).items()}
+        self.contact_offsets={name:float(value) for name,value in
+                              getattr(self.task.module,'CONTACT_OFFSETS_M',{}).items()}
+        self._contact_views = {}
+        self._contact_sums = {}
+        self._contact_samples = 0
         self._conveyor_controls = []
         specs = {o.name: o for o in self.task.objects}
+        for name,load in self.passive_loads.items():
+            if (not isinstance(load,PlaningResistance) or name not in specs or not specs[name].free
+                    or name in self.motions or name in self.conveyors or name in self.fixture_joints
+                    or load.contact_pair not in self.contact_pairs
+                    or self.contact_pairs[load.contact_pair][0]!=name):
+                raise ValueError('passive cutting load requires a free, unactuated contact-reporting body')
+            target=self.contact_pairs[load.contact_pair][1]
+            if target not in specs or specs[target].free:
+                raise ValueError('world-space planing resistance requires fixed stock')
+        if any(name not in specs for name in self.contact_patch_radii):
+            raise ValueError('contact patch settings require a declared task body')
+        if any(name not in specs or not math.isfinite(offset) or offset<=0.
+               for name,offset in self.contact_offsets.items()):
+            raise ValueError('contact offsets require declared task bodies and positive finite distances')
+        for pair in self.contact_pairs.values():
+            if len(pair)!=2 or any(name not in specs for name in pair):
+                raise ValueError("contact pairs require two declared bodies")
         self._support_masses = {name: specs[name].mass for name in self.motions if name in specs}
         for name, trajectory in self.motions.items():
             if name not in specs or not specs[name].free:
@@ -49,6 +85,9 @@ class DynamicYamEmbodiment(YamArenaEmbodiment):
                 raise ValueError("fixture joint requires distinct declared parent and child bodies")
             if not specs[child].free or not specs[joint["parent"]].free:
                 raise ValueError("fixture joints require declared rigid bodies")
+        for name in getattr(self.task.module, "SUPPORT_JOINTS", {}):
+            if name not in specs or not specs[name].free or name in self.fixture_joints:
+                raise ValueError("world guides require rigid bodies without a fixture parent")
         self._motion_time = 0.0
         self._motion_enabled = False
         self._driver_base = None
@@ -70,10 +109,27 @@ class DynamicYamEmbodiment(YamArenaEmbodiment):
             atexit.register(adapter._close_app_at_exit)
         from yam_arena import scene
 
+        antialiasing=getattr(self.task.module,"RENDER_ANTIALIASING",None)
+        if antialiasing is not None:
+            if antialiasing not in {"Off","FXAA","TAA","DLSS","DLAA"}:
+                raise ValueError("unsupported task rendering antialiasing mode")
+            import omni.replicator.core as rep
+            rep.settings.set_render_rtx_realtime(antialiasing=antialiasing)
+
         original = scene.task_object
 
         def support_object(spec):
             obj = original(spec)
+            if spec.name in {pair[0] for pair in self.contact_pairs.values()}:
+                spawn_contact = obj.spawner_cfg.func
+
+                def spawn_reporting(prim_path, cfg, *args, **kwargs):
+                    from pxr import PhysxSchema
+                    prim = spawn_contact(prim_path, cfg, *args, **kwargs)
+                    PhysxSchema.PhysxContactReportAPI.Apply(prim).CreateThresholdAttr(0.)
+                    return prim
+
+                obj.spawner_cfg.func = spawn_reporting
             solver = getattr(self.task.module, "RIGID_SOLVER_ITERATIONS", {}).get(spec.name)
             if solver:
                 position, velocity = solver
@@ -105,6 +161,37 @@ class DynamicYamEmbodiment(YamArenaEmbodiment):
                     return prim
 
                 obj.spawner_cfg.func = spawn_compound
+            visual_parts = getattr(self.task.module, 'VISUAL_PARTS', {}).get(spec.name)
+            if visual_parts:
+                spawn_visual_base = obj.spawner_cfg.func
+
+                def spawn_visual_parts(prim_path, cfg, *args, **kwargs):
+                    from dynamic_task_moving_crank_sharpener.geometry import author_compound
+                    prim = spawn_visual_base(prim_path, cfg, *args, **kwargs)
+                    author_compound(prim, visual_parts, cfg, visual_only=True)
+                    return prim
+
+                obj.spawner_cfg.func = spawn_visual_parts
+            patch_radii=self.contact_patch_radii.get(spec.name)
+            contact_offset=self.contact_offsets.get(spec.name)
+            if patch_radii is not None or contact_offset is not None:
+                spawn_surface=obj.spawner_cfg.func
+
+                def spawn_contact_surface(prim_path,cfg,*args,**kwargs):
+                    from pxr import PhysxSchema,Usd,UsdPhysics
+                    prim=spawn_surface(prim_path,cfg,*args,**kwargs)
+                    for collider in Usd.PrimRange(prim):
+                        if collider.HasAPI(UsdPhysics.CollisionAPI):
+                            api=PhysxSchema.PhysxCollisionAPI.Apply(collider)
+                            if patch_radii is not None:
+                                api.CreateTorsionalPatchRadiusAttr(patch_radii[0])
+                                api.CreateMinTorsionalPatchRadiusAttr(patch_radii[1])
+                            if contact_offset is not None:
+                                api.CreateContactOffsetAttr(contact_offset)
+                                api.CreateRestOffsetAttr(0.)
+                    return prim
+
+                obj.spawner_cfg.func=spawn_contact_surface
             if spec.name in self.conveyors:
                 obj.spawner_cfg.rigid_props.kinematic_enabled = True
                 obj.spawner_cfg.rigid_props.disable_gravity = True
@@ -128,26 +215,17 @@ class DynamicYamEmbodiment(YamArenaEmbodiment):
                 obj.spawner_cfg.rigid_props.kinematic_enabled = False
                 obj.spawner_cfg.rigid_props.disable_gravity = True
                 obj.spawner_cfg.rigid_props.enable_ccd = False
-                joint_spec = getattr(self.task.module, "SUPPORT_JOINTS", {}).get(spec.name)
-                if joint_spec:
-                    spawn_body = obj.spawner_cfg.func
+            joint_spec = getattr(self.task.module, "SUPPORT_JOINTS", {}).get(spec.name)
+            if joint_spec:
+                spawn_body = obj.spawner_cfg.func
 
-                    def spawn_guided(prim_path, cfg, *args, **kwargs):
-                        from pxr import Gf, Sdf, UsdPhysics
-                        prim = spawn_body(prim_path, cfg, *args, **kwargs)
-                        path = str(prim.GetPath())
-                        joint = UsdPhysics.PrismaticJoint.Define(prim.GetStage(), path+"_guide")
-                        joint.CreateBody1Rel().SetTargets([Sdf.Path(path)])
-                        joint.CreateAxisAttr(joint_spec.get("axis", "Y"))
-                        joint.CreateLocalPos0Attr().Set(Gf.Vec3f(*spec.pos))
-                        joint.CreateLocalPos1Attr().Set(Gf.Vec3f(0, 0, 0))
-                        joint.CreateLocalRot0Attr().Set(Gf.Quatf(1))
-                        joint.CreateLocalRot1Attr().Set(Gf.Quatf(1))
-                        joint.CreateLowerLimitAttr().Set(float(joint_spec["lower"]))
-                        joint.CreateUpperLimitAttr().Set(float(joint_spec["upper"]))
-                        return prim
+                def spawn_guided(prim_path, cfg, *args, **kwargs):
+                    from dynamic_task_moving_crank_sharpener.fixtures import attach_world_guide
+                    prim = spawn_body(prim_path, cfg, *args, **kwargs)
+                    attach_world_guide(prim, joint_spec, spec.pos, spec.yaw)
+                    return prim
 
-                    obj.spawner_cfg.func = spawn_guided
+                obj.spawner_cfg.func = spawn_guided
             if spec.name in self.fixture_joints:
                 spawn_child = obj.spawner_cfg.func
                 joint_description = self.fixture_joints[spec.name]
@@ -173,6 +251,43 @@ class DynamicYamEmbodiment(YamArenaEmbodiment):
         if self._driver_base is self._base:
             return
         self._verify_physical_scene()
+        self._machine_visuals = None
+        machine_specs = getattr(self.task.module, "MACHINE_VISUALS", {})
+        if machine_specs:
+            import omni.usd
+            from dynamic_task_moving_crank_sharpener.mechanisms import MechanismVisuals
+            self._machine_visuals = MechanismVisuals(
+                omni.usd.get_context().get_stage(), machine_specs,
+                self._verified_body_paths, {o.name:o for o in self.task.objects}, self.conveyors)
+        if self.contact_pairs:
+            import json
+            from pathlib import Path
+            import omni.usd
+            from pxr import Usd,UsdPhysics
+            from isaaclab_physx.physics import PhysxManager
+            sim_view=PhysxManager.get_physics_sim_view()
+            usd_stage=omni.usd.get_context().get_stage()
+            specs={o.name:o for o in self.task.objects};view_audit={};self._contact_views={}
+            for name,pair in self.contact_pairs.items():
+                sensor=self._verified_body_paths[pair[0]];target=self._verified_body_paths[pair[1]]
+                # A static object's Xform is not a physics-registered actor.
+                # Its concrete collision shapes must be selected individually.
+                filters=([target] if specs[pair[1]].free else
+                         [str(p.GetPath()) for p in Usd.PrimRange(usd_stage.GetPrimAtPath(target))
+                          if p.HasAPI(UsdPhysics.CollisionAPI)])
+                if not filters:raise RuntimeError('contact target has no registered collision shapes')
+                view=sim_view.create_rigid_contact_view([sensor],filter_patterns=[filters],max_contact_data_count=128)
+                if view.sensor_count!=1 or view.filter_count!=len(filters):
+                    raise RuntimeError('native contact view did not resolve all declared sensor/filter objects')
+                self._contact_views[name]=view
+                view_audit[name]={'configured_sensor_path':sensor,'configured_filter_paths':filters,
+                                  'native_sensor_count':int(view.sensor_count),'native_filter_count':int(view.filter_count),
+                                  'reports_filtered_friction':name in self.contact_friction_pairs}
+            audit_path=os.environ.get('DYNA_SCENE_AUDIT')
+            if audit_path:
+                audit_file=Path(audit_path);audit=json.loads(audit_file.read_text());audit['contact_views']=view_audit
+                audit_file.write_text(json.dumps(audit,indent=2)+'\n')
+            self._contact_sums={name:np.zeros(3) for name in self.contact_pairs}
         if getattr(self._base, "_physics_handles_decimation", False):
             raise RuntimeError("dynamic supports require the PhysX per-step action loop")
         self._driver_base = self._base
@@ -182,6 +297,23 @@ class DynamicYamEmbodiment(YamArenaEmbodiment):
             if self._motion_enabled:
                 self._motion_time += self._base.physics_dt
                 self._drive_supports(self._motion_time)
+                instantaneous_contacts={}
+                for name,view in self._contact_views.items():
+                    raw=view.get_contact_force_matrix(dt=self._base.physics_dt)
+                    values=raw.detach().cpu().numpy() if hasattr(raw,"detach") else raw.numpy()
+                    if values.shape!=(1,view.filter_count,3) or not np.isfinite(values).all():
+                        raise RuntimeError("invalid native filtered contact-force data")
+                    instantaneous_contacts[name]=values[0].sum(axis=0)
+                    self._contact_sums[name]+=instantaneous_contacts[name]
+                    if name in self.contact_friction_pairs:
+                        from dynamic_task_moving_crank_sharpener.contact_forces import filtered_friction_sum
+                        buffers=view.get_friction_data(dt=self._base.physics_dt)
+                        def numpy(value):
+                            return value.detach().cpu().numpy() if hasattr(value,'detach') else value.numpy()
+                        self._friction_sums[name]+=filtered_friction_sum(
+                            numpy(buffers[0]),numpy(buffers[2]),numpy(buffers[3]),view.filter_count)
+                self._apply_passive_loads(instantaneous_contacts)
+                self._contact_samples+=1
             apply_robot_actions()
 
         self._base.action_manager.apply_action = advance_supports
@@ -196,29 +328,91 @@ class DynamicYamEmbodiment(YamArenaEmbodiment):
 
         stage = omni.usd.get_context().get_stage()
         solver_settings = getattr(self.task.module, "RIGID_SOLVER_ITERATIONS", {})
-        needed = (set(self.motions) | set(self.conveyors) | set(self.fixture_joints)
-                  | set(getattr(self.task.module, "BODY_PARTS", {})) | set(solver_settings))
+        contact_bodies={body for pair in self.contact_pairs.values() for body in pair}
+        needed = (set(self.motions) | set(self.conveyors) | set(self.fixture_joints) | set(self.contact_patch_radii) | set(self.passive_loads)
+                  | set(self.contact_offsets) | set(getattr(self.task.module, 'VISUAL_PARTS', {}))
+                  | set(getattr(self.task.module, "BODY_PARTS", {})) | set(solver_settings) | contact_bodies)
+        self._verified_body_paths={}
+        specs={o.name:o for o in self.task.objects}
         audit = {"verified": True, "objects": {}}
+        if self.contact_patch_radii:
+            scenes=[p for p in stage.Traverse() if p.IsA(UsdPhysics.Scene)]
+            if len(scenes)!=1:
+                raise RuntimeError('finite torsional contact patches require one verified physics scene')
+            solver=PhysxSchema.PhysxSceneAPI(scenes[0]).GetSolverTypeAttr().Get()
+            if solver!='TGS':
+                raise RuntimeError('finite torsional contact patches require the native TGS solver')
+            audit['contact_patch_solver']={'type':solver,'path':str(scenes[0].GetPath())}
         for name in needed:
-            matches = [p for p in stage.Traverse() if p.GetName() == name and p.HasAPI(UsdPhysics.RigidBodyAPI)]
+            matches = [p for p in stage.Traverse() if p.GetName() == name
+                       and (not specs[name].free or p.HasAPI(UsdPhysics.RigidBodyAPI))]
             if len(matches) != 1:
-                raise RuntimeError(f"expected one spawned rigid body named {name}, found {len(matches)}")
+                raise RuntimeError(f"expected one spawned task body named {name}, found {len(matches)}")
             body = matches[0]
             path = str(body.GetPath())
+            self._verified_body_paths[name]=path
             entry = {"path": path}
+            visual_parts = getattr(self.task.module, 'VISUAL_PARTS', {}).get(name)
+            if visual_parts:
+                visuals = [p for p in body.GetChild('geometry').GetChildren()
+                           if p.GetName().startswith('visual_') and not p.GetName().endswith('_material')]
+                if len(visuals) != len(visual_parts) or any(
+                        p.HasAPI(UsdPhysics.CollisionAPI) or p.HasAPI(UsdPhysics.RigidBodyAPI) for p in visuals):
+                    raise RuntimeError('surface visuals must match declarations and have no physics schemas')
+                entry['nonphysical_visual_parts'] = len(visuals)
+            if name in self.passive_loads:
+                from dataclasses import asdict
+                entry['passive_cutting_load']={**asdict(self.passive_loads[name]),'discrete_stopping_impulse_cap':True}
+            if name in self.contact_patch_radii:
+                from pxr import Usd
+                expected=self.contact_patch_radii[name]
+                colliders=[p for p in Usd.PrimRange(body) if p.HasAPI(UsdPhysics.CollisionAPI)]
+                actual=[]
+                for collider in colliders:
+                    api=PhysxSchema.PhysxCollisionAPI(collider)
+                    values=(api.GetTorsionalPatchRadiusAttr().Get(),api.GetMinTorsionalPatchRadiusAttr().Get())
+                    if any(v is None or abs(v-e)>1e-7 for v,e in zip(values,expected)):
+                        raise RuntimeError('native contact patch radii differ from their declared values')
+                    actual.append({'path':str(collider.GetPath()),'radius_m':values[0],'minimum_m':values[1]})
+                if not actual:raise RuntimeError('contact patch body has no colliders')
+                entry['torsional_contact_patches']=actual
+            if name in self.contact_offsets:
+                from pxr import Usd
+                expected=self.contact_offsets[name]
+                colliders=[p for p in Usd.PrimRange(body) if p.HasAPI(UsdPhysics.CollisionAPI)]
+                if not colliders:
+                    raise RuntimeError('contact offset body has no colliders')
+                for collider in colliders:
+                    api=PhysxSchema.PhysxCollisionAPI(collider)
+                    offset=api.GetContactOffsetAttr().Get()
+                    if offset is None or not math.isclose(offset,expected,rel_tol=1e-6) or api.GetRestOffsetAttr().Get()!=0.:
+                        raise RuntimeError('native collision offsets differ from their declared values')
+                entry['contact_offset_m']=expected
+                entry['zero_rest_offset']=True
             parts = getattr(self.task.module, "BODY_PARTS", {}).get(name)
             if parts:
-                actual = [p for p in body.GetChild("geometry").GetChildren() if p.GetName().startswith("solid_")]
+                actual = [p for p in body.GetChild("geometry").GetChildren()
+                          if p.GetName().startswith("solid_") and p.HasAPI(UsdPhysics.CollisionAPI)]
                 if len(actual) != len(parts) or stage.GetPrimAtPath(path+"/geometry/mesh").IsValid():
                     raise RuntimeError(f"compound geometry for {name} was not spawned as declared")
                 entry["compound_solids"] = len(actual)
                 entry["placeholder_mesh_removed"] = True
             guide = getattr(self.task.module, "SUPPORT_JOINTS", {}).get(name)
             if guide:
-                joint = UsdPhysics.PrismaticJoint.Get(stage, path+"_guide")
-                if not joint or joint.GetBody1Rel().GetTargets() != [body.GetPath()]:
-                    raise RuntimeError(f"world prismatic guide missing for {name}")
-                entry["world_prismatic_guide"] = True
+                from dynamic_task_moving_crank_sharpener.fixtures import world_guide_settings
+                kind, axis, lower, upper = world_guide_settings(guide)
+                cls = {'fixed': UsdPhysics.FixedJoint, 'prismatic': UsdPhysics.PrismaticJoint,
+                       'revolute': UsdPhysics.RevoluteJoint}[kind]
+                joint = cls.Get(stage, path+"_guide")
+                if (not joint or joint.GetBody1Rel().GetTargets() != [body.GetPath()]
+                        or joint.GetBody0Rel().GetTargets()):
+                    raise RuntimeError(f"world {kind} guide missing or incorrect for {name}")
+                if axis is not None and (joint.GetAxisAttr().Get() != axis
+                                         or abs(joint.GetLowerLimitAttr().Get()-lower)>1e-6
+                                         or abs(joint.GetUpperLimitAttr().Get()-upper)>1e-6):
+                    raise RuntimeError(f"world {kind} guide limits are incorrect for {name}")
+                entry["world_"+kind+"_guide"] = True
+                entry['world_guide_axis'] = axis
             if name in self.motions:
                 if not PhysxSchema.PhysxRigidBodyAPI(body).GetDisableGravityAttr().Get():
                     raise RuntimeError(f"actuated support {name} still has gravity enabled")
@@ -237,6 +431,10 @@ class DynamicYamEmbodiment(YamArenaEmbodiment):
                     raise RuntimeError(f"fixture joint missing or incorrectly connected for {name}")
                 entry["fixture_joint"] = self.fixture_joints[name]["kind"]
             audit["objects"][name] = entry
+            if name in {pair[0] for pair in self.contact_pairs.values()}:
+                if not body.HasAPI(PhysxSchema.PhysxContactReportAPI):
+                    raise RuntimeError(f"contact reporter not enabled for {name}")
+                entry["contact_reporter"]=True
             if name in solver_settings:
                 api = PhysxSchema.PhysxRigidBodyAPI(body)
                 actual = [api.GetSolverPositionIterationCountAttr().Get(), api.GetSolverVelocityIterationCountAttr().Get()]
@@ -251,6 +449,8 @@ class DynamicYamEmbodiment(YamArenaEmbodiment):
         import torch
         import warp as wp
 
+        if self._machine_visuals is not None:
+            self._machine_visuals.update(seconds)
         for name, trajectory in self.motions.items():
             state = trajectory.at(seconds)
             view = self._base.scene[name].root_view
@@ -283,10 +483,50 @@ class DynamicYamEmbodiment(YamArenaEmbodiment):
             view.apply_forces_and_torques_at_position(force_data=forces, torque_data=torques,
                                                       position_data=None, indices=indices, is_global=True)
 
+    def _apply_passive_loads(self,contacts):
+        if not self.passive_loads:return
+        import torch
+        import warp as wp
+        for name,load in self.passive_loads.items():
+            view=self._base.scene[name].root_view
+            sample=view.get_transforms();torch_backend=isinstance(sample,torch.Tensor)
+            pose=sample[0] if torch_backend else wp.to_torch(sample)[0]
+            velocity=view.get_velocities();com=view.get_coms()
+            velocity=velocity[0] if torch_backend else wp.to_torch(velocity)[0]
+            com=com[0,:3] if torch_backend else wp.to_torch(com)[0,:3]
+            raw_mass=view.get_inv_masses();raw_inertia=view.get_inv_inertias()
+            inverse_mass=(raw_mass if torch_backend else wp.to_torch(raw_mass)).detach().cpu().numpy().reshape(-1)[0]
+            inverse_inertia=(raw_inertia if torch_backend else wp.to_torch(raw_inertia)).detach().cpu().numpy()[0].reshape((3,3),order='F')
+            force,point,speed=load.evaluate(pose.detach().cpu().numpy(),velocity.detach().cpu().numpy(),
+                                          com.detach().cpu().numpy(),contacts[load.contact_pair][2],
+                                          dt=self._base.physics_dt,inverse_mass=float(inverse_mass),
+                                          inverse_inertia_local=inverse_inertia)
+            force_tensor=torch.as_tensor(force,dtype=pose.dtype,device=pose.device).reshape(1,3)
+            point_tensor=torch.as_tensor(point,dtype=pose.dtype,device=pose.device).reshape(1,3)
+            indices=torch.tensor([0],dtype=torch.int32,device=pose.device)
+            if not torch_backend:
+                force_tensor=wp.from_torch(force_tensor.contiguous());point_tensor=wp.from_torch(point_tensor.contiguous())
+                indices=wp.from_torch(indices)
+            view.apply_forces_and_torques_at_position(force_data=force_tensor,torque_data=None,
+                                                      position_data=point_tensor,indices=indices,is_global=True)
+            power=float(np.dot(force,speed))
+            self._passive_sums[name][:3]+=force;self._passive_sums[name][3]+=power
+            self._passive_work[name]+=-power*self._base.physics_dt
+        self._passive_samples+=1
+
     def reset(self, scene, *, seed=None):
         self._motion_enabled = False
+        self._contact_samples=0
+        self._passive_samples=0
+        for value in self._passive_sums.values():value[:]=0.
+        for name in self._passive_work:self._passive_work[name]=0.
+        for force in self._contact_sums.values():force[:]=0.
+        for force in self._friction_sums.values():force[:]=0.
         for control in self._conveyor_controls:
             control.Set(False)
+        reset_visuals = getattr(self.task.module, 'reset_visuals', None)
+        if callable(reset_visuals):
+            reset_visuals()
         observation = super().reset(scene, seed=seed)
         self._motion_time = 0.0
         self._motion_enabled = True
@@ -305,7 +545,20 @@ class DynamicYamEmbodiment(YamArenaEmbodiment):
         self.task.module.LIVE_OBJECTS = object_states(self._env, self.task.names)
         world = self._base.arena_world
         origin = self._base.scene.env_origins[0]
+        contact_forces={name:force/max(1,self._contact_samples) for name,force in self._contact_sums.items()}
+        friction_forces={name:force/max(1,self._contact_samples) for name,force in self._friction_sums.items()}
+        passive={name:{'force_world_N':(value[:3]/max(1,self._passive_samples)).copy(),
+                       'power_W':float(value[3]/max(1,self._passive_samples)),
+                       'dissipated_work_J':self._passive_work[name]} for name,value in self._passive_sums.items()}
+        self._passive_samples=0
+        for value in self._passive_sums.values():value[:]=0.
+        self._contact_samples=0
+        for force in self._contact_sums.values():force[:]=0.
+        for force in self._friction_sums.values():force[:]=0.
         self.task.module.LIVE_CONTEXT = {
+            "contact_forces": contact_forces,
+            "contact_friction_forces":friction_forces,
+            "passive_loads":passive,
             "time_s": self._motion_time,
             "tcp": {side: tcp_world(self._base.scene[side+"_robot"]) for side in ("left", "right")},
             "tcp_rotation": {side: link_poses(self._base.scene[side+"_robot"])["gripper"][:3, :3]
@@ -365,6 +618,15 @@ class DynamicYamEmbodiment(YamArenaEmbodiment):
                       "tcp": {k: v.tolist() for k, v in context["tcp"].items()},
                       "body_origins": {k: v.tolist() for k, v in context["body_origins"].items()},
                       "gripper": context["gripper"], "score_info": result.info}
+            if context.get('tcp_rotation'):
+                record['tcp_rotation']={name:value.tolist() for name,value in context['tcp_rotation'].items()}
+            if context.get("contact_forces"):
+                record["contact_forces"]={name:value.tolist() for name,value in context["contact_forces"].items()}
+            if context.get('contact_friction_forces'):
+                record['contact_friction_forces']={name:value.tolist() for name,value in context['contact_friction_forces'].items()}
+            if context.get('passive_loads'):
+                record['passive_loads']={name:{**value,'force_world_N':value['force_world_N'].tolist()}
+                                         for name,value in context['passive_loads'].items()}
             self._trace_file.write(json.dumps(record, separators=(",", ":"))+"\n")
             if round(self._motion_time*self.info.control_hz) % 20 == 0:
                 self._trace_file.flush()
@@ -405,6 +667,12 @@ class DynamicScriptedPolicy(YamScriptedPolicy):
                 pos, rotation, finger = target_hook(arm, label, t, pos, rotation, finger)
             q, _, _ = solve_target(pos, rotation, plan.q, plan.base_pos)
             plan.q = q
+            joint_hook=getattr(module,'demo_joint_target',None)
+            if callable(joint_hook):
+                q=np.asarray(joint_hook(arm,label,t,q.copy()),dtype=float)
+                if (q.shape!=(6,) or not np.isfinite(q).all()
+                        or np.any(q<ik.LOWER) or np.any(q>ik.UPPER)):
+                    raise ValueError('scripted joint targets must respect the native arm limits')
             targets.append(np.r_[q, np.clip(finger/FINGER_OPEN, 0, 1)])
         meta = {"request_stop": True} if t > self._end+self.hold_s else {}
         return ActionChunk(actions=[Action(data=pack(*targets), meta=meta)], control_hz=1/self._dt)

@@ -6,7 +6,8 @@ from types import SimpleNamespace
 import unittest
 
 import numpy as np
-from yam_arena.task_file import load
+from yam_arena import station
+from yam_arena.task_file import ObjectState, load
 
 
 class SharpenerTests(unittest.TestCase):
@@ -22,19 +23,25 @@ class SharpenerTests(unittest.TestCase):
         scene = self.scene
         tool = np.asarray(scene.TOOL.pos)
         wheel = np.asarray(scene.WHEEL.pos)
-        cutter_x = tool[0] + scene.CUTTER_OFFSET + max(0., feed) + cutter_lag
-        start_face = tool[0] + scene.CUTTER_OFFSET - scene.CUTTER_HALF_THICKNESS
-        pencil = np.array((start_face + feed - .070, tool[1], tool[2]))
-        orientation = (0., 0., 0., 1.) if end == 1 else (0., 0., 1., 0.)
+        yaw = scene.TOOL.yaw
+        axial = np.array((math.cos(yaw), math.sin(yaw), 0.))
+        lateral = np.array((-math.sin(yaw), math.cos(yaw), 0.))
+        up = np.array((0., 0., 1.))
+        cutter = tool + (scene.CUTTER_OFFSET + max(0., feed) + cutter_lag)*axial
+        start_face = scene.CUTTER_OFFSET - scene.CUTTER_HALF_THICKNESS
+        pencil = tool + (start_face + feed - scene.PENCIL_LENGTH/2)*axial
+        pencil_yaw = yaw + (0. if end == 1 else math.pi)
         if not aligned:
-            orientation = (0., 0., math.sin(.2), math.cos(.2))
+            pencil_yaw += .4
+        orientation = (0., 0., math.sin(pencil_yaw/2), math.cos(pencil_yaw/2))
+        radial = math.cos(self.angle)*lateral + math.sin(self.angle)*up
         context = {
             'body_origins': {
                 'tool': tool,
                 'pencil': pencil,
-                'cutter': np.array((cutter_x, tool[1], tool[2])),
+                'cutter': cutter,
                 'wheel': wheel,
-                'knob': wheel + (.046, .035*math.cos(self.angle), .035*math.sin(self.angle)),
+                'knob': wheel + scene.KNOB_OFFSET_X*axial + scene.CRANK_RADIUS*radial,
             },
         }
         scene.observe({'pencil': SimpleNamespace(quat_xyzw=orientation)}, context, .05)
@@ -47,7 +54,12 @@ class SharpenerTests(unittest.TestCase):
 
     def test_fixed_insertion_many_turns_below_first_score_tier(self):
         self.revolve(12)
-        self.assertLess(self.scene._cut_depth_by_end[1], .006)
+        self.assertLess(self.scene._cut_depth_by_end[1], self.scene.CUT_TIERS[0])
+
+    def test_native_root_coordinates_use_python_floats(self):
+        for body in self.scene.OBJECTS:
+            with self.subTest(body=body.name):
+                self.assertTrue(all(type(value) is float for value in body.pos))
 
     def test_progressive_feed_completes_the_taper(self):
         self.revolve(8, advance=True)
@@ -98,6 +110,26 @@ class SharpenerTests(unittest.TestCase):
         self.assertEqual(self.scene._cut_depth_by_end, {-1: 0., 1: 0.})
         self.assertEqual(self.scene._loaded_by_end, {-1: 0., 1: 0.})
 
+    def test_complete_point_uses_the_bare_table_as_the_return_surface(self):
+        scene = self.scene
+        self.revolve(8, advance=True)
+        center = np.array((.28, .18, scene.TOP + scene.PENCIL_THICKNESS/2))
+        half_extents = np.array((scene.PENCIL_DIAMETER, scene.PENCIL_LENGTH, scene.PENCIL_THICKNESS))/2
+        turned_flat = np.array((0., 0., math.sqrt(.5), math.sqrt(.5)))
+
+        def score_at(root):
+            scene.LIVE_CONTEXT = {'body_origins': {'pencil': root},
+                                  'tcp': {'left': np.array((-.2, .3, 1.)),
+                                          'right': np.array((-.2, -.3, 1.))}}
+            still = np.zeros(3)
+            pencil = ObjectState(root, turned_flat, still, still, root-half_extents, root+half_extents)
+            return scene.score({'pencil': pencil})
+
+        self.assertEqual(score_at(center), 1.)
+        self.assertEqual(score_at(center + (0., 0., .031)), .75)
+        near_far_edge = center.copy()
+        near_far_edge[1] = station.TABLE_CENTER[1] + station.TABLE_SIZE[1]/2 - .020
+        self.assertEqual(score_at(near_far_edge), .75)
 
 if __name__ == '__main__':
     unittest.main()

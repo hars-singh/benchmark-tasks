@@ -1,6 +1,6 @@
-# Feed a pencil into a moving sharpener while turning its crank
+# Sharpen a loose pencil with an X-ACTO KS 1031 hand crank
 
-Sharpen one end of the yellow pencil. Gradually feed it into the front opening while turning the rear crank clockwise until it has a complete point. Withdraw the pencil, place it across both rests, let go, and move both hands clear.
+Sharpen one end of the yellow pencil in the X-ACTO KS 1031. Pick it up from the table and feed it into the front opening while turning the crank clockwise. Withdraw it when it has an intact complete point, set it on the table, release it, and move both hands clear.
 
 The complete fixed layout, materials, scoring thresholds and approximations are in `task.json`.
 The primary score is computed from physical object state by `scene.py`, independently of the policy.
@@ -46,7 +46,7 @@ ledger at $10. It does not claim to report the provider's invoice.
 Every run uses seed 0, zero jitter, 20 Hz control, 240 Hz physics on `cuda:0` and three 640x352 camera observations.
 The action limit is 1600 steps. Cold rendering can take several minutes;
 simulation time pauses while inference is pending. The demo can end on sustained success.
-Recorded scores for the two videos are: Dream-1 beta run: 0.00; scripted native-contact demo: 1.00.
+Recorded scores for the two videos are: Dream-1 beta refused after 848 recorded steps; last native state score: 0.00; scripted native-contact demo: 1.00.
 
 Use the completed `adhoc_*.json` report, excluding any `.live.json`:
 
@@ -61,7 +61,7 @@ the Dream policy receives the standard cameras and robot joint state.
 
 ## Reset and licenses
 
-Center the carriage, put the crank knob below its axis, and reset the cutter spring and both cut depths. Place a fresh blunt 140 mm pencil on the rests and start both arms ready with open grippers. For a physical trial, use an enclosed manual-feed sharpener, clear the shavings and calibrate the visible feed reference as described in the protocol.
+Secure the sharpener by the three stock mounting screws, set the standard opening and clear the shavings. Put the crank knob below its axis and lay a fresh blunt pencil flat at its start mark. The simulator resets spring and cut depths. The pencil rests directly on the table.
 
 New task code and generated primitive geometry are MIT licensed; see `LICENSE`.
 The YAM robot model (URDF and meshes) is MIT licensed by I2RT Robotics. The pinned
@@ -72,3 +72,11 @@ states that the wrapper and its upstream `YAM-inspect-Isaac` code have no licens
 The task bundle includes original task geometry and fetches the rig separately as
 a runtime dependency. It redistributes no upstream rig code, URDF or robot meshes.
 Isaac Lab-Arena, Isaac Lab and Isaac Sim retain their upstream licenses and terms.
+
+## Recorded model refusal
+
+The supplied model recording ends at an actual Dream API safety refusal. It is not a completed normal action horizon. The stated model score comes from the last independently scored native physical state; the unmodified Inspect report retains its error status. The video includes every recorded step before refusal. Exact error:
+
+```text
+PolicyError: DreamAPI refused the inference request: DA-4000 BAD_REQUEST (malformed): unsafe instruction in this scene, refused: The object is an electric motor, not a pencil sharpener, causing damage.
+```
