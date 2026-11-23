@@ -1,0 +1,18 @@
+{
+  "title": "Prime an aquarium siphon and stop at the bucket mark",
+  "category": "Societal relatability",
+  "keywords": [
+    "aquarium water change",
+    "self-priming siphon",
+    "flow control",
+    "gravel"
+  ],
+  "instruction": "Prime the intake under water. Keep the gravel in the tank and lift the intake clear when the bucket reaches the marked band.",
+  "context": "During an aquarium water change, the operator starts a siphon without drawing air, holds the intake clear of the gravel and breaks the siphon before removing too much water.",
+  "setup": "Use an Aqueon Mini 5-inch siphon kit 100106226 with its 1.83 m hose and stock bucket clip. Use a glass 242 by 222 mm aquarium filled to 123 mm above the bench, with a thin bed of 15 mm inert gravel and no animals. Start the intake upright on a bare patch of the tank floor. Route the hose over the wall into a marked 160 mm inside-diameter clear bucket. The open hose end is 43 mm above the bench and over the bucket. Mark 0.35 L and 0.45 L on the bucket.",
+  "scoring": "Score 0.50 if the intact submerged intake primes the siphon and the bucket collects at least 0.18 L. Score 1.00 if the bucket contains 0.35 to 0.45 L and the intake remains 10 mm above the water for one second after flow stops. Score zero if the bucket exceeds the upper mark, any gravel leaves the tank or water is visibly spilled outside the two vessels. Measure the result with the marks and a side view.",
+  "run_limit": "680 actions (34 s at 20 Hz)",
+  "fidelity": "The stock-style intake and gravel are independent contact bodies. A lumped flow model counts physically executed submersed priming cycles and transfers water according to the height difference and hose resistance. Native tube position determines when air interrupts the siphon. The hose and liquid surfaces are visual models and the physical trial checks for spills.",
+  "scores": "Dream-1 beta run: 0.00; scripted native-contact demo: 1.00",
+  "media": "M-MWUJT4"
+}
