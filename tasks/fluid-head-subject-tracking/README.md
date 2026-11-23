@@ -5,7 +5,7 @@ Use the pan handle to film the moving orange target in one level shot. Keep the 
 The complete fixed layout, materials, scoring thresholds and approximations are in `task.json`.
 The primary score is computed from physical object state by `scene.py`, independently of the policy.
 
-The [physical trial protocol](assets/PROTOCOL.md) describes the bench setup and measurements.
+The Logitech MX Brio 4K ($199.99 list) fits the head's stock 1/4-20 plate. The [physical trial protocol](assets/PROTOCOL.md) gives the recording setup and field-of-view check.
 
 ## Install
 
