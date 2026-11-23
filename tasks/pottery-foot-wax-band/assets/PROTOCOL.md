@@ -1,0 +1,7 @@
+# Apply wax resist to a stoneware foot ring
+
+Use the VEVOR tabletop 450 W pottery wheel, SKU PDSLPJBSSLTM85KA2001V1, with its original 279 mm aluminium wheelhead and complete splash basin. Center a dry, unglazed bisque cup upside down on the wheelhead and hold the lower rim against it with three small dabs of soft throwing clay. Use a cup with a flat raised foot about 8 mm wide, 3–5 mm tall and 81 mm across. Clean loose dust from the cup and wheel, and set the wheel to 30 rpm before starting. Place an ordinary 1/4-inch flat brush on a brush rest. Load it from a pre-measured 0.4 mL sample of Mayco AC-302 water-based wax resist and tap it once against the dish to remove a hanging drop.
+
+Hold the brush bristles lightly against the exposed face of the ring as the cup turns. Use a wet overhead photograph with raking desk light, a ruler scale and a fixed center mark on the wheel. Read the longest dry gap along the center of the ring and any overrun onto the inner recess. Complete the coating and remove the brush from the work area before judging. The physical test finishes before drying, glaze application or firing. The simulator uses a green coverage witness so wet sectors remain visible in the recording.
+
+Sources [wheelhead and speed specification](https://www.vevor.com/category-c_10000/product-p_010905195434) · [Mayco wax resist for pottery feet](https://www.maycocolors.com/wp-content/uploads/2026/03/Specialty_web.pdf) · [Mayco banding method](https://www.buymayco.com/docs/mayco_book.pdf)

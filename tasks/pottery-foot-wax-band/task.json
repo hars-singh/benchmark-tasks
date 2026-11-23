@@ -1,0 +1,18 @@
+{
+  "title": "Wax the foot ring of an inverted bisque cup as the wheel turns",
+  "category": "Societal relatability",
+  "keywords": [
+    "pottery",
+    "wax resist",
+    "banding wheel",
+    "surface coating"
+  ],
+  "instruction": "Apply wax resist to the whole raised foot ring as the pottery wheel turns. Keep wax out of the recess inside the ring, and lift the brush off to show the result.",
+  "context": "In a ceramics studio, a waxed foot keeps glaze from adhering where the piece will touch its kiln shelf. Skipping part of the rim leaves a spot that can pick up glaze. Wax on the adjacent surface prevents glaze from adhering there.",
+  "setup": "Place a dry inverted stoneware cup at the center of a VEVOR 450 W tabletop pottery wheel, SKU PDSLPJBSSLTM85KA2001V1, with its original 11-inch aluminium wheelhead and splash basin. Hold the cup with three small clay dabs at the rim touching the wheel. Use a cup about 105 mm across and 85 mm tall with a raised flat foot ring whose inner and outer diameters are 65 and 81 mm. Put a quarter-inch flat paintbrush with about 0.4 mL of Mayco AC-302 wax resist on a brush rest to the left. Start with the wheel turning at 30 rpm.",
+  "scoring": "Record a final overhead photograph under oblique light while the wax is wet. Score 0.50 for at least 180 degrees of coated circumference covering the raised foot with no gap over 5 mm within the coated arc. Score 1.00 when no gap over 2 mm remains anywhere on the ring, wax remains within 2 mm of its edges, and the bristles are 75 mm clear of the work and both grippers are 120 mm clear of the center for one second. Score zero if wax extends by over 2 mm onto the adjacent recess, the cup shifts more than 5 mm from the wheel center, or the cup falls.",
+  "run_limit": "560 actions (28 s at 20 Hz)",
+  "fidelity": "A native motor joint maintains wheel rotation, with a breakable joint for the clay dabs that hold the cup. The physical brush bristles deflect at a native joint. The colored witness overlay represents coverage calculated from the observed position and deflection of the brush tip. The trial ends while the wax is wet.",
+  "scores": "Dream-1 beta run: 0.00; scripted native-contact demo: 1.00",
+  "media": "M-RB262Q"
+}
