@@ -1,0 +1,18 @@
+{
+  "title": "Register a PCB stencil with a printer’s X and Y adjusters",
+  "category": "Impact on AI timelines",
+  "keywords": [
+    "electronics assembly",
+    "PCB stencil",
+    "two-axis stage",
+    "pad registration"
+  ],
+  "instruction": "Use the X and Y adjusters to align the stencil openings over the copper lands. Open the frame to inspect the board and close it again with the alignment preserved.",
+  "context": "Before applying paste, an electronics assembler checks that opening and reseating the fixture preserves stencil-to-pad registration. Offset apertures can cause shorts or leave a pad without paste.",
+  "setup": "Use an SMTmax YSJ-250 manual stencil printer with the 430 by 350 mm working area, its stock X and Y adjustment controls, and normal board stops. Fit a 338 by 345 mm aluminium frame with a 0.25 mm stainless stencil. Center a 90 by 112 by 1.6 mm FR-4 test PCB in the stops. The coupon has two rows of four 5.5 mm square copper pads at x offsets ±14 mm and y offsets ±12.5 and ±37.5 mm. The stencil has matching 4.2 mm square openings. Set the closed stencil 1.7 mm above the pad plane for dry inspection. Start with the PCB offset -0.95 mm in x and +0.70 mm in y. The stencil frame starts closed.",
+  "scoring": "Score 0.50 for all eight aperture centres within 0.38 mm of their copper land centres in the closed position. Score 1.00 when the aligned frame then opens at least 21 degrees and closes again, with all eight centres within the same tolerance for a full second and both grippers more than 80 mm clear of the grasped rail. Score zero if no alignment is achieved or the base moves more than 2 mm. A vertical camera, feeler gauge and ruler support measurement.",
+  "run_limit": "640 actions (32 s at 20 Hz)",
+  "fidelity": "Independent native X and Y joints carry the PCB. The separate knobs drive these joints through a native angular-to-linear constraint with a nominal 1.8 mm lead. The stencil has open apertures and pivots on the rear hinge. The physical task measures dry registration and repeat closure.",
+  "scores": "Dream-1 beta run: 0.00; scripted native-contact demo: 1.00",
+  "media": "M-7SLAJW"
+}

@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "dynamic-task-pcb-stencil-xy-registration"
+version = "0.1.0"
+requires-python = ">=3.12"
+[project.entry-points."inspect_robots.embodiments"]
+pcb_stencil_xy_registration_yam = "dynamic_task_pcb_stencil_xy_registration.yam_dynamic:make_embodiment"
+[project.entry-points."inspect_robots.policies"]
+pcb_stencil_xy_registration_demo = "dynamic_task_pcb_stencil_xy_registration.yam_dynamic:make_scripted_policy"
+pcb_stencil_xy_registration_idle = "dynamic_task_pcb_stencil_xy_registration.yam_dynamic:make_idle_policy"
+pcb_stencil_xy_registration_dream_guard = "dynamic_task_pcb_stencil_xy_registration.budget:make_guarded_dream_policy"
+[tool.setuptools.packages.find]
+include = ["dynamic_task_pcb_stencil_xy_registration*"]
