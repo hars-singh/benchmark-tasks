@@ -1,0 +1,18 @@
+{
+  "title": "Clear a jammed sheet with a printer’s manual feed knob",
+  "category": "Societal relatability",
+  "keywords": [
+    "manual feed",
+    "printer paper jam",
+    "rubber platen",
+    "paper handling"
+  ],
+  "instruction": "Turn the manual knob away from the feed side until the paper clears the rollers. Put the removed paper in the tray and close the printer cover.",
+  "context": "Clearing a paper jam is a common user-facing printer task. This dot-matrix model has an external feed knob that advances the remnant through the rollers while the printer is off.",
+  "setup": "Use an Epson LX-350 switched off with its original right-side knob and cover. The 348 × 275 × 154 mm case is centred at (451, -96) mm, with the platen axis along x and the knob on the negative-x side. The hinged cover starts open and the loose supply paper is already torn away. A 174 by 78 mm creased paper remnant starts in the nip with 29 mm of its length below the platen and the rest visible above. The upper 8 mm of the torn edge is curled. Put a 224 by 141 mm receiving tray at (448, -350) mm on the same table.",
+  "scoring": "Score 0.50 if the manual knob raises the exposed sheet by at least 23 mm before either gripper grasps it. Score 1.00 if the whole sheet then rests in the tray, the roller path is clear and the printer cover stays stationary within three degrees of closed for one second. Score zero if the printer base moves more than 2 mm or the robot pulls out the paper before the knob advances it. Use fixed tape marks and a side view for measurement.",
+  "run_limit": "900 actions (45 s at 20 Hz)",
+  "fidelity": "A free paper remnant advances by native contact with the rubber platen as the stock-style knob turns. The spring-supported opposing roller models nip pressure. The mildly folded paper uses a measured rigid thickness envelope. The task ends with the mechanism closed and the sheet removed while the printer is off. A next-page feed is a separate physical check after the cover closes.",
+  "scores": "Dream-1 beta run: 0.00; scripted native-contact demo: 1.00",
+  "media": "M-RC6CR5"
+}

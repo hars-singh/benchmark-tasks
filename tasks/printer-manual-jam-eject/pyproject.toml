@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "dynamic-task-printer-manual-jam-eject"
+version = "0.1.0"
+requires-python = ">=3.12"
+[project.entry-points."inspect_robots.embodiments"]
+printer_manual_jam_eject_yam = "dynamic_task_printer_manual_jam_eject.yam_dynamic:make_embodiment"
+[project.entry-points."inspect_robots.policies"]
+printer_manual_jam_eject_demo = "dynamic_task_printer_manual_jam_eject.yam_dynamic:make_scripted_policy"
+printer_manual_jam_eject_idle = "dynamic_task_printer_manual_jam_eject.yam_dynamic:make_idle_policy"
+printer_manual_jam_eject_dream_guard = "dynamic_task_printer_manual_jam_eject.budget:make_guarded_dream_policy"
+[tool.setuptools.packages.find]
+include = ["dynamic_task_printer_manual_jam_eject*"]
