@@ -1,0 +1,18 @@
+{
+  "title": "Center a wandering sanding belt and verify its tracking",
+  "category": "Societal relatability",
+  "keywords": [
+    "bench sander",
+    "belt tracking",
+    "idler adjustment",
+    "start-stop check"
+  ],
+  "instruction": "Use the stock switch to check which way the belt drifts. Stop it, adjust the external tracking knob, then run the belt again to check that it stays centered. Switch the machine off and move away.",
+  "context": "A replacement abrasive belt can walk across its drums after installation. A controlled start-stop check and tracking adjustment keep the belt on the machine during later sanding.",
+  "setup": "Bolt a WEN 6502T belt and disc sander to a stable bench with its 4 by 36 inch belt bed horizontal. Leave the stock guards, backstop, keyed switch and tracking knob in place. Use the manufacturer's 80-grit, 4 by 36 inch belt. Begin stopped with the belt roughly centered and the tracking screw slightly biased so the belt drifts to one side on the initial observed check. Use the stock switch and external knob only.",
+  "scoring": "Score 0.50 if the observed first run shows at least 3.5 mm of drift, the knob is adjusted while the belt is stopped, and the second run stays within 2.5 mm of the center for 1.5 seconds. Score 1.00 after switching off and leaving the observed centered belt stopped and both grippers clear for one second. Score zero if the belt leaves the working width, the robot touches the abrasive surface during motion or the knob is adjusted while the drums turn. Use a fixed side camera and an external ruler beside the guard.",
+  "run_limit": "570 actions (28.5 s at 20 Hz)",
+  "fidelity": "The stock rocker, tracking screw, idler carriage, rotating drums and axial belt travel are native joints. A reduced-speed drum drive and a measured screw-to-tracking model approximate the unloaded belt. The stock splice moves around the continuous loop at the measured drum speed.",
+  "scores": "Dream-1 beta run: 0.00; scripted native-contact demo: 1.00",
+  "media": "M-J8ZERQ"
+}
