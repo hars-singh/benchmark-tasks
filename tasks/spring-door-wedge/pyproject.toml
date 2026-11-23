@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "dynamic-task-spring-door-wedge"
+version = "0.1.0"
+requires-python = ">=3.12"
+[project.entry-points."inspect_robots.embodiments"]
+spring_door_wedge_yam = "dynamic_task_spring_door_wedge.yam_dynamic:make_embodiment"
+[project.entry-points."inspect_robots.policies"]
+spring_door_wedge_demo = "dynamic_task_spring_door_wedge.yam_dynamic:make_scripted_policy"
+spring_door_wedge_idle = "dynamic_task_spring_door_wedge.yam_dynamic:make_idle_policy"
+spring_door_wedge_dream_guard = "dynamic_task_spring_door_wedge.budget:make_guarded_dream_policy"
+[tool.setuptools.packages.find]
+include = ["dynamic_task_spring_door_wedge*"]

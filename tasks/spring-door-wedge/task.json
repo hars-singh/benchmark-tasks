@@ -1,0 +1,18 @@
+{
+  "title": "Keep a self-closing door open with a rubber wedge",
+  "category": "Societal relatability",
+  "keywords": [
+    "self-closing door",
+    "rubber wedge",
+    "spring hinge",
+    "bimanual support"
+  ],
+  "instruction": "Open the spring-hinged door past 66 degrees. Keep it open while placing the rubber wedge under it. Let the door settle between 50 and 61 degrees, supported by the wedge, and move both hands clear.",
+  "context": "A loose door wedge keeps an ordinary workshop door open while carrying items through the doorway. The closer constantly pulls on the door while the wedge is placed.",
+  "setup": "Use an ordinary non-rated door on a Deltana DSH35 single-action spring hinge and a stock Shepherd 9163 rubber wedge. The YAM-scale wooden panel is 265 by 244 mm and clears the hard floor by 17 mm. It starts fully closed and unlatched. The fixed jamb is at x=492 mm and y=247 mm. A loose 121 by 32 by 38 mm wedge starts flat at x=235 mm and y=-282 mm with the thick heel toward positive X. Use a ruler, overhead angle marks and a side camera.",
+  "scoring": "Score 0.50 if the door is opened past 66 degrees and the wedge holds it between 27 and 63 degrees with hands clear. Score 1.00 if the door instead holds between 50 and 61 degrees for two seconds, with the bottom rail resting on the nonslipping wedge. Score zero if hands or other objects bear the door, the wedge creeps during the final hold, or the door closes.",
+  "run_limit": "440 actions (22 seconds at 20 Hz)",
+  "fidelity": "The scaled wood panel has a native single-axis hinge and bounded spring drive. A loose rubber wedge supports the rail by friction and passive collision. The spring effort and rubber friction are nominal.",
+  "scores": "Dream-1 beta run: 0.00; scripted native-contact demo: 1.00",
+  "media": "M-9L8DJD"
+}
