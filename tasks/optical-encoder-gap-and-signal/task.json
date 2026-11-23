@@ -1,0 +1,18 @@
+{
+  "title": "Seat an optical encoder and verify it in both directions",
+  "category": "Impact on AI timelines",
+  "keywords": [
+    "optical encoder",
+    "push-on hub",
+    "motor assembly",
+    "quadrature"
+  ],
+  "instruction": "Press the encoder hub to its installed height with the supplied spacer. Put the spacer on its mat, then turn the shaft to the 45-degree mark and back to verify both directions.",
+  "context": "At robot actuator bring-up, the gap between the codewheel and its sensor affects joint position feedback. Seating the hub against the stock spacer and checking both directions catches an incomplete assembly before the actuator enters service.",
+  "setup": "Use a US Digital E8T miniature optical kit encoder with the 720 cycles-per-revolution disk, 6.35 mm push-on hub and SPACER-E8T tool. The unpowered motor has an accessible rear shaft on a rigid bench mount. Its encoder base is centred and fixed and its sensor PCB is seated. The hub has already been started square on the shaft about 3.55 mm above seated height. The original spacer lies over the hub with its notches at the latches. The rotor is at zero on a rear test handwheel with a 176 mm rim and 20 mm spinner. Use marked zero and 45-degree positions. Put a 71 by 68 mm rubber return mat next to the motor.",
+  "scoring": "Score 0.50 for seating the hub to the spacer, with the spacer then left on the mat. Score 1.00 if a forward and reverse 45-degree check each yields 336 to 384 quadrature edges in the appropriate order, with forward and reverse magnitudes within 14 edges and no rotation for one second after the check. Score zero if the hub fails to seat, the spacer is left on the shaft or the motor mount shifts over 2 mm. Use a signed quadrature counter and the two marked shaft positions in the physical trial.",
+  "run_limit": "460 actions (23 s at 20 Hz)",
+  "fidelity": "The prestarted disk descends against nominal axial press fit resistance in a native shaft guide. The stock-style spacer contacts the hub and is removed as a free body. The native rotor includes the handwheel and shaft. The simulator derives ideal quadrature edge counts from the disk motion only at the installed height. Photodiode signal quality is measured in the physical trial.",
+  "scores": "Dream-1 beta run: 0.00; scripted native-contact demo: 1.00",
+  "media": "M-RCZFM3"
+}

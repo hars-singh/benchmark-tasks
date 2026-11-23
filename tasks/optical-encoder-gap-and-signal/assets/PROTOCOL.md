@@ -1,0 +1,11 @@
+# Seat and verify a US Digital E8T optical encoder
+
+Mount an E8T configured for a 6.35 mm shaft and 720 optical cycles per revolution with the base and sensor PCB installed as in steps 1–3 of the manufacturer instructions. Set the drive motor power off. Use one new push-on hub for each physical installation. Prestart it square with the longer end facing the base. Leave about 3.55 mm of travel to the spacer-defined depth. Start with the manufacturer's SPACER-E8T tool above the hub and its notches aligned to the base latches. Use a shaft support and use the encoder before the cover is snapped on.
+
+Place the shaft axis at x=354 mm and y=42 mm on the bench and its top mounting surface 115 mm above the table. Use a 176 mm handwheel on the rear shaft with a 20 mm spinner and zero and 45-degree witness marks. The optional handwheel drawing uses a stock goBILDA 1314-0016-0250 quarter-inch shaft hub and two M4 screws spaced 16 mm apart. Print the spinner separately and fit it over a smooth M4 shank with washers and a locknut so the spinner can turn freely. Use a fixed bench pointer to read the marks. Use the rubber tool mat at x=263 mm, y=142 mm. After seating, lift the spacer out and set it down on the mat.
+
+Power the encoder independently at 5 V and attach a signed quadrature counter. Zero the counter. Turn the unpowered shaft toward the 45-degree mark, pause and turn back. The nominal count per leg is 360 edges. For full score, expect 336–384 edges each way, reverse phase order on the return, forward and reverse magnitudes differing by at most 14, and a stationary shaft for one second after the check. Score the terminal part of the check with the tool on the mat.
+
+The simulator represents the aligned shaft guide and axial press-fit resistance with a native joint. It predicts ideal quadrature edges from the disk's measured rotation when the disk is within 0.21 mm of seated height on the normal axis. The actual signal is checked using the real encoder during physical testing.
+
+[Manufacturer assembly instructions](https://www.usdigital.com/media/ebxnr5yd/e8t-assembly-instructions.pdf) · [E8T specifications](https://www.usdigital.com/products/encoders/incremental/kit/e8t/) · [Quarter-inch handwheel hub](https://www.gobilda.com/set-screw-hubs-16mm-pattern)
