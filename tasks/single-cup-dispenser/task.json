@@ -1,0 +1,19 @@
+{
+  "title": "Take one paper cup from a spring-fed counter dispenser",
+  "category": "Societal relatability",
+  "keywords": [
+    "cup dispenser",
+    "nest separation",
+    "spring follower",
+    "flexible gasket"
+  ],
+  "instruction": "Take exactly one paper cup from the dispenser and set it upright on the blue mat. Leave the next cup in the dispenser and move both hands clear.",
+  "context": "A spring feeds the next nested cup against a flexible rim gate. The recognisable self-service task is to separate one cup and leave the other cups captured for the next person.",
+  "setup": "Use the standard two-arm YAM station. Coordinates in metres, x forward, y left, table top z=0.7475. The horizontal rim of the San Jamar EZ-Fit C2410C dispenser is centred at (0.421,-0.164,0.8765). Use its original XC2422SBK small gasket, C2415 spring and 100458BK pusher. The high-impact plastic tube is 597 mm long. The mounting hole is 146 mm. Start four empty GMZ 9 oz B single-wall paper cups, 95 mm high with a 77 mm rim and 52 mm base, with small bases out and the first rim at x=0.428. The simulated stack pitch is 8 mm. The spring follower engages the rearmost rim. The 138 mm square blue landing mat is centred at (0.420,-0.420) on a 127 mm serving riser, mat top z=0.8761. The grippers start open and clear. Provide a side view of the outlet and an overview of the landing mat.",
+  "scoring": "0.50 when the leading cup is completely outside the outlet and the next cup advances at least 2.5 mm to its retained position. Measure the unloaded stack pitch and use a fixed side camera and a ruler to compare the old and new exposed cup bases. The new base must be 77–97 mm out from the gasket plane. 1.00 when the only dispensed cup is on its base within 12 degrees of upright, entirely within the mat area, stationary and released with both grippers at least 83 mm from its centre for one continuous second, and the remaining cups stay in the dispenser. A second cup fully leaving the outlet or any cup falling off the counter makes the score zero, even if recovered.",
+  "run_limit": "700 actions (35 s at 20 Hz)",
+  "fidelity": "Each simulated 95 mm paper cup has a colliding tapered polygonal shell, base and rolled rim. Six sprung native hinges approximate the flexible hexagonal gasket. A guided spring follower feeds the loose stack through contact. Friction, nesting pitch and spring dynamics are nominal. The rigid shells omit local paper compression and permanent creasing. The cups are free bodies throughout each trial.",
+  "reset_notes": "Load four matching empty cups with the small bases facing out. Set the lead rim at the reference position, with the follower touching the last rim. Verify that the leading cup is presented and that the remaining cups stay inside when the robot is at rest. Restore the mat and open both grippers.",
+  "scores": "Dream-1 beta run: 0.00; scripted native-contact demo: 1.00",
+  "media": "M-A2N68B"
+}
