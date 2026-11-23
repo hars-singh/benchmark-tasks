@@ -1,0 +1,18 @@
+{
+  "title": "Wet a pour-over coffee bed and complete the measured pour",
+  "category": "Societal relatability",
+  "keywords": [
+    "V60",
+    "drip kettle",
+    "controlled pouring",
+    "paper filter"
+  ],
+  "instruction": "Pour a small dose from the centre outward to wet the grounds. Pause for 24 seconds, then finish the measured pour. Set the kettle back on its rest and let the filter drain.",
+  "context": "A manual pour-over starts with even wetting. A controlled second pour keeps water in the coffee bed and below the filter rim while the dripper drains.",
+  "setup": "Use a Hario V60 size 01 dripper and paper filter on a clear coffee server and gram scale. Level 8.0 g of medium-ground coffee in the paper. Place a Hario V60 Drip Kettle AIR VKA-35-TB filled with 220 g of room-temperature water on a 157 by 170 mm silicone rest. The spout starts toward the front, opposite its handle. Set the dripper centre at x=271 mm and y=25 mm and the kettle rest at x=351 mm and y=253 mm in bench coordinates. Tare the kettle and the server separately before the trial.",
+  "scoring": "Score 0.50 for a 20 to 28 g first pour with at least 82 percent of the bed wet and a pause of at least 24 seconds. Score 1.00 if the completed pour delivers 117 to 124 g, at least 94 percent of the bed is wet, 98 to 110 g drains into the server and the kettle is placed upright on its rest and released. Score zero for more than 2 g outside the filter or a shifted server. Use a gram scale and overhead photos at the two checkpoints.",
+  "run_limit": "1,500 actions (75 s at 20 Hz)",
+  "fidelity": "The kettle is a native rigid body. An approximation uses its measured nozzle pose to locate the stream and rate and integrates wetting and drainage with a fixed retention mass. The practice pour uses room-temperature water. Liquid slosh, heating, and extraction chemistry are outside the scored operation.",
+  "scores": "Dream-1 beta run: 0.00; scripted native-contact demo: 1.00",
+  "media": "M-RMQNMM"
+}

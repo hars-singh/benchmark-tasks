@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "dynamic-task-pour-over-bed-wetting"
+version = "0.1.0"
+requires-python = ">=3.12"
+[project.entry-points."inspect_robots.embodiments"]
+pour_over_bed_wetting_yam = "dynamic_task_pour_over_bed_wetting.yam_dynamic:make_embodiment"
+[project.entry-points."inspect_robots.policies"]
+pour_over_bed_wetting_demo = "dynamic_task_pour_over_bed_wetting.yam_dynamic:make_scripted_policy"
+pour_over_bed_wetting_idle = "dynamic_task_pour_over_bed_wetting.yam_dynamic:make_idle_policy"
+pour_over_bed_wetting_dream_guard = "dynamic_task_pour_over_bed_wetting.budget:make_guarded_dream_policy"
+[tool.setuptools.packages.find]
+include = ["dynamic_task_pour_over_bed_wetting*"]
