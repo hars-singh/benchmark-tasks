@@ -1,0 +1,18 @@
+{
+  "title": "Pass a loaded shopping bag to a moving hand",
+  "category": "Societal relatability",
+  "keywords": [
+    "human-robot handoff",
+    "paper shopping bag",
+    "load transfer",
+    "two handles"
+  ],
+  "instruction": "Lift the shopping bag by both handles and offer both loops to the reaching person. Release the bag after their fingers support both handles.",
+  "context": "A cashier hands a filled paper carrier to a customer. Both paper handles need support so the bag stays level while the customer takes its weight and moves away.",
+  "setup": "Place an unprinted 180 × 80 × 220 mm Biopack TB0180822 kraft paper bag with two twisted paper handles at x=339 mm, y=-215 mm on the YAM table, with its narrow dimension along y. Put two closed 100 g and 85 g sample cartons upright inside. Let the two handle loops stand and lean their crowns toward one another with a 24 mm crown separation. The recipient approaches from positive y with their fingers pointing along negative y and slightly curled up. From 4.5 to 7.15 seconds after the start their palm centre moves 283 mm to x=366 mm, y=-23 mm, at z=1100.5 mm. Hold this pose until 10.05 seconds, then withdraw 283 mm over 3.05 seconds. Use table-edge marks to reproduce the approach and return.",
+  "scoring": "Score 0.50 if the loaded bag is lifted at least 48 mm clear of the table and both crowns are presented within 33 mm of one another at the handover position. Score 1.00 if the person takes both handles, carries the bag at least 160 mm away from the handover point and supports it for one second with both robot grippers at least 103 mm clear. The lowest point of the bag must remain at least 50 mm above the table during this final measurement. Score zero if either carton falls out or the bag tilts over 33 degrees.",
+  "run_limit": "400 actions (20 s at 20 Hz)",
+  "fidelity": "Bag, two suspended handles and loads are individual rigid bodies. Each loop pivots compliantly at its attachment row. The moving recipient is a shaped native contact body with fixed curled fingers. Their physical support and the native motion of the bag and both handles are observed through the carry. Paper buckling and active finger articulation are omitted.",
+  "scores": "Dream-1 beta run: 0.00; scripted native-contact demo: 1.00",
+  "media": "M-2WMB37"
+}
