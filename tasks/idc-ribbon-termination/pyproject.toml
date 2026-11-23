@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "dynamic-task-idc-ribbon-termination"
+version = "0.1.0"
+requires-python = ">=3.12"
+[project.entry-points."inspect_robots.embodiments"]
+idc_ribbon_termination_yam = "dynamic_task_idc_ribbon_termination.yam_dynamic:make_embodiment"
+[project.entry-points."inspect_robots.policies"]
+idc_ribbon_termination_demo = "dynamic_task_idc_ribbon_termination.yam_dynamic:make_scripted_policy"
+idc_ribbon_termination_idle = "dynamic_task_idc_ribbon_termination.yam_dynamic:make_idle_policy"
+idc_ribbon_termination_dream_guard = "dynamic_task_idc_ribbon_termination.budget:make_guarded_dream_policy"
+[tool.setuptools.packages.find]
+include = ["dynamic_task_idc_ribbon_termination*"]

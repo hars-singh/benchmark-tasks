@@ -1,0 +1,19 @@
+{
+  "title": "Square and press a twenty-way IDC ribbon connection",
+  "category": "Impact on AI timelines",
+  "keywords": [
+    "IDC",
+    "flat ribbon cable",
+    "insulation displacement",
+    "assembly press",
+    "wire harness"
+  ],
+  "instruction": "Place the ribbon into the connector with its red stripe at pin one. Keep it square while pressing the handle down to close the connector.",
+  "context": "IDC harness assembly creates all twenty wire terminations in one pressing operation. A skewed or reversed ribbon produces a faulty harness even when the cover appears closed.",
+  "setup": "Bolt a PanaVise 502 PanaPress with its stock 506 IDC kit, 510 socket block and adjustable depth stop to the bench. These stock parts are listed for about US$299 together. Use a preassembled 30 mm wide, twenty-way 3M 89120-0101 socket. Place the socket at x=463 mm and y=47 mm with pin one toward positive y, the cap uppermost and its slot open. Use matching 3M 3365 ribbon with 1.27 mm conductor pitch and a red pin-one edge. The cut end starts outside the slot. Its far end is already terminated and connected to an unpowered harness tester. Set the press stop against a correctly terminated 10.7 mm reference socket as specified in the protocol.",
+  "scoring": "0.50 when every conductor lies in its intended groove and the cut end is fully through the cap slot, with the red edge at pin one. 1.00 if for one second the cap stays within 0.45 mm of its set shut height, square to the locator within 2 degrees, while the ribbon stays registered. After the physical trial, raise the platen and check all twenty conductors with an ordinary cable tester. An open, cross, short, lifted cap or damaged socket makes the physical result zero.",
+  "run_limit": "480 actions (24 s at 20 Hz)",
+  "fidelity": "The press is represented by a fixed locator, a native lever and a guided return platen. Two hinged PVC ribbon sections approximate cable flex. Native contact closes a loaded cap. The simulation checks all twenty conductor positions and the cap stroke. Electrical continuity and latch retention are verified in the physical trial.",
+  "scores": "Dream-1 beta run: 0.00; scripted native-contact demo: 1.00",
+  "media": "M-47W53D"
+}
