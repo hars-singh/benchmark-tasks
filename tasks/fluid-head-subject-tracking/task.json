@@ -1,0 +1,18 @@
+{
+  "title": "Pan a tripod camera to follow a moving subject",
+  "category": "Societal relatability",
+  "keywords": [
+    "camera operator",
+    "fluid head",
+    "continuous tracking",
+    "moving subject"
+  ],
+  "instruction": "Use the pan handle to film the moving orange target in one level shot. Keep the whole target centered through the marked crossing.",
+  "context": "A camera operator must pan a damped head as a subject moves independently, keeping the shot usable throughout the crossing.",
+  "setup": "Use a level small tabletop tripod, SmallRig CH10 3259B compact fluid head and Sony ZV-1 compact camera. Lock the tilt and use the stock pan handle on the right. Match a 34-degree horizontal field of view and 16:9 framing. Place the fixed pan axis at x=0.435 m, y=-0.190 m, z=0.8795 m in the YAM station. The lens centre is 63 mm forward of the axis and 74 mm above it. The 58 by 104 mm orange plate is at lens height on a driven tabletop camera slider at x=0.923 m. Its centre travels from y=-0.395 m to y=0.135 m in eight seconds, starting after a 3.25-second preparation interval. It eases in and out at each end. Start with the camera aimed at the starting centre of the orange plate.",
+  "scoring": "Use the camera recording from the start to the end of the eight-second crossing. Score 0.50 if the whole orange rectangle is visible for at least 4 seconds. Score 1.00 if the whole plate stays in the central half of the image width for at least 90 percent of the crossing and the recorded horizon is within 2 degrees of level in those frames. Check the playback with a simple vertical centre band and a level line. Score zero if the tripod shifts over 4 mm or the robot alters the target path by over 18 mm.",
+  "run_limit": "480 actions (24 s at 20 Hz)",
+  "fidelity": "The camera and original-style pan bar share one native revolute body, with passive viscous pan resistance and a locked tilt. The camera is rendered from a native pinhole sensor rigidly mounted to the camera body. A guided slider moves the visible orange target. Pan resistance, the tripod envelope and the lens are nominal models. The three standard YAM observations are used by the policy. The recorded camera view is independent evidence for scoring.",
+  "scores": "Dream-1 beta run: 0.00; scripted native-contact demo: 1.00",
+  "media": "M-A2W92B"
+}
