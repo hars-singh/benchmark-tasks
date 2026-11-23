@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "dynamic-task-oven-mitt-assisted-donning"
+version = "0.1.0"
+requires-python = ">=3.12"
+[project.entry-points."inspect_robots.embodiments"]
+oven_mitt_assisted_donning_yam = "dynamic_task_oven_mitt_assisted_donning.yam_dynamic:make_embodiment"
+[project.entry-points."inspect_robots.policies"]
+oven_mitt_assisted_donning_demo = "dynamic_task_oven_mitt_assisted_donning.yam_dynamic:make_scripted_policy"
+oven_mitt_assisted_donning_idle = "dynamic_task_oven_mitt_assisted_donning.yam_dynamic:make_idle_policy"
+oven_mitt_assisted_donning_dream_guard = "dynamic_task_oven_mitt_assisted_donning.budget:make_guarded_dream_policy"
+[tool.setuptools.packages.find]
+include = ["dynamic_task_oven_mitt_assisted_donning*"]

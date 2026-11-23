@@ -1,0 +1,18 @@
+{
+  "title": "Help a reaching hand put on an oven mitt",
+  "category": "Societal relatability",
+  "keywords": [
+    "oven mitt",
+    "moving hand",
+    "bimanual dressing",
+    "thumb seating"
+  ],
+  "instruction": "Align the loose oven mitt on the counter and hold its cuff open for the reaching hand. Align the thumb with its pocket. Release the mitt when the hand is fully inside and let the wearer pull their hand back.",
+  "context": "A kitchen helper can hold the soft opening steady and orient the thumb for someone who can move their hand but has difficulty putting the mitt on alone.",
+  "setup": "Use an OXO Good Grips 11318400 silicone mitt and a left adult training hand. Keep the bench at room temperature. The YAM-scale mitt is about 274 mm long. Start with it loose at x=242 mm, y=35 mm, cuff toward positive X. The training hand begins centered at x=674 mm and y=12 mm and reaches toward the open cuff before withdrawing 128 mm and raising the wrist 58 mm.",
+  "scoring": "Score 0.50 if the four fingers are inside the main pocket, the thumb is in its separate pocket and the cuff covers the wrist. Score 1.00 if the correctly worn mitt stays on through at least 80 mm of withdrawal with both grippers clear and holds for 0.85 seconds. Record overhead and side video with a ruler and wrist witness mark. Any incorrect seating, dropping, or unsupported pose scores zero.",
+  "run_limit": "380 actions (19 s at 20 Hz)",
+  "fidelity": "The mitten shell and palm are native contact geometry. Spring-supported segments approximate the elastic cuff. The training hand follows a force-limited reaching and lifting trajectory. The thumb flexes through a native joint. Fabric drape and individual motion of the four fingers are simplified.",
+  "scores": "Dream-1 beta run: 0.00; scripted native-contact demo: 1.00",
+  "media": "M-HHL4NV"
+}
