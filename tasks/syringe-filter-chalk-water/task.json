@@ -1,0 +1,18 @@
+{
+  "title": "Filter a chalk-water sample into a marked vial",
+  "category": "Other",
+  "keywords": [
+    "syringe filter",
+    "liquid handling",
+    "flow control",
+    "particulate water"
+  ],
+  "instruction": "Tighten the filter by its rim. Press the plunger slowly until the clarified water reaches the band on the vial, then clear both grippers.",
+  "context": "When preparing a water sample for measurement, an operator needs a leak-free filter connection and a measured volume of clear filtrate. A loose connection can discharge cloudy sample outside the filter.",
+  "setup": "Use a 10 mL BD Luer-Lok 302995 needle-free syringe, a brown Sartorius Minisart NML 17594-K 5 micrometre filter and a 15 mL clear borosilicate vial. Clamp the syringe upright with its outlet pointing down. Start with 9 mL of water containing 40 mg of suspended coarse chalk with particles 10 micrometres or larger. The syringe filter has already been started one quarter turn short of its seated position. Put the upright vial in an ordinary 26 mm tube rack directly under the outlet with a 17 mm air gap. Mark 7 mL and 8 mL on the vial.",
+  "scoring": "Score 0.50 for at least 3.5 mL of clarified water in the upright vial after tightening the filter. Score 1.00 for 7 to 8 mL with both grippers at least 100 mm from the filter and 67 mm from the stationary plunger for one second. Score zero if there is visible leakage or cloudy bypass in the vial, spillage exceeds 0.12 mL, the vial tilts over 14 degrees, or the flow averaged over any quarter second exceeds 3 mL per second. Use a graduated vial and video playback to verify the physical result.",
+  "run_limit": "480 actions (24 s at 20 Hz)",
+  "fidelity": "Native contact drives the plunger and filter rim. The locked angle and axial ring travel represent the seal on the stock coupling, including nominal resistance to reopening once compressed. The liquid model computes delivered volume from the barrel area and observed plunger travel, with nominal dead volume and flow resistance. The filter retains the coarse chalk fraction in the physical trial. The simulator draws the two liquid levels and treats filtered output as clear.",
+  "scores": "Dream-1 beta run: 0.00; scripted native-contact demo: 1.00",
+  "media": "M-K3JWS8"
+}

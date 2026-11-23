@@ -1,0 +1,9 @@
+# Filter a chalk-water sample into a marked vial
+
+Use a BD 302995 10 mL Luer-Lok syringe without a needle, a brown Sartorius 17594-K Minisart 5 µm filter and a 15 mL straight borosilicate collection vial with 7 and 8 mL graduation marks. The original filter is available as a 50-piece pack. Fill the syringe with 9 mL of well-mixed water containing 40 mg of coarse chalk whose size range starts at 10 µm. Mount the syringe on its barrel in a stock laboratory universal clamp with the outlet facing down. Start the filter on the mating threads with approximately 75 degrees remaining before the normal snug position. Put the vial in a standard 26 mm tube rack and center it directly beneath the outlet with about 17 mm clearance to the vial rim.
+
+Use a clean dry sheet under the outlet to detect leaks. Confirm visible clarity with a black line behind the vial and compare with a separate sample of the original chalk water. Measure final volume from the graduation band at eye level and use the recording to confirm that the plunger is at rest with both hands clear. The size of the marks and the camera timing are sufficient to catch a fast discharge or overflow.
+
+The simulator represents the normal seal by the twist and the axial travel of a guided ring, with viscous resistance on the plunger. It computes delivered volume from the measured plunger displacement and actual position of the collection vial. The glass and flange are native contact bodies. The liquid level is a volume visualization and the full task uses a coarse particle filter for chalk-water clarification.
+
+[BD syringe specifications](https://www.bd.com/en-us/products-and-solutions/products/product-page.302995) · [Sartorius filter sizes, fitting and pack reference](https://www.sartorius.com/resource/blob/1736356/1c54fa5d56af5989ca7c866bbff58add/minisart-nml-3035372-instructions-for-use-manual-mul-sartori-1--data.pdf)

@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "dynamic-task-syringe-filter-chalk-water"
+version = "0.1.0"
+requires-python = ">=3.12"
+[project.entry-points."inspect_robots.embodiments"]
+syringe_filter_chalk_water_yam = "dynamic_task_syringe_filter_chalk_water.yam_dynamic:make_embodiment"
+[project.entry-points."inspect_robots.policies"]
+syringe_filter_chalk_water_demo = "dynamic_task_syringe_filter_chalk_water.yam_dynamic:make_scripted_policy"
+syringe_filter_chalk_water_idle = "dynamic_task_syringe_filter_chalk_water.yam_dynamic:make_idle_policy"
+syringe_filter_chalk_water_dream_guard = "dynamic_task_syringe_filter_chalk_water.budget:make_guarded_dream_policy"
+[tool.setuptools.packages.find]
+include = ["dynamic_task_syringe_filter_chalk_water*"]
