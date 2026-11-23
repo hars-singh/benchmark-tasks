@@ -1,0 +1,18 @@
+{
+  "title": "Recover the feeder index for a TurtleBot3 controller chip",
+  "category": "Impact on AI timelines",
+  "keywords": [
+    "SMT feeder",
+    "embossed tape",
+    "reverse indexing",
+    "pick window"
+  ],
+  "instruction": "The first package was advanced past the pick mark. Use the stock buttons to bring it back to the mark. Advance each of the next two packages to the same mark and pause after each. Leave the third package centered and both grippers clear.",
+  "context": "The ROBOTIS TurtleBot3 OpenCR RevH uses an Analog Devices MAX3443ECSA+ transceiver at U21 to communicate with DYNAMIXEL actuators. While setting up a LumenPnP run for the controller, a feeder operator corrects a missed index and checks that the nozzle will find the next three parts.",
+  "setup": "Use an Opulo LumenPnP v1.4 12 mm feeder on its stock loading station. Load 12 mm embossed carrier tape with three unpowered MAX3443ECSA+T SOIC-8 transceivers from cut tape spaced 8 mm apart. Prepare the cover leader according to the loading guide and leave the three inspected pockets exposed. Start in the normal tape-drive mode. With the first package initially centered, tap forward twice so its center is 4 mm past the stock pick reference. Leave the components seated in their pockets.",
+  "scoring": "Use overhead video with a mm scale. Score 0.50 if the first package is recovered by reverse indexing and the second is then advanced to the same pick reference. Each center must stop within 1.15 mm of the reference for 0.40 seconds. Score 1.00 after also presenting the third package and leaving it centered with the pick area clear for one second. Score zero for a displaced package, tape bypass, or missing the bidirectional recovery.",
+  "run_limit": "590 actions (29.5 s at 20 Hz)",
+  "fidelity": "Native finger contact moves both stock buttons. The actual sprocket rotation couples to a native tape slider. The tape pockets and unpowered SOIC-8 envelopes with simplified pins are native collision geometry. This run begins after the stock cover film has been prepared and focuses on bidirectional index recovery.",
+  "scores": "Dream-1 beta run: 0.00; scripted native-contact demo: 1.00",
+  "media": "M-94G7SG"
+}
