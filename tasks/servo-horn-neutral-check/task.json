@@ -1,0 +1,18 @@
+{
+  "title": "Fit a servo horn at mechanical neutral",
+  "category": "Impact on AI timelines",
+  "keywords": [
+    "servo horn",
+    "Dynamixel",
+    "splined assembly",
+    "mechanical neutral"
+  ],
+  "instruction": "Pick up the servo horn and seat it with its index aligned to the wheel gear's neutral mark. Move both hands clear for the two unloaded test swings and leave the horn seated at neutral.",
+  "context": "When rebuilding a robot joint, an offset between its mechanical and electronic zero moves its operating range. An index check before attaching a linkage prevents an incorrect horn position from being carried into the assembly.",
+  "setup": "Bolt a ROBOTIS MX-28AR flange to a horizontal bench so the output shaft faces up. With power off after homing, leave the factory washer installed. Place the HN07-N101 horn loose on a rubber parts mat. Its index starts about 24 degrees from the wheel-gear neutral direction. Put a witness card with centre and plus and minus 25-degree marks under the overhanging rim. Begin the observer's unloaded movement check after the horn is seated and both hands clear. Stand setup and check instructions are in the physical protocol.",
+  "scoring": "Score half for a released horn fully seated at neutral, with the index within five degrees. Score full if the horn stays centred within 0.75 mm and seated within 0.65 mm during both unloaded movements, follows the shaft to within five degrees on each side, and returns to neutral. Both hands must be clear during the check and for one second after the return.",
+  "run_limit": "480 actions (24 s at 20 Hz)",
+  "fidelity": "The stock-profile wheel gear and the loose horn meet through native spline contacts during installation. The physical examiner secures the original center screw once the seated fit and hand clearance are measured. The simulator models that step with a breakable native retainer that preserves the measured position and angle. The unloaded drive check then measures both swings and the return to neutral.",
+  "scores": "Dream-1 beta run: 0.00; scripted native-contact demo: 1.00",
+  "media": "M-6BFCLP"
+}
