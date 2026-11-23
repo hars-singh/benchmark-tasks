@@ -1,0 +1,18 @@
+{
+  "title": "Recover a decoupled magnetic stir bar",
+  "category": "Other",
+  "keywords": [
+    "magnetic stirrer",
+    "spin-out recovery",
+    "phase coupling",
+    "liquid handling"
+  ],
+  "instruction": "Slide the beaker onto the center of the running stirrer until the bar turns steadily. Release the beaker and leave both grippers clear.",
+  "context": "A stir bar that loses magnetic coupling can stay stopped or chatter even though the motor is running. Restoring coupling without touching the submerged bar keeps the sample contained.",
+  "setup": "Use an unheated IKA big squid white 0003672000 at 200 rpm, with a 160 mm glass plate. Put a 25 by 6 mm PTFE-coated stir bar in a DURAN SUPER DUTY 150 mL beaker, 60 mm diameter by 80 mm high, containing 115 mL of water and a small quantity of blue food dye. Center the stirrer at x=0.424 m, y=-0.182 m on the YAM table. Start the beaker 44 mm toward negative y with its base flat. Before reset verify from above that the bar is decoupled at the starting position and couples near the plate center.",
+  "scoring": "0.50 for three consecutive turns with the bar within 10 mm of the plate center and speed in 170 to 230 rpm. 1.00 if the released beaker remains centered within 7 mm and the bar remains coupled in that speed band for ten seconds. Use overhead video and a ruler to count turns and place a timing mark beside the beaker. Score zero if the beaker tilts over 12 degrees at any time, the bar leaves the vessel, the gripper enters the beaker or liquid is spilled.",
+  "run_limit": "600 actions (30 s at 20 Hz)",
+  "fidelity": "A rotating body below the glass drives a distance-dependent magnetic centering force and phase-dependent torque on the loose bar. The glass physically contains the bar. Fluid drag is nominal. A blue ring indicates the liquid level and the clear overhead view shows the bar below it. The native score tracks stir-bar speed, position, glass orientation and release. The physical trial checks spills.",
+  "scores": "Dream-1 beta run: 0.00; scripted native-contact demo: 1.00",
+  "media": "M-PAZA5Q"
+}
