@@ -23,7 +23,7 @@ if a.budget_ledger and a.policy == "dream":
 cmd = [cli, "run", "--embodiment", "pcb_stencil_xy_registration_yam", "--policy", policy,
        "-E", "device=cpu",
        "-E", "task="+str(root/"scene.py"), "-E", "object_jitter=0", "-E", "control_hz=20",
-       "-E", "cam_width=480", "-E", "cam_height=270", "--instruction", spec["instruction"],
+       "-E", "cam_width=640", "-E", "cam_height=352", "--instruction", spec["instruction"],
        "--scorer", "task_score", "--max-steps", "640", "--seed", "0",
        "--store-frames", "--log-dir", str(a.out.resolve())]
 if a.policy == "dream":

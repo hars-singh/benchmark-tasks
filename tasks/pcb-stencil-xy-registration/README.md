@@ -1,6 +1,6 @@
-# Register a PCB stencil with a printer’s X and Y adjusters
+# Register the stencil for a TurtleBot3 OpenCR motor-bus transceiver
 
-Use the X and Y adjusters to align the stencil openings over the copper lands. Open the frame to inspect the board and close it again with the alignment preserved.
+Use the printer's X and Y adjusters to align the eight U21 stencil openings over the robot-controller lands. Open the frame to inspect the board and close it again with the alignment preserved.
 
 The complete fixed layout, materials, scoring thresholds and approximations are in `task.json`.
 The primary score is computed from physical object state by `scene.py`, independently of the policy.
@@ -43,7 +43,7 @@ python run.py dream --out model_trial --budget-ledger dream_budget.json
 For Dream-1, configure `DREAM_API_KEY` or the standard private Dream SDK credential file.
 The optional ledger reserves each published request tariff before inference and caps the
 ledger at $10. It does not claim to report the provider's invoice.
-Every run uses seed 0, zero jitter, 20 Hz control, 240 Hz physics on `cpu` and three 480x270 camera observations.
+Every run uses seed 0, zero jitter, 20 Hz control, 240 Hz physics on `cpu` and three 640x352 camera observations.
 The action limit is 640 steps. Cold rendering can take several minutes;
 simulation time pauses while inference is pending. The demo can end on sustained success.
 Recorded scores for the two videos are: Dream-1 beta run: 0.00; scripted native-contact demo: 1.00.

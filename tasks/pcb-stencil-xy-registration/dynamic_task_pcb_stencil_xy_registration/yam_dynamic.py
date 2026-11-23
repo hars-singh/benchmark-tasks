@@ -112,6 +112,14 @@ class DynamicYamEmbodiment(YamArenaEmbodiment):
             from isaaclab.app import AppLauncher
             os.environ.setdefault("OMNI_KIT_ACCEPT_EULA", "YES")
             options = {"headless": self.headless, "device": self.device, "enable_cameras": True}
+            local_cache = os.environ.get("DYNA_KIT_CACHE_DIR")
+            if local_cache:
+                if any(character.isspace() for character in local_cache):
+                    raise ValueError("the Kit cache directory must contain no whitespace")
+                options["kit_args"] = (
+                    f"--/UJITSO/datastore/localCachePath={local_cache} "
+                    "--/UJITSO/datastore/localDataStore/largeChunkDiskBudgetMB=1536"
+                )
             if not self.headless:
                 os.environ["DISPLAY"] = adapter.window_display(os.environ)
                 options["visualizer"] = ["kit"]
@@ -167,6 +175,13 @@ class DynamicYamEmbodiment(YamArenaEmbodiment):
                 static, dynamic = friction
                 obj.spawner_cfg.physics_material = replace(obj.spawner_cfg.physics_material,
                     static_friction=static, dynamic_friction=dynamic, friction_combine_mode="min")
+            compliance = getattr(self.task.module, "SURFACE_COMPLIANCE", {}).get(spec.name)
+            if compliance is not None:
+                stiffness, damping = map(float, compliance)
+                if not (math.isfinite(stiffness) and stiffness > 0 and math.isfinite(damping) and damping >= 0):
+                    raise ValueError("surface compliance needs positive stiffness and nonnegative damping")
+                obj.spawner_cfg.physics_material = replace(obj.spawner_cfg.physics_material,
+                    compliant_contact_stiffness=stiffness, compliant_contact_damping=damping)
             if spec.name in {pair[0] for pair in self.contact_pairs.values()}:
                 spawn_contact = obj.spawner_cfg.func
 
@@ -593,6 +608,15 @@ class DynamicYamEmbodiment(YamArenaEmbodiment):
             self._passive_work[name]+=-power*self._base.physics_dt
         self._passive_samples+=1
 
+    def close(self):
+        trace = getattr(self, "_trace_file", None)
+        if trace is not None:
+            import atexit
+            atexit.unregister(trace.close)
+            trace.close()
+            del self._trace_file
+        super().close()
+
     def reset(self, scene, *, seed=None):
         self._motion_enabled = False
         self._contact_samples=0
@@ -669,6 +693,9 @@ class DynamicYamEmbodiment(YamArenaEmbodiment):
         observe = getattr(self.task.module, "observe", None)
         if callable(observe):
             observe(self.task.module.LIVE_OBJECTS, self.task.module.LIVE_CONTEXT, self._base.step_dt)
+        actuator_update = getattr(self.task.module, "update_actuators", None)
+        if callable(actuator_update):
+            actuator_update()
         material_update = getattr(self.task.module, "update_materials", None)
         if callable(material_update):
             material_update()

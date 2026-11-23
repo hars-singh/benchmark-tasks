@@ -77,7 +77,7 @@ def attach_screw_coupling(joint, child_prim, description, objects):
     coupling.CreateExcludeFromArticulationAttr().Set(True)
 
 
-def attach_fixture_joint(child_prim, description, objects):
+def attach_fixture_joint(child_prim, description, objects, *, suffix=""):
     """Author a passive or spring-loaded joint during spawn, before physics starts.
 
     The anchor is a world point at reset. Axis is in the parent's initial frame.
@@ -106,7 +106,7 @@ def attach_fixture_joint(child_prim, description, objects):
         raise ValueError("fixture joint frame roll must be finite")
     path = str(child_prim.GetPath())
     parent_path = path.rsplit("/", 1)[0]+"/"+parent.name
-    joint_path = path+"_joint"
+    joint_path = path+"_joint"+suffix
     cls = {"revolute": UsdPhysics.RevoluteJoint, "prismatic": UsdPhysics.PrismaticJoint,
            "fixed": UsdPhysics.FixedJoint, "spherical": UsdPhysics.SphericalJoint}[kind]
     joint = cls.Define(child_prim.GetStage(), joint_path)
@@ -163,4 +163,9 @@ def attach_fixture_joint(child_prim, description, objects):
             if kind != 'revolute':
                 raise ValueError('the screw side of a coupling must be revolute')
             attach_screw_coupling(joint, child_prim, coupling, objects)
+    for index, bond in enumerate(description.get("adhesion", ())):
+        if (suffix or bond.get("kind") != "fixed" or not joint_break_limits(bond)
+                or bond.get("parent") == child.name or "adhesion" in bond):
+            raise ValueError("adhesion requires a breakable fixed joint to another body")
+        attach_fixture_joint(child_prim, bond, objects, suffix=f"_adhesion_{index}")
     return joint

@@ -21,9 +21,150 @@ Z_FRAME=TOP+.061
 Z_FOIL=TOP+.0495
 FRAME_HINGE=np.array((X+.169,Y,Z_FRAME))
 FRAME_FRONT=X-.149
-HOLE_W=.0042
-GRID_X=(-.014,.014)
-GRID_Y=(-.0375,-.0125,.0125,.0375)
+# ROBOTIS OpenCR RevH U21 land centers and D228 centerline lengths.
+# Bottom-up view, transformed from the official PCB outline and artwork.
+U21_LANDS=((0.02770881, 0.02076516, 0.00150038),
+ (0.02770881, 0.01949516, 0.00150038),
+ (0.02770881, 0.01822516, 0.00150038),
+ (0.02770881, 0.01695516, 0.00150038),
+ (0.03260885, 0.02076516, 0.00150012),
+ (0.03260885, 0.01949516, 0.00150012),
+ (0.03260885, 0.01822516, 0.00150012),
+ (0.03260885, 0.01695516, 0.00150012))
+COPPER_WIDTH=0.000599948
+APERTURE_X=.00170
+APERTURE_Y=.00040
+FOIL_THICKNESS=.00015
+REGISTRATION_LIMIT=.00015
+# The larger exposed copper landmarks come from the same bottom mask artwork.
+OTHER_LANDS_MM=(('C', -51.0651, -3.105, 2.84988, 2.84988),
+ ('C', -51.0651, 10.10503, 2.84988, 2.84988),
+ ('C', -49.5251, -25.95002, 1.40005, 1.40005),
+ ('C', -49.23732, -17.00007, 1.50012, 1.50012),
+ ('C', -49.0999, -7.65008, 1.54991, 1.54991),
+ ('C', -49.0999, 16.69989, 1.54991, 1.54991),
+ ('C', -41.53502, -1.2, 2.84988, 2.84988),
+ ('C', -41.53502, 3.50001, 2.84988, 2.84988),
+ ('C', -38.2, -35.10011, 1.40005, 1.40005),
+ ('C', -36.2, -35.10011, 1.40005, 1.40005),
+ ('C', -34.20001, -35.10011, 1.40005, 1.40005),
+ ('C', -22.20003, 34.60003, 1.59995, 1.59995),
+ ('C', -19.69991, 34.60003, 1.59995, 1.59995),
+ ('C', -11.50003, 34.60003, 1.59995, 1.59995),
+ ('C', -8.99991, 34.60003, 1.59995, 1.59995),
+ ('C', -8.30522, -22.58985, 1.59995, 1.59995),
+ ('C', -5.76522, -22.58985, 1.59995, 1.59995),
+ ('C', -3.22522, -22.58985, 1.59995, 1.59995),
+ ('C', -1.20007, -35.19993, 1.45009, 1.45009),
+ ('C', -0.80002, 34.60003, 1.59995, 1.59995),
+ ('C', -0.68522, -22.58985, 1.59995, 1.59995),
+ ('C', 0.83878, 25.67015, 1.59995, 1.59995),
+ ('C', 1.33993, -35.19993, 1.45009, 1.45009),
+ ('C', 1.33993, -32.65993, 1.45009, 1.45009),
+ ('C', 1.7001, 34.60003, 1.59995, 1.59995),
+ ('C', 1.85478, -22.58985, 1.59995, 1.59995),
+ ('C', 3.37878, 25.67015, 1.59995, 1.59995),
+ ('C', 3.87993, -35.19993, 1.45009, 1.45009),
+ ('C', 3.87993, -32.65993, 1.45009, 1.45009),
+ ('C', 4.39478, -22.58985, 1.59995, 1.59995),
+ ('C', 5.91878, 25.67015, 1.59995, 1.59995),
+ ('C', 6.41993, -35.19993, 1.45009, 1.45009),
+ ('C', 6.41993, -32.65993, 1.45009, 1.45009),
+ ('C', 6.93478, -22.58985, 1.59995, 1.59995),
+ ('C', 8.45878, 25.67015, 1.59995, 1.59995),
+ ('C', 8.95993, -35.19993, 1.45009, 1.45009),
+ ('C', 8.95993, -32.65993, 1.45009, 1.45009),
+ ('C', 9.47478, -22.58985, 1.59995, 1.59995),
+ ('C', 9.95002, 34.6013, 1.59995, 1.59995),
+ ('C', 10.99878, 25.67015, 1.59995, 1.59995),
+ ('C', 11.49993, -35.19993, 1.45009, 1.45009),
+ ('C', 11.49993, -32.65993, 1.45009, 1.45009),
+ ('C', 12.01478, -22.58985, 1.59995, 1.59995),
+ ('C', 12.45014, 34.6013, 1.59995, 1.59995),
+ ('C', 13.53878, 25.67015, 1.59995, 1.59995),
+ ('C', 14.03993, -35.19993, 1.45009, 1.45009),
+ ('C', 14.03993, -32.65993, 1.45009, 1.45009),
+ ('C', 14.95001, 34.6013, 1.59995, 1.59995),
+ ('C', 16.07878, 25.67015, 1.59995, 1.59995),
+ ('C', 16.57993, -35.19993, 1.45009, 1.45009),
+ ('C', 16.57993, -32.65993, 1.45009, 1.45009),
+ ('C', 18.61878, -22.58985, 1.59995, 1.59995),
+ ('C', 19.11993, -35.19993, 1.45009, 1.45009),
+ ('C', 19.11993, -32.65993, 1.45009, 1.45009),
+ ('C', 21.15878, -22.58985, 1.59995, 1.59995),
+ ('C', 21.65993, -35.19993, 1.45009, 1.45009),
+ ('C', 21.65993, -32.65993, 1.45009, 1.45009),
+ ('C', 23.15014, 34.6013, 1.59995, 1.59995),
+ ('C', 23.69878, -22.58985, 1.59995, 1.59995),
+ ('C', 23.69878, 25.67015, 1.59995, 1.59995),
+ ('C', 25.65001, 34.6013, 1.59995, 1.59995),
+ ('C', 26.23878, -22.58985, 1.59995, 1.59995),
+ ('C', 26.23878, 25.67015, 1.59995, 1.59995),
+ ('C', 28.15013, 34.6013, 1.59995, 1.59995),
+ ('C', 28.77878, -22.58985, 1.59995, 1.59995),
+ ('C', 28.77878, 25.67015, 1.59995, 1.59995),
+ ('C', 31.31878, -22.58985, 1.59995, 1.59995),
+ ('C', 31.31878, 25.67015, 1.59995, 1.59995),
+ ('C', 33.85878, -22.58985, 1.59995, 1.59995),
+ ('C', 33.85878, 25.67015, 1.59995, 1.59995),
+ ('C', 33.99874, 0.32019, 1.59995, 1.59995),
+ ('C', 33.99874, 2.86019, 1.59995, 1.59995),
+ ('C', 34.40006, -35.40009, 1.40005, 1.40005),
+ ('C', 34.40006, -33.40009, 1.40005, 1.40005),
+ ('C', 34.40006, -31.40009, 1.40005, 1.40005),
+ ('C', 34.40006, -29.4001, 1.40005, 1.40005),
+ ('C', 36.35002, 34.6013, 1.59995, 1.59995),
+ ('C', 36.40005, -35.40009, 1.40005, 1.40005),
+ ('C', 36.40005, -33.40009, 1.40005, 1.40005),
+ ('C', 36.40005, -31.40009, 1.40005, 1.40005),
+ ('C', 36.40005, -29.4001, 1.40005, 1.40005),
+ ('C', 36.53874, -2.21981, 1.59995, 1.59995),
+ ('C', 36.53874, 0.32019, 1.59995, 1.59995),
+ ('C', 36.53874, 2.86019, 1.59995, 1.59995),
+ ('C', 38.40005, -35.40009, 1.40005, 1.40005),
+ ('C', 38.40005, -33.40009, 1.40005, 1.40005),
+ ('C', 38.40005, -31.40009, 1.40005, 1.40005),
+ ('C', 38.40005, -29.4001, 1.40005, 1.40005),
+ ('C', 38.85014, 34.6013, 1.59995, 1.59995),
+ ('C', 40.40005, -35.40009, 1.40005, 1.40005),
+ ('C', 40.40005, -33.40009, 1.40005, 1.40005),
+ ('C', 40.40005, -31.40009, 1.40005, 1.40005),
+ ('C', 40.40005, -29.4001, 1.40005, 1.40005),
+ ('C', 41.15011, 27.09992, 1.50012, 1.50012),
+ ('C', 41.35001, 34.6013, 1.59995, 1.59995),
+ ('C', 42.40004, -35.40009, 1.40005, 1.40005),
+ ('C', 42.40004, -31.40009, 1.40005, 1.40005),
+ ('C', 47.34999, -0.3773, 1.24993, 1.24993),
+ ('C', 47.34999, 4.47258, 1.24993, 1.24993),
+ ('C', 50.29995, -25.19995, 1.40005, 1.40005),
+ ('C', 50.29995, -23.19996, 1.40005, 1.40005),
+ ('C', 50.29995, -21.19996, 1.40005, 1.40005),
+ ('C', 50.29995, -14.39987, 1.40005, 1.40005),
+ ('C', 50.29995, -12.39988, 1.40005, 1.40005),
+ ('C', 50.29995, -10.39988, 1.40005, 1.40005),
+ ('R', -49.5251, -27.95001, 1.40005, 1.40005),
+ ('R', -49.23732, -19.50019, 1.50012, 1.50012),
+ ('R', -49.0999, -10.14995, 1.54991, 1.54991),
+ ('R', -49.0999, 14.20002, 1.54991, 1.54991),
+ ('R', -41.53502, 8.20003, 2.84988, 2.84988),
+ ('R', -40.2, -35.10011, 1.40005, 1.40005),
+ ('R', -24.6999, 34.60003, 1.59995, 1.59995),
+ ('R', -13.9999, 34.60003, 1.59995, 1.59995),
+ ('R', -10.84522, -22.58985, 1.59995, 1.59995),
+ ('R', -3.29989, 34.60003, 1.59995, 1.59995),
+ ('R', -1.70122, 25.67015, 1.59995, 1.59995),
+ ('R', -1.20007, -32.65993, 1.45009, 1.45009),
+ ('R', 7.45015, 34.6013, 1.59995, 1.59995),
+ ('R', 16.07878, -22.58985, 1.59995, 1.59995),
+ ('R', 20.65002, 34.6013, 1.59995, 1.59995),
+ ('R', 21.15878, 25.67015, 1.59995, 1.59995),
+ ('R', 33.85015, 34.6013, 1.59995, 1.59995),
+ ('R', 33.99874, -2.21981, 1.59995, 1.59995),
+ ('R', 41.15011, 25.09992, 1.50012, 1.50012),
+ ('R', 42.40004, -33.40009, 1.40005, 1.40005),
+ ('R', 42.40004, -29.4001, 1.40005, 1.40005),
+ ('R', 50.29995, -27.19995, 1.40005, 1.40005),
+ ('R', 50.29995, -16.40012, 1.40005, 1.40005))
 PITCH=.0018
 BLUE=(.08,.26,.49)
 ALUM=(.60,.68,.73)
@@ -37,8 +178,8 @@ X_BED=Box('longitudinal_carriage',pos=(X+X_ERROR,Y,TOP+.031),size=(.290,.371,.00
           mass=.92,color=ALUM)
 XY_BED=Box('board_support_table',pos=(X+X_ERROR,Y+Y_ERROR,TOP+.040),size=(.292,.406,.012),
            mass=1.84,color=PLATE)
-PCB=Box('controller_board',pos=(X+X_ERROR,Y+Y_ERROR,TOP+.047),size=(.090,.112,.0016),
-        mass=.032,color=GREEN)
+PCB=Box('robotis_opencr_revh_bare_controller_pcb',pos=(X+X_ERROR,Y+Y_ERROR,TOP+.047),
+        size=(.105,.075,.0016),mass=.025,color=GREEN)
 FRAME=Box('aluminium_stencil_frame',pos=tuple(map(float,FRAME_HINGE)),size=(.345,.340,.022),
           mass=.506,color=ALUM)
 SCREW_X=Box('longitudinal_adjustment_knob',pos=(X-.194,Y-.137,TOP+.034),
@@ -53,20 +194,28 @@ def frame_box(size, pos, color):
 
 
 def foil_mesh():
-    """Disjoint foil rectangles leave eight actual square apertures."""
-    shape_x,shape_y=.300,.318
-    lower_x,upper_x=X-shape_x/2.,X+shape_x/2.
-    lower_y,upper_y=Y-shape_y/2.,Y+shape_y/2.
-    holes=tuple((X+x,Y+y) for x in GRID_X for y in GRID_Y)
-    xs=sorted([lower_x,upper_x]+[X+x+s*HOLE_W/2 for x in GRID_X for s in (-1,1)])
-    ys=sorted([lower_y,upper_y]+[Y+y+s*HOLE_W/2 for y in GRID_Y for s in (-1,1)])
-    result=[]
+    """Build the 0.15 mm foil around the eight actual U21 openings."""
+    lower_x,upper_x=X-.150,X+.150
+    lower_y,upper_y=Y-.159,Y+.159
+    holes=tuple((X+x,Y+y) for x,y,_ in U21_LANDS)
+    xs=sorted({lower_x,upper_x}|{x+s*APERTURE_X/2. for x,_ in holes for s in (-1,1)})
+    ys=sorted({lower_y,upper_y}|{y+s*APERTURE_Y/2. for _,y in holes for s in (-1,1)})
     for xa,xb in zip(xs,xs[1:]):
         for ya,yb in zip(ys,ys[1:]):
             cx,cy=.5*(xa+xb),.5*(ya+yb)
-            if all(abs(cx-hx)>HOLE_W*.48 or abs(cy-hy)>HOLE_W*.48 for hx,hy in holes):
-                result.append(frame_box((xb-xa,yb-ya,.00025),(cx,cy,Z_FOIL),FOIL))
-    return result
+            occupied=any(abs(cx-x)<APERTURE_X/2. and abs(cy-y)<APERTURE_Y/2. for x,y in holes)
+            if not occupied:
+                yield frame_box((xb-xa,yb-ya,FOIL_THICKNESS),(cx,cy,Z_FOIL),FOIL)
+
+
+def copper_witnesses():
+    for x,y,length in U21_LANDS:
+        yield Solid('box',(length,COPPER_WIDTH,.00006),(x,y,.00083),color=COPPER)
+        for side in (-1.,1.):
+            yield Solid('cylinder',(COPPER_WIDTH/2.,.00006),(x+side*length/2.,y,.00083),color=COPPER)
+    for kind,x,y,width,height in OTHER_LANDS_MM:
+        geometry=('cylinder',(width*.0005,.00004)) if kind=='C' else ('box',(width*.001,height*.001,.00004))
+        yield Solid(*geometry,(x*.001,y*.001,.00082),color=COPPER)
 
 
 def screw_knob(axis):
@@ -97,12 +246,9 @@ BODY_PARTS={
     SCREW_Y.name:screw_knob('Y'),
 }
 VISUAL_PARTS={
-    PCB.name:(
-        *(Solid('box',(.0055,.0055,.0002),(x,y,.0009),color=COPPER) for x in GRID_X for y in GRID_Y),
-        *(Solid('box',(.022,.00055,.00005),(0.,y,.00084),color=(.64,.70,.49)) for y in GRID_Y),
-    ),
+    PCB.name:tuple(copper_witnesses()),
     XY_BED.name:tuple(Solid('box',(.007,.016,.004),(x,y,.0077),color=BLACK)
-                     for x in (-.048,.048) for y in (-.042,.042)),
+                     for x in (-.055,.055) for y in (-.026,.026)),
     SCREW_X.name:(Solid('box',(.014,.0015,.0004),(0.,0.,.0158),color=ALUM),),
     SCREW_Y.name:(Solid('box',(.0015,.013,.0004),(0.,0.,.0158),color=ALUM),),
 }
@@ -126,14 +272,15 @@ SURFACE_FRICTION={FRAME.name:(.50,.42),SCREW_X.name:(.92,.79),SCREW_Y.name:(.92,
 CONTACT_OFFSETS_M={o.name:.00024 for o in OBJECTS}
 RIGID_SOLVER_ITERATIONS={o.name:(64,8) for o in OBJECTS}
 OBJECT_MATERIALS={BASE.name:'blue steel YSJ-250 base',X_BED.name:'aluminium X carriage',
-                  XY_BED.name:'aluminium Y support table with locating shoes',PCB.name:'FR-4 PCB with copper pads',
-                  FRAME.name:'aluminium frame with a 0.25 mm stainless stencil',
+                  XY_BED.name:'aluminium Y support table with locating shoes',PCB.name:'ROBOTIS OpenCR 1.0 RevH FR-4 bare controller board with U21 copper lands',
+                  FRAME.name:'aluminium frame with a 0.15 mm stainless bottom-side stencil for OpenCR U21',
                   SCREW_X.name:'steel adjustment screw with knurled polymer knob',
                   SCREW_Y.name:'steel adjustment screw with knurled polymer knob'}
 
 down=np.column_stack(((0.,-1.,0.),(1.,0.,0.),(0.,0.,1.)))
-TASK_RECORD_CAMERA=(BASE.name,Camera((0.,0.,.168),tuple(matrix_to_quat_xyzw(down)),
-                                      'opengl',Lens.from_focal(28.,640,360)))
+U21_CENTER=tuple(float(sum(land[i] for land in U21_LANDS)/len(U21_LANDS)) for i in (0,1))
+TASK_RECORD_CAMERA=(BASE.name,Camera((*U21_CENTER,.177),tuple(matrix_to_quat_xyzw(down)),
+                                      'opengl',Lens.from_focal(164.,640,352)))
 LIVE_CONTEXT={}
 SUCCESS_HOLD_S=1.
 MAX_PARTIAL_SCORE=.50
@@ -154,11 +301,10 @@ def aperture_registration(objects, context):
     frame_rotation=quat_xyzw_to_matrix(objects[FRAME.name].quat_xyzw)
     board_rotation=quat_xyzw_to_matrix(objects[PCB.name].quat_xyzw)
     offsets=[]
-    for x in GRID_X:
-        for y in GRID_Y:
-            opening=o[FRAME.name]+frame_rotation@(np.array((X+x,Y+y,Z_FOIL))-FRAME_HINGE)
-            pad=o[PCB.name]+board_rotation@np.array((x,y,.0008))
-            offsets.append(opening-pad)
+    for x,y,_ in U21_LANDS:
+        opening=o[FRAME.name]+frame_rotation@(np.array((X+x,Y+y,Z_FOIL))-FRAME_HINGE)
+        pad=o[PCB.name]+board_rotation@np.array((x,y,.00083))
+        offsets.append(opening-pad)
     d=np.array(offsets)
     return float(np.max(np.linalg.norm(d[:,:2],axis=1))),float(np.max(abs(d[:,2])))
 
@@ -167,7 +313,7 @@ def observe(objects, context, dt):
     global _aligned,_opened,_invalid
     planar, vertical=aperture_registration(objects,context)
     _invalid=_invalid or math.dist(context['body_origins'][BASE.name],BASE.pos)>.002
-    _aligned=_aligned or planar<=.00038 and vertical<=.0020
+    _aligned=_aligned or planar<=REGISTRATION_LIMIT and vertical<=.0020
     lift=quat_xyzw_to_matrix(objects[FRAME.name].quat_xyzw)[0,2]
     _opened=_opened or _aligned and lift>=math.sin(math.radians(21.))
 
@@ -175,7 +321,7 @@ def observe(objects, context, dt):
 def success(objects):
     xy,z=aperture_registration(objects,LIVE_CONTEXT)
     free=all(math.dist((X-.090,Y-.164,Z_FRAME),tcp)>.080 for tcp in LIVE_CONTEXT['tcp'].values())
-    return bool(not _invalid and _opened and xy<=.00038 and z<=.0020 and free)
+    return bool(not _invalid and _opened and xy<=REGISTRATION_LIMIT and z<=.0020 and free)
 
 
 def score(objects):
