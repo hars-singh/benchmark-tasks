@@ -1,0 +1,18 @@
+{
+  "title": "Finish seating window-screen spline around an open corner",
+  "category": "Societal relatability",
+  "keywords": [
+    "rescreening",
+    "vinyl screen spline",
+    "corner rolling",
+    "screen frame"
+  ],
+  "instruction": "Use the concave spline roller to seat the open run and follow it around the corner until it joins the seated side. Lift the roller away and leave the mesh held by the continuous spline.",
+  "context": "When replacing damaged insect screen, the splined joint keeps the mesh on the frame. The corner can lift out when the roller turns, and reworking it can release a previously seated edge.",
+  "setup": "Use a 226 by 254 mm aluminium vent-screen frame cut from stock 5/16 by 3/4 inch rail, Phifer standard fiberglass mesh, continuous 0.140-inch Phifer vinyl spline and a Phifer wood spline roller. Leave the other edges seated. Start with the first 21 mm of the near groove seated. Lift the remaining front run, and its full 90-degree corner. The adjoining run starts seated from the bend onward. Rest the frame flat on a nonslip mat and place the roller beside the near rail with its concave end toward the frame.",
+  "scoring": "Score 0.50 if the loose front run is seated continuously and stays seated after the roller moves away. Score 1.00 after seating the entire open section, including the turn and its join to the seated side, for one second with the roller clear. Check every 20 mm and at the corner with an overhead video and straightedge. Score zero if the mesh tears or an already seated edge remains loose at the final check.",
+  "run_limit": "660 actions (33 s at 20 Hz)",
+  "fidelity": "The concave roller and vinyl spline move through native contact. Short linked spline segments and compliant contacts approximate bending and compression in the channel. The aluminum groove and fiberglass weave use stock dimensions. The mesh begins resting against the frame and its tension is checked by hand in the physical trial.",
+  "scores": "Dream-1 beta run: 0.00; scripted native-contact demo: 1.00",
+  "media": "M-WHWLR5"
+}
