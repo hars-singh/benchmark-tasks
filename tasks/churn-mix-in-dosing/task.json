@@ -1,0 +1,18 @@
+{
+  "title": "Add a measured batch of chocolate chips while an ice-cream bowl churns",
+  "category": "Societal relatability",
+  "keywords": [
+    "churning",
+    "chocolate chips",
+    "ingredient spout",
+    "rotating bowl"
+  ],
+  "instruction": "Tip the chips through the ingredient spout while the freezer bowl keeps turning. Keep the measure above the lid. Set it back on the rest and let the bowl make at least two more turns.",
+  "context": "Late mix-ins are added to many frozen desserts during churning. The bowl needs to keep rotating after the addition so the stationary mixing paddle can distribute the chips.",
+  "setup": "Use a Cuisinart ICE-21P1 1.5-quart freezer-bowl ice-cream maker with its original clear lid and paddle. Start with a thick vanilla base about five minutes before the end of churning, the lid locked, and the machine already turning. Set an ordinary quarter-cup measure with eighteen chocolate chips about 10 mm across on a rubber rest. Arrange the handle so the measure is easy to lift level.",
+  "scoring": "Score 0.50 if at least nine chips reach the ice cream during churning. Score 1.00 if all eighteen are delivered and remain in the ice cream, the measure is upright on its rest and the bowl turns at least two further revolutions with the grippers clear. At the final photograph, chips must be present in at least three quadrants of the bowl. Score zero if the tool enters the guarded opening or a delivered chip drops out of the freezer bowl. Observe the bowl witness mark and use overhead video to count the dose and chips outside the lid.",
+  "run_limit": "500 actions (25 s at 20 Hz)",
+  "fidelity": "The freezer bowl rotates through a native motor joint. Native contacts carry individual mix-ins on a thin moving layer representing thickened ice cream, with the stationary dasher redirecting them. The simulator represents the brief addition interval during an already running churn.",
+  "scores": "Dream-1 beta run: 0.00; scripted native-contact demo: 1.00",
+  "media": "M-8KGDW2"
+}
