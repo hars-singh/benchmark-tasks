@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "dynamic-task-salad-spinner-brake"
+version = "0.1.0"
+requires-python = ">=3.12"
+[project.entry-points."inspect_robots.embodiments"]
+salad_spinner_brake_yam = "dynamic_task_salad_spinner_brake.yam_dynamic:make_embodiment"
+[project.entry-points."inspect_robots.policies"]
+salad_spinner_brake_demo = "dynamic_task_salad_spinner_brake.yam_dynamic:make_scripted_policy"
+salad_spinner_brake_idle = "dynamic_task_salad_spinner_brake.yam_dynamic:make_idle_policy"
+salad_spinner_brake_dream_guard = "dynamic_task_salad_spinner_brake.budget:make_guarded_dream_policy"
+[tool.setuptools.packages.find]
+include = ["dynamic_task_salad_spinner_brake*"]

@@ -1,0 +1,18 @@
+{
+  "title": "Dry rinsed lettuce in a hand-pumped salad spinner and stop it with the brake",
+  "category": "Societal relatability",
+  "keywords": [
+    "salad spinner",
+    "centrifugal drying",
+    "reciprocating pump",
+    "basket brake"
+  ],
+  "instruction": "Pump the salad spinner until it collects at least 16 grams of water from the lettuce. Press the stock brake while the basket is turning. Leave the basket stopped with the lettuce inside and your hands clear.",
+  "context": "Household salad spinners remove rinse water before serving. The brake stops the spinning colander so the basket can be handled.",
+  "setup": "Use an OXO Good Grips 32480 white spinner, 10.5 by 10.5 by 6 inches, with stock 6.22-quart bowl and 4.95-quart basket. Put 88 g of romaine in the basket with a measured 23 g of surface water. The outer bowl starts wiped dry, the lid seated, the pump unlocked and the basket stopped. Keep a gram scale and fixed side camera for scoring.",
+  "scoring": "Score 0.50 if at least 16 g is collected after at least three full pump strokes and the lettuce stays inside. Score 1.00 if those conditions hold, the stock brake arrests the moving basket, and the basket stays still for one second with both hands clear and the lid seated. All other outcomes score 0.00. Measure collected mass against the bowl's dry tare.",
+  "run_limit": "420 actions (21 seconds at 20 Hz)",
+  "fidelity": "The pump, brake and basket use native joints. Measured pump travel drives a reduced-speed basket through a one-way drive approximation. A speed-dependent water transfer model represents centrifugation. The lettuce is modeled with loose, rigid, nonuniform leaf envelopes.",
+  "scores": "Dream-1 beta run: 0.00; scripted native-contact demo: 1.00",
+  "media": "M-DNASGL"
+}
